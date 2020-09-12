@@ -20,19 +20,28 @@ html, body {
 
 .big-container,
 .small-container {
-	margin: 0 auto; }
+	margin: 0 auto;
+}
 .big-container {
 	width: 100%;
 	max-width: 960px;
-	padding: 0 24px; }
+	padding: 0 24px;
+}
 .small-container {
-	max-width: 600px; }
+	max-width: 600px;
+}
+
+.section {
+	overflow: hidden;
+	position: relative;
+}
 
 .section-block {
 	padding: 20vh 0;
 	display: flex;
 	align-items: center;
-	min-height: 100vh; }
+	min-height: 100vh;
+}
 
 img {
 	display: block;
@@ -68,7 +77,10 @@ a {
 	}
 
 p {
-	margin: 0.62em 0 0;
+	margin: 0 0 0.62em;
+}
+p:last-child {
+	margin-bottom: 0;
 }
 
 /* strong {
@@ -84,18 +96,27 @@ p {
 /* MENU
 /******************/
 
-#menu {
-	right: 30px;
-	top: 0;
+.menu {
 	height: 100%;
-	position: fixed; }
-	#menu ul {
+	right: 0;
+	top: 0;
+	width: 240px;
+	position: absolute;
+	font-size: 1rem;
+	clip: rect(0, auto, auto, 0); }
+	.menu ul {
 		height: 100%;
+		top: 0;
+		right: 32px;
+		position: fixed;
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
 	}
-	#menu a {
+	.menu li {
+		position: relative;
+	}
+	.menu a {
 		display: block;
 		padding: 12px 64px 12px 24px;
 		text-decoration: none;
@@ -103,8 +124,11 @@ p {
 		text-align: right;
 		position: relative;
 	}
-		#menu a:before,
-		#menu a:after {
+		.menu a:before {
+			width: 6px;
+			height: 6px;
+			background: #a4a4a4;
+			transition: background 0.30s ease-out;
 			content: '';
 			position: absolute;
 			right: 32px;
@@ -112,48 +136,105 @@ p {
 			transform-origin: center center;
 			transform: translate3d(50%,-50%,0) rotate(45deg);
 		}
-		#menu a:before {
-			width: 6px;
-			height: 6px;
-			background: #a4a4a4;
-			transition: background 0.30s ease-out;
+		.menu svg {
+			position: absolute;
+			right: 16px;
+			width: 32px;
+			top: 50%;
+			
+			transform: translate3d(0,-50%,0);
 		}
-		#menu a:after {
-			width: 18px;
-			height: 18px;
-			box-shadow: inset 0 0 0 2px white;
-			opacity: 0;
+		.menu .menu-selection {
+			fill: transparent;
+			stroke: white;
+			stroke-width: 2px;
+			stroke-dasharray: 64;
+			stroke-dashoffset: 64;
+
+			transition: stroke-dasharray 1s ease-out,
+							stroke-dashoffset 1s ease-out;
 		}
-	#menu a.current {
+		.menu .current .menu-selection {
+			stroke-dasharray: 64;
+			stroke-dashoffset: 0;
+		}
+	.menu .current a {
 		color: white;
 	}
-		#menu a.current:before {
+		.menu .current a:before {
 			background: white;
 		}
-		#menu a.current:after {
-			opacity: 1;
-		}
-	#menu a:hover {
+	.menu a:hover {
 		color: white;
 	}
-	#menu a:hover:before {
+	.menu a:hover:before {
 		background: white;
 	}
 
-
+.section-white .menu a {
+	color: #b7b7b7;
+}
+	.section-white .menu .current a {
+		color: #181818;
+	}
+	.section-white .menu a:before {
+		background: #bfbfbf;
+	}
+		.section-white .menu .current a:before {
+			background: #181818;
+		}
+		.section-white .menu a:hover {
+			color: #181818;
+		}
+		.section-white .menu a:hover:before {
+			background: #181818;
+		}
+	.section-white .menu .menu-selection {
+		stroke: #181818;
+	}
 /*
 /* Hello
 /******************/
 
-#hello {
+#hello .section-block {
 	padding: 20vh 0px;
 	font-size: 36px;
+}
+#hello .hello-anim {
+	position: relative;
+	padding-top: 3.2em;
+}
+#hello h1 {
+	margin-bottom: 0;
+	color: white;
+	position: absolute;
+	top: 50%;
+	left: 0;
+
+	transition: top 1.50s cubic-bezier(.19,.07,.41,.95),
+					color 1.50s cubic-bezier(.19,.07,.41,.95);
+}
+
+#hello p {
+	opacity: 0;
+	transform: translate3d(0,50%,0);
+	transition: all 2s cubic-bezier(.08,.64,.41,.95);
+}
+
+#hello.play h1 {
+	color: #a4a4a4;
+	top: 0;
+}
+
+#hello.play p {
+	transform: translate3d(0,0,0);
+	opacity: 1;
 }
 
 /*
 /* Projects
 /******************/
 
-#projects {
+/* #projects {
 	padding: 20vh 0px;
-}
+} */

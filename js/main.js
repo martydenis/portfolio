@@ -1,56 +1,67 @@
+jQuery.fn.outerHTML = function() {
+	return jQuery('<div />').append(this.eq(0).clone()).html();
+};
+
 $(document).ready(function(){
+	$('#hello .hello-anim > *').each(function(index, el){
+		let $this = $(el),
+		    $delay = $this.data('delay');
+		$this.css('transition-delay', $delay+'ms');
+	});
 
-	// $("#hamburger").click(function(e){
-	// 	e.preventDefault();
-	// 	$("body").toggleClass("with-sidebar");
-	// });
+	let $menu = $('.menu').outerHTML();
+	$('.section').each(function(){
+		if($(this).attr('id') != 'hello'){
+			$(this).prepend($menu);
+		}
+	});
 
-	let $menuA = $("#menu a");
-	$menuA.click(function(e){
+	setTimeout(function(){
+		$('#hello').addClass('play');
+	}, 1600);
+
+	$(".menu a").click(function(e){
 		// Effectue l'animation du scroll quand cliqué sur un lien de la NAV.
 		e.preventDefault();
 		let $this = $(this),
-			 $body = $('body, html');
+			 $body = $('body, html'),
+			 href = $this.attr('href');
 
-		if($($this.attr('href')).length > 0){
+		if($(href).length > 0){
 			$body.stop().animate({
 				scrollTop: $($this.attr('href')).offset().top
-			}, 400, "swing");
+			}, 500, "swing");
 		}
 
-		$('#menu .current').removeClass('current');
-		$this.addClass('current');
+		// $('.menu .current').removeClass('current');
+		// $('.menu a[href="'+href+'"]').parent().addClass('current');
 
 		// hash($(this).attr("href"));
 	});
 
 	/*************** SCROLL SPY ****************/
 
-	// var sections = [$("#me"), $("#projets"), $("#contact")];
-	// var id = false;
-	// var scrolled_id;
+	let sections = [$("#hello"), $("#projects"), $("#contact")],
+	    id = false,
+	    scrolled_id;
 
 	// // Donne la classe current au lien de la NAV correspondant avec la section consultée.
-	// $("#body").scroll(function(e){
-	// 	scrollTop = $(this).scrollTop();
+	$(document).on('scroll', function(e){
+		scrollTop = $(this).scrollTop();
 
-	// 	for (var i in sections){
-	// 		var section = sections[i];
-	// 		if(scrollTop >= section.offset().top + $("#site-content").scrollTop() - $("#header").height() ) {
-	// 			scrolled_id = section.attr("id")
-	// 		}
-	// 	};
+		for (var i in sections){
+			var section = sections[i];
+			if(scrollTop + $(window).height()/2 >= section.offset().top ) {
+				scrolled_id = section.attr("id")
+			}
+		};
 
-	// 	if(scrolled_id != id){
-	// 		id = scrolled_id;
-	// 		$menuA.removeClass("current");
-	// 		$("a[href='#" + id + "']").addClass("current");
-
-	// 		if(scrolled_id == "contact" && $("#nom").val() == "" ){
-	// 			$("#nom").focus();
-	// 		}
-	// 	}
-	// });
+		if(scrolled_id != id){
+			id = scrolled_id;
+			$('.menu .current').removeClass("current");
+			$(".menu a[href='#" + id + "']").parent().addClass("current");
+		}
+	});
 
 	/************* FORM de VALIDATION *************/
 

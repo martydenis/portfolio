@@ -120,24 +120,44 @@ if(isset($_POST) && count($_POST)>0){
 	<link rel="stylesheet" type="text/css" href="css/responsive.css"/>
 </head>
 <body>
-	<nav id="menu">
-		<ul>
-			<li><a href="#hello" class="current">Hello</a></li>
-			<li><a href="#projects">Projects</a></li>
-			<li><a href="#contact">Get in touch</a></li>
-		</ul>
-	</nav>
+	<header id="hello" class="section">
+		<nav class="menu">
+			<ul>
+				<li class="current">
+					<a href="#hello">Hello</a>
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 30" xml:space="preserve">
+						<rect class="menu-selection" x="7.05" y="7.05" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -6.2132 15)" width="15.91" height="15.91"/>
+					</svg>
+				</li>
+				<li>
+					<a href="#projects">Projects</a>
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 30" xml:space="preserve">
+						<rect class="menu-selection" x="7.05" y="7.05" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -6.2132 15)" width="15.91" height="15.91"/>
+					</svg>
+				</li>
+				<li>
+					<a href="#contact">Get in touch</a>
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 30 30" xml:space="preserve">
+						<rect class="menu-selection" x="7.05" y="7.05" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -6.2132 15)" width="15.91" height="15.91"/>
+					</svg>
+				</li>
+			</ul>
+		</nav>
 
-	<header id="hello" class="section-block">
-		<div class="big-container">
-			<h1>Hi, I am Martin</h1>
-			<p>I'm a 27 years old front-end developer and webdesigner,<br>living in Louvain-la-Neuve, Belgium</p>
-			<p>I graduated from the <a href="http://www.infographie-sup.be/" target="_blank">ESIAJ</a> in 2015<br>and have been working at <a href="https://www.e-net-b.be/" target="_blank">E-net Business</a> since.</p>
-		</div><!-- FIN Big Container -->
+		<div class="section-block">
+			<div class="big-container">
+				<div class="hello-anim">
+					<h1 data-delay="0">Hi, I am Martin</h1>
+					<p data-delay="1250">I'm a 27 years old front-end developer and webdesigner,<br>living in Louvain-la-Neuve, Belgium</p>
+					<p data-delay="2000">I graduated from the <a href="http://www.infographie-sup.be/" target="_blank">ESIAJ</a> in 2015<br>and have since been working at <a href="https://www.e-net-b.be/" target="_blank">E-net Business</a>.</p>
+				</div>
+			</div><!-- FIN Big Container -->
+		</div>
 	</header><!-- FIN Me -->
 
 	
-	<section id="projects" class="section-block section-white">
+	<section id="projects" class="section section-white">
+		<div class="section-block"></div>
 	<?php /*
 		<h2>Projets</h2>
 
@@ -159,7 +179,7 @@ if(isset($_POST) && count($_POST)>0){
 			</div> <!-- FIN BIG CONTAINER -->
 		</article> <!-- FIN 36 -->
 
-		<!-- <article class="section-block">
+		<!-- <article class="section">
 			<div class="big-container">
 
 				<h3>AJSquare</h3>
@@ -177,7 +197,7 @@ if(isset($_POST) && count($_POST)>0){
 			</div>
 		</article> -->
 
-		<article class="section-block">
+		<article class="section">
 			<div class="big-container">
 				<h3>Datakillers</h3>
 				<img src="img/datakillers.png" alt="Datakillers - Dataviz sur les Tueurs en série.">
@@ -194,11 +214,12 @@ if(isset($_POST) && count($_POST)>0){
 		*/ ?>
 	</section> <!-- FIN PROJETS -->
 
-	<section id="contact" class="section-block">
+	<section id="contact" class="section">
+		<div class="section-block"></div>
 	<?php /*
 		<h2>Contact</h2>
 		<article>
-			<div class="big-container section-block">
+			<div class="big-container section">
 				<p class="mb24 mt0">Si vous voulez me joindre, vous pouvez remplir mon formulaire.</p>
 				<div id="dial" class="col2">
 					<h3>Martin</h3>
