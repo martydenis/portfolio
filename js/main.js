@@ -5,60 +5,52 @@ $(document).ready(function(){
 	// 	$("body").toggleClass("with-sidebar");
 	// });
 
-	var $menuA = $("#menu a");
+	let $menuA = $("#menu a");
 	$menuA.click(function(e){
 		// Effectue l'animation du scroll quand cliqué sur un lien de la NAV.
 		e.preventDefault();
-		var $this = $(this),
+		let $this = $(this),
 			 $body = $('body, html');
 
-		if( $body.hasClass("with-sidebar") ) {
-			$body.removeClass("with-sidebar");
-			setTimeout(function(){
-				$body.stop().animate({
-					scrollTop: $($this.attr('href')).offset().top + $body.scrollTop()
-				}, 400, "swing");
-			}, 200);
-		} else {
+		if($($this.attr('href')).length > 0){
 			$body.stop().animate({
 				scrollTop: $($this.attr('href')).offset().top
 			}, 400, "swing");
-			
-			$('#menu .current').removeClass('current');
-			$this.addClass('current');
 		}
 
-		hash($(this).attr("href"));
+		$('#menu .current').removeClass('current');
+		$this.addClass('current');
+
+		// hash($(this).attr("href"));
 	});
 
 	/*************** SCROLL SPY ****************/
 
-	var sections = [$("#me"), $("#projets"), $("#contact")];
-	var id = false;
-	var scrolled_id;
+	// var sections = [$("#me"), $("#projets"), $("#contact")];
+	// var id = false;
+	// var scrolled_id;
 
-	// Donne la classe current au lien de la NAV correspondant avec la section consultée.
-	$("#body").scroll(function(e){
-		scrollTop = $(this).scrollTop();
+	// // Donne la classe current au lien de la NAV correspondant avec la section consultée.
+	// $("#body").scroll(function(e){
+	// 	scrollTop = $(this).scrollTop();
 
-		for (var i in sections){
-			var section = sections[i];
-			if(scrollTop >= section.offset().top + $("#site-content").scrollTop() - $("#header").height() ) {
-				scrolled_id = section.attr("id")
-			}
-		};
+	// 	for (var i in sections){
+	// 		var section = sections[i];
+	// 		if(scrollTop >= section.offset().top + $("#site-content").scrollTop() - $("#header").height() ) {
+	// 			scrolled_id = section.attr("id")
+	// 		}
+	// 	};
 
-		if(scrolled_id != id){
-			id = scrolled_id;
-			$menuA.removeClass("current");
-			$("a[href='#" + id + "']").addClass("current");
+	// 	if(scrolled_id != id){
+	// 		id = scrolled_id;
+	// 		$menuA.removeClass("current");
+	// 		$("a[href='#" + id + "']").addClass("current");
 
-			if(scrolled_id == "contact" && $("#nom").val() == "" ){
-				$("#nom").focus();
-			}
-		}
-
-	});
+	// 		if(scrolled_id == "contact" && $("#nom").val() == "" ){
+	// 			$("#nom").focus();
+	// 		}
+	// 	}
+	// });
 
 	/************* FORM de VALIDATION *************/
 

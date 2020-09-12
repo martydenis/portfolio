@@ -103,9 +103,7 @@ if(isset($_POST) && count($_POST)>0){
 		// redirect to thank you page
 	}
 }
-// OK, A PARTIR D'ICI TU PEUX TOUCHER...
 
-// TOUT TON CODE HTML VA CI-DESSOUS
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -114,40 +112,33 @@ if(isset($_POST) && count($_POST)>0){
 	<meta charset="UTF-8">
 	<meta name="description" content="Webdesigner et webdeveloper à Gembloux - Namur. Je m'occuperai de la réalisation de votre site web de A à Z">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1"/>
-
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
-	<link rel="icon" type="image/png" href="img/favicon.png"/>
+	
+	<!-- <link rel="icon" type="image/png" href="img/favicon.png"/> -->
 	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
-	<link rel="stylesheet" type="text/css" href="css/material-design-iconic-font.min.css"/>
+	<!-- <link rel="stylesheet" type="text/css" href="css/material-design-iconic-font.min.css"/> -->
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	<link rel="stylesheet" type="text/css" href="css/responsive.css"/>
 </head>
 <body>
 	<nav id="menu">
 		<ul>
-			<li><a href="#me" class="current">About me</a></li>
+			<li><a href="#hello" class="current">Hello</a></li>
 			<li><a href="#projects">Projects</a></li>
-			<li><a href="#contact">Contact</a></li>
+			<li><a href="#contact">Get in touch</a></li>
 		</ul>
 	</nav>
 
-	<header id="me" class="section-block">
+	<header id="hello" class="section-block">
 		<div class="big-container">
-			<h1>Martin Denis<span id="less">Webdesigner</span></h1>
-
-			<div class="small-container">
-
-				<p>I'm a 26 years old front-end developer and webdesigner,
-					<br>graduated from the section <a href="http://www.dwm.re">Webdesign & Multimédia</a> at the <a href="http://www.infographie-sup.be/">ESIAJ</a>.</p>
-
-				<p>Let me show you.</p>
-			</div><!-- FIN Small Container -->
+			<h1>Hi, I am Martin</h1>
+			<p>I'm a 27 years old front-end developer and webdesigner,<br>living in Louvain-la-Neuve, Belgium</p>
+			<p>I graduated from the <a href="http://www.infographie-sup.be/" target="_blank">ESIAJ</a> in 2015<br>and have been working at <a href="https://www.e-net-b.be/" target="_blank">E-net Business</a> since.</p>
 		</div><!-- FIN Big Container -->
 	</header><!-- FIN Me -->
 
-	<section id="projects" class="section">
+	
+	<section id="projects" class="section-block section-white">
+	<?php /*
 		<h2>Projets</h2>
 
 		<article class="section-block">
@@ -200,9 +191,11 @@ if(isset($_POST) && count($_POST)>0){
 				</div> <!-- FIN SMALL CONTAINER -->
 			</div> <!-- FIN BIG CONTAINER -->
 		</article> <!-- FIN DATAKILLERS -->
+		*/ ?>
 	</section> <!-- FIN PROJETS -->
 
-	<section id="contact" >
+	<section id="contact" class="section-block">
+	<?php /*
 		<h2>Contact</h2>
 		<article>
 			<div class="big-container section-block">
@@ -283,9 +276,11 @@ if(isset($_POST) && count($_POST)>0){
 
 			</div> <!-- FIN BIG CONTAINER -->
 		</article> <!-- FIN ARTICLE CONTACT -->
+	*/ ?>
 	</section> <!-- FIN CONTACT -->
 
 	<footer id="footer">
+	<?php /*
 		<div class="big-container">
 			<p>Créé avec amour par Martin Denis dans le cadre du travail de fin de 2e année à l'<a href="http://www.infographie-sup.be/">ESIAJ</a> à Namur, Belgique.</p>
 
@@ -311,8 +306,10 @@ if(isset($_POST) && count($_POST)>0){
 				</ul>
 			</div>
 		</div> <!-- FIN BIG CONTAINER -->
+	*/ ?>
 	</footer> <!-- FIN FOOTER -->
 
+	<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@200..700&display=swap" rel="stylesheet">
 	<script src="js/jquery.js"></script>
 	<script src="js/main.js"></script>
 </body>
