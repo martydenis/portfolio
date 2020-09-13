@@ -25,7 +25,8 @@ html, body {
 .big-container {
 	width: 100%;
 	max-width: 960px;
-	padding: 0 24px;
+	padding-left: 24px;
+	padding-right: 24px;
 }
 .small-container {
 	max-width: 600px;
@@ -37,10 +38,11 @@ html, body {
 }
 
 .section-block {
-	padding: 20vh 0;
+	padding: 2em 0;
 	display: flex;
 	align-items: center;
 	min-height: 100vh;
+	min-height: calc(var(--vh, 1vh) * 100);
 }
 
 img {
@@ -53,7 +55,7 @@ img {
 /*****************************************/
 
 h1 {
-	font-size: 1.3888em;
+	font-size: 1.5em;
 	font-weight: 700;
 	line-height: 56px;
 	font-weight: 200;
@@ -104,11 +106,15 @@ p:last-child {
 	position: absolute;
 	font-size: 1rem;
 	clip: rect(0, auto, auto, 0); }
-	.menu ul {
-		height: 100%;
-		top: 0;
+	.menu .clip {
+		top: 50%;
+		top: calc(var(--vh, 1vh) * 50);
+		transform: translate(0,-50%);
 		right: 32px;
 		position: fixed;
+	}
+	.menu ul {
+		
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
@@ -119,10 +125,14 @@ p:last-child {
 	.menu a {
 		display: block;
 		padding: 12px 64px 12px 24px;
+		line-height: 24px;
+		height: 48px;
 		text-decoration: none;
 		color: #a4a4a4;
 		text-align: right;
 		position: relative;
+		z-index: 1;
+		outline: none;
 	}
 		.menu a:before {
 			width: 6px;
@@ -136,23 +146,28 @@ p:last-child {
 			transform-origin: center center;
 			transform: translate3d(50%,-50%,0) rotate(45deg);
 		}
-		.menu svg {
+		.menu .clip-path {
 			position: absolute;
 			right: 16px;
-			width: 32px;
-			top: 50%;
-			
-			transform: translate3d(0,-50%,0);
+			top: 0;
+			transition: clip-path 0.50s ease-out;
+			clip-path: polygon(16px 11px, 20px 14px, 32px 14px, 32px 34px, 20px 34px, 16px 38px, 12px 34px, 0px 34px, 0px 14px, 12px 14px);
 		}
-		.menu .menu-selection {
+		.menu svg {
+			width: 32px;
+			pointer-events: none;
+		}
+		.menu polyline {
 			fill: transparent;
 			stroke: white;
 			stroke-width: 2px;
-			stroke-dasharray: 64;
+			stroke-miterlimit:10;
+			
+			/* stroke-dasharray: 64;
 			stroke-dashoffset: 64;
 
 			transition: stroke-dasharray 1s ease-out,
-							stroke-dashoffset 1s ease-out;
+							stroke-dashoffset 1s ease-out; */
 		}
 		.menu .current .menu-selection {
 			stroke-dasharray: 64;
@@ -189,7 +204,7 @@ p:last-child {
 		.section-white .menu a:hover:before {
 			background: #181818;
 		}
-	.section-white .menu .menu-selection {
+	.section-white .menu polyline {
 		stroke: #181818;
 	}
 /*
@@ -197,18 +212,19 @@ p:last-child {
 /******************/
 
 #hello .section-block {
-	padding: 20vh 0px;
-	font-size: 36px;
+	font-size: 1.70rem;
 }
 #hello .hello-anim {
 	position: relative;
-	padding-top: 3.2em;
+	padding-top: 4em;
 }
 #hello h1 {
 	margin-bottom: 0;
 	color: white;
 	position: absolute;
+	line-height: 1.25;
 	top: 50%;
+	top: calc(50% - 0.625em);
 	left: 0;
 
 	transition: top 1.50s cubic-bezier(.19,.07,.41,.95),
@@ -218,7 +234,8 @@ p:last-child {
 #hello p {
 	opacity: 0;
 	transform: translate3d(0,50%,0);
-	transition: all 2s cubic-bezier(.08,.64,.41,.95);
+	transition: opacity 2s cubic-bezier(.08,.64,.41,.95),
+					transform 2s cubic-bezier(.08,.64,.41,.95);
 }
 
 #hello.play h1 {
@@ -238,3 +255,14 @@ p:last-child {
 /* #projects {
 	padding: 20vh 0px;
 } */
+
+/*
+/* footer
+/******************/
+
+#footer {
+	background: #111111;
+	color: #a4a4a4;
+	padding: 5em 0;
+	font-size: 0.9rem;
+}

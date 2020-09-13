@@ -2,7 +2,19 @@ jQuery.fn.outerHTML = function() {
 	return jQuery('<div />').append(this.eq(0).clone()).html();
 };
 
+function updateVhValue(){
+	// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+	let vh = window.innerHeight * 0.01;
+	// Then we set the value in the --vh custom property to the root of the document
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
 $(document).ready(function(){
+	
+	$(window).on('orientationChange', function(){
+		updateVhValue();
+	});
+
 	$('#hello .hello-anim > *').each(function(index, el){
 		let $this = $(el),
 		    $delay = $this.data('delay');
@@ -43,22 +55,46 @@ $(document).ready(function(){
 
 	let sections = [$("#hello"), $("#projects"), $("#contact")],
 	    id = false,
+	    sectionIndex = 0,
 	    scrolled_id;
 
 	// // Donne la classe current au lien de la NAV correspondant avec la section consultée.
 	$(document).on('scroll', function(e){
-		scrollTop = $(this).scrollTop();
+		let scrollTop = $(this).scrollTop();
+		let polygon = [
+			[16, 11],
+			[20, 14],
+			[32, 14],
+			[32, 34],
+			[20, 34],
+			[16, 38],
+			[12, 34],
+			[0, 34],
+			[0, 14],
+			[12, 14]
+		];
 
 		for (var i in sections){
 			var section = sections[i];
 			if(scrollTop + $(window).height()/2 >= section.offset().top ) {
-				scrolled_id = section.attr("id")
+				scrolled_id = section.attr("id");
+				sectionIndex = i;
 			}
 		};
 
 		if(scrolled_id != id){
 			id = scrolled_id;
 			$('.menu .current').removeClass("current");
+			
+			let newPath = '';
+			for (let index = 0; index < polygon.length; index++) {
+				let point = polygon[index];
+				if(index != 0)
+					newPath += ', '
+				newPath += point[0]+ 'px ' + (point[1]+(48*sectionIndex)) + 'px';
+			}
+
+			$('.menu .clip-path').css('clip-path', 'polygon('+newPath+')');
 			$(".menu a[href='#" + id + "']").parent().addClass("current");
 		}
 	});
