@@ -111,6 +111,7 @@ p:last-child {
 		top: calc(var(--vh, 1vh) * 50);
 		transform: translate(0,-50%);
 		right: 32px;
+		z-index: 10;
 		position: fixed;
 	}
 	.menu ul {
@@ -187,13 +188,13 @@ p:last-child {
 	}
 
 .section-white .menu a {
-	color: #b7b7b7;
+	color: #cccfd4;
 }
 	.section-white .menu .current a {
 		color: #181818;
 	}
 	.section-white .menu a:before {
-		background: #bfbfbf;
+		background: #cccfd4;
 	}
 		.section-white .menu .current a:before {
 			background: #181818;
@@ -261,8 +262,8 @@ p:last-child {
 /******************/
 
 #footer {
-	background: #111111;
-	color: #a4a4a4;
+	background: #f4f6f9;
+	color: #7f7f7f;
 	padding: 5em 0;
-	font-size: 0.9rem;
+	font-size: 0.85rem;
 }

@@ -10,14 +10,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<title>Portfolio - Martin Denis | Webdeveloper & Webdesigner</title>
+	<title>Portfolio - Martin Denis | Front-end developer & Webdesigner</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Webdesigner et webdeveloper à Gembloux - Namur. Je m'occuperai de la réalisation de votre site web de A à Z">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1"/>
 	
 	<!-- <link rel="icon" type="image/png" href="img/favicon.png"/> -->
 	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
-	<!-- <link rel="stylesheet" type="text/css" href="css/material-design-iconic-font.min.css"/> -->
 	<link rel="stylesheet" type="text/css" href="css/style.css<?php echo '?'.time() ; ?>"/>
 	<link rel="stylesheet" type="text/css" href="css/responsive.css<?php echo '?'.time() ; ?>"/>
 </head>
@@ -57,17 +56,18 @@
 	</header>
 	<!-- FIN Hello -->
 
-	
-	<section id="projects" class="section section-white">
-		<div class="section-block"></div>
-	
-	</section>
-	<!-- FIN PROJECTS -->
+	<main class="section section-white">
+		<section id="projects" class="section">
+			<div class="section-block"></div>
 
-	<section id="contact" class="section">
-		<div class="section-block"></div>
-	</section>
-	<!-- FIN CONTACT -->
+		</section>
+		<!-- FIN PROJECTS -->
+
+		<section id="contact" class="section">
+			<div class="section-block"></div>
+		</section>
+		<!-- FIN CONTACT -->
+	</main>
 
 	<footer id="footer">
 		<div class="big-container">

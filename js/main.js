@@ -1,16 +1,4 @@
-jQuery.fn.outerHTML = function() {
-	return jQuery('<div />').append(this.eq(0).clone()).html();
-};
-
-function updateVhValue(){
-	// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-	let vh = window.innerHeight * 0.01;
-	// Then we set the value in the --vh custom property to the root of the document
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-
 $(document).ready(function(){
-	
 	$(window).on('orientationChange', function(){
 		updateVhValue();
 	});
@@ -22,10 +10,8 @@ $(document).ready(function(){
 	});
 
 	let $menu = $('.menu').outerHTML();
-	$('.section').each(function(){
-		if($(this).attr('id') != 'hello'){
-			$(this).prepend($menu);
-		}
+	$('.section-white').each(function(){
+		$(this).prepend($menu);
 	});
 
 	setTimeout(function(){
@@ -47,32 +33,19 @@ $(document).ready(function(){
 
 		// $('.menu .current').removeClass('current');
 		// $('.menu a[href="'+href+'"]').parent().addClass('current');
-
-		// hash($(this).attr("href"));
 	});
 
 	/*************** SCROLL SPY ****************/
 
 	let sections = [$("#hello"), $("#projects"), $("#contact")],
-	    id = false,
+	    id = '',
 	    sectionIndex = 0,
 	    scrolled_id;
 
 	// // Donne la classe current au lien de la NAV correspondant avec la section consultée.
 	$(document).on('scroll', function(e){
 		let scrollTop = $(this).scrollTop();
-		let polygon = [
-			[16, 11],
-			[20, 14],
-			[32, 14],
-			[32, 34],
-			[20, 34],
-			[16, 38],
-			[12, 34],
-			[0, 34],
-			[0, 14],
-			[12, 14]
-		];
+		let polygon = [[16, 11],[20, 14],[32, 14],[32, 34],[20, 34],[16, 38],[12, 34],[0, 34],[0, 14],[12, 14]];
 
 		for (var i in sections){
 			var section = sections[i];
@@ -99,59 +72,62 @@ $(document).ready(function(){
 		}
 	});
 
+
+
 	/************* FORM de VALIDATION *************/
+	$("#form").on("submit", function(e) {
+		var field, value = null;
+		var valid = true;
 
-	function isEmailValid(email){//compare l'email entré à l'expression régulière.
-		var regExpPattern = /^[0-9a-zA-Z][-._a-zA-Z0-9]*@([0-9a-zA-Z][-._0-9a-zA-Z]*\.)+[a-zA-Z]{2,4}$/;
-		return (email.match(regExpPattern)!=null);
-	}
+		// Teste le nom.
+		field = $("#nom");
+		value = field.val();
+		if ( value ) {
+			field.parent().removeClass("erreur");
+		} else {
+			field.parent().addClass("erreur");
+			valid = false;
+		}
 
-	$("#form").on("submit", function(e){
-	var field, value = null;
-	var valid = true;
+		// Teste l'email.
+		field = $("#email");
+		value = field.val();
+		if ( isEmailValid(value) ) {
+			field.parent().removeClass("erreur");
+		} else {
+			field.parent().addClass("erreur");
+			valid = false;
+		}
 
-	// Teste le nom.
-	field = $("#nom");
-	value = field.val();
-	if ( value ) {
-		field.parent().removeClass("erreur");
-	} else {
-		field.parent().addClass("erreur");
-		valid = false;
-	}
+		// Teste le message.
+		field = $("#message");
+		value = field.val();
+		if ( value ) {
+			field.parent().removeClass("erreur");
+		} else {
+			field.parent().addClass("erreur");
+			valid = false;
+		}
 
-	// Teste l'email.
-	field = $("#email");
-	value = field.val();
-	if ( isEmailValid(value) ) {
-		field.parent().removeClass("erreur");
-	} else {
-		field.parent().addClass("erreur");
-		valid = false;
-	}
-
-	// Teste le message.
-	field = $("#message");
-	value = field.val();
-	if ( value ) {
-		field.parent().removeClass("erreur");
-	} else {
-		field.parent().addClass("erreur");
-		valid = false;
-	}
-
-	// Termine la validation.
+		// Termine la validation.
 		if (!valid) {
 			e.preventDefault();
 		}
 	});
-
 });
 
-hash = function(h){ // conserve l'historique des #
-	if(history.pushState){
-		history.pushState(null, null, h)
-	} else {
-		location.hash = h
-	}
+function updateVhValue(){
+	// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+	let vh = window.innerHeight * 0.01;
+	// Then we set the value in the --vh custom property to the root of the document
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
+
+function isEmailValid(email) { //compare l'email entré à l'expression régulière.
+	var regExpPattern = /^[0-9a-zA-Z][-._a-zA-Z0-9]*@([0-9a-zA-Z][-._0-9a-zA-Z]*\.)+[a-zA-Z]{2,4}$/;
+	return (email.match(regExpPattern)!=null);
+}
+
+jQuery.fn.outerHTML = function() {
+	return jQuery('<div />').append(this.eq(0).clone()).html();
+};
