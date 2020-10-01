@@ -20,23 +20,23 @@
 		padding-right: 40px;
 	}
 
-	.menu,
-	.menu a {
+	#menu,
+	#menu a {
 		width: 48px;
 	}
-	.menu a {
+	#menu a {
 		padding: 0;
 	}
-	.menu a span {
+	#menu a span {
 		display: none;
 	}
-	.menu a:before {
+	#menu a:before {
 		right: 24px;
 	}
-	.menu .clip {
+	#menu .clip {
 		right: 0;
 	}
-	.menu .clip-path {
+	#menu .clip-path {
 		right: 8px;
 	}
 
@@ -49,5 +49,4 @@
 	html, body {
 		font-size: 14px;
 	}
-
 }

@@ -21,62 +21,96 @@
 	<link rel="stylesheet" type="text/css" href="css/responsive.css<?php echo '?'.time() ; ?>"/>
 </head>
 <body>
-	<header id="hello" class="section">
-		<nav class="menu">
-			<div class="clip">
-				<ul>
-					<li class="current">
-						<a href="#hello"><span>Hello</span></a>
-					</li>
-					<li>
-						<a href="#projects"><span>Projects</span></a>
-					</li>
-					<li>
-						<a href="#contact"><span>Get in touch</span></a>
-					</li>
-				</ul>
+	<!-- <nav id="menu">
+		<div class="clip">
+			<ul>
+				<li class="current">
+					<a href="#anchor__hello"><span>Hello</span></a>
+				</li>
+				<li>
+					<a href="#anchor__projects"><span>Projects</span></a>
+				</li>
+				<li>
+					<a href="#anchor__contact"><span>Get in touch</span></a>
+				</li>
+			</ul>
 
-				<div class="clip-path">
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 144" style="enable-background:new 0 0 32 144;" xml:space="preserve">
-						<polyline class="st0" points="16,36 4,24 16,12 28,24 16,36 16,60 4,72 16,84 28,72 16,60 4,72 16,84 16,108 4,120 16,132 28,120 16,108 "/>
-					</svg>
-				</div>
+			<div class="clip-path">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 144" style="enable-background:new 0 0 32 144;" xml:space="preserve">
+					<polyline class="st0" points="16,36 4,24 16,12 28,24 16,36 16,60 4,72 16,84 28,72 16,60 4,72 16,84 16,108 4,120 16,132 28,120 16,108 "/>
+				</svg>
 			</div>
-		</nav>
+		</div>
+	</nav> -->
 
-		<div class="section-block">
-			<div class="big-container">
-				<div class="hello-anim">
-					<h1 data-delay="0">Hi, I am Martin</h1>
-					<p data-delay="1250">I'm a <?php echo $age; ?> years old front-end developer and webdesigner, <br class="hidden-sm">living in Louvain-la-Neuve, Belgium</p>
-					<p data-delay="2000">I graduated from the <a href="http://www.infographie-sup.be/" target="_blank">ESIAJ</a> in 2015 <br class="hidden-sm">and have been working at <a href="https://www.e-net-b.be/" target="_blank">E-net Business</a> ever since.</p>
+	<div id="overlay" class="section__fader"></div>
+
+	<span id="anchor__hello" class="section__anchor"></span>
+	<header id="hello" class="section">
+		<div class="section__block">
+			<div class="container-small">
+				<div class="hello-anim section__content">
+					<h1 id="hello-anim-1">Hi, I am Martin</h1>
+					<p class="hello-anim-p">I'm a <?php echo $age; ?> years old front-end developer and webdesigner, <br class="hidden-sm">living in Louvain-la-Neuve, Belgium</p>
+					<p class="hello-anim-p">I graduated from the <a href="http://www.infographie-sup.be/" target="_blank">ESIAJ</a> in 2015 <br class="hidden-sm">and have been working at <a href="https://www.e-net-b.be/" target="_blank">E-net Business</a> ever since.</p1250>
 				</div>
 			</div>
 		</div>
 	</header>
 	<!-- FIN Hello -->
 
-	<main class="section section-white">
-		<section id="projects" class="section">
-			<div class="section-block"></div>
+	<span id="anchor__projects" class="section__anchor"></span>
+<!-- 
+	<section id="projects__intro" class="section">		
+		<h2 id="projects__intro__title">My work</h2>
+	</section> -->
 
-		</section>
-		<!-- FIN PROJECTS -->
+	<section id="projects" class="section section__white">
+		
+		<article id="project__hexkingdom" class="project ">
+			<h2 id="projects__title">My work</h2>
+			<div class="pin-wrapper">
+				<div class="container-big section__block">
+					<div class="section__content">
+						<img src="img/hexkingdom.png" alt="HexKingdom" class="project__laptop" width="920" height="489"/>
 
-		<section id="contact" class="section">
-			<div class="section-block"></div>
-		</section>
-		<!-- FIN CONTACT -->
-	</main>
+						<h3>HexKingdom</h3>
+					</div>
+				</div>
+			</div>
+		</article>
+		<article id="project__datakillers" class="project ">
+			<div class="pin-wrapper">
+				<div class="container-big section__block">
+					<div class="section__content">
+						<img src="img/datakillers.png" alt="DataKillers" class="project__laptop" width="920" height="489"/>
+
+						<h3>DataKillers</h3>
+					</div>
+				</div>
+			</div>
+		</article>
+	</section>
+	<!-- FIN PROJECTS -->
+
+	<span id="anchor__contact" class="section__anchor"></span>
+	<section id="contact" class="section section__white">
+		<div class="section__block"></div>
+	</section>
+	<!-- FIN CONTACT -->
 
 	<footer id="footer">
-		<div class="big-container">
+		<div class="container-small">
 			<p>Created with ❤️ by Martin Denis in Louvain-la-Neuve, Belgium</p>
 		</div>
 	</footer>
 
-	<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@200..700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..800&display=swap" rel="stylesheet">
 	<script src="js/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 	<script src="js/main.js<?php echo '?'.time() ; ?>"></script>
 </body>
 </html>
