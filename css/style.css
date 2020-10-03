@@ -148,10 +148,10 @@ p:last-child {
 /* Projects
 /******************/
 
-#projects {
+/* #projects { */
    /* position: relative;
    top: -50%; */
-}
+/* } */
 
 .project {
    position: relative;
@@ -185,7 +185,7 @@ p:last-child {
 
 #projects .section__content {
    flex-grow: 1;
-
+   font-weight: 500;
    transform: translate3d(0,50px,0);
 }
 
@@ -207,12 +207,12 @@ p:last-child {
    margin-bottom: calc(var(--vh, 1vh) * 100);
 }
    #project__hexkingdom .btn {
-      color: #0084d4;
+      color: #51a8e4;
    }
    #project__hexkingdom .pin-wrapper {
       background: #51b2ed;
-      background: -webkit-linear-gradient(to bottom left, #0084d4 0%,#7cd6ff 100%);
-      background: linear-gradient(to bottom left, #0084d4 0%,#7cd6ff 100%);
+      background: -webkit-linear-gradient(to bottom , #009be0 0%,#ccd0f1 100%);
+      background: linear-gradient(to bottom , #009be0 0%,#ccd0f1 100%);
       color: white;
       
       -webkit-mask: url(../img/work-mask.svg) no-repeat;
@@ -226,13 +226,43 @@ p:last-child {
    }
 
 #project__datakillers .btn {
-   color: rgb(255, 0, 78);
+   color: #ca0745;
 }
 #project__datakillers .pin-wrapper {
    background: rgb(255, 0, 78);
-   background: -webkit-linear-gradient(to bottom left, rgb(255, 0, 78) 0%, rgb(241, 47, 106) 100%);
-   background: linear-gradient(to bottom left, rgb(255, 0, 78) 0%, rgb(241, 47, 106) 100%);
+   background: -webkit-linear-gradient(to bottom, rgb(255, 0, 78) 0%, rgb(241, 47, 106) 100%);
+   background: linear-gradient(to bottom, rgb(255, 0, 78) 0%, rgb(241, 47, 106) 100%);
    color: white;
+}
+
+#project__datakillers svg {
+   position: absolute;
+   z-index: 0;
+   bottom: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+}
+
+#project__datakillers svg .data-line {
+   stroke: rgba(103, 28, 51, 0.36);
+   stroke-width: 9;
+   height: 0;
+   /* transform: scaleY(0); */
+   transform-origin: bottom center;
+}
+
+
+
+#project__artinmov .pin-wrapper {
+   background: #200409;
+   background: -webkit-linear-gradient(to bottom, #151515 0%, #400b11 100%);
+   background: linear-gradient(to bottom, #151515 0%, #400b11 100%);
+   color: white;
+}
+
+#project__artinmov .btn {
+   color: #200409;
 }
 
 

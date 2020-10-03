@@ -23,7 +23,7 @@ $(document).ready(function(){
          y: 0
       })
       .addTo(scrollController);
-      
+
    $(".hello-anim-p").each(function(index){
       new ScrollMagic.Scene({
          triggerElement: "#hello",
@@ -32,11 +32,10 @@ $(document).ready(function(){
          duration: "60%",
       })
       .setTween(this, {y: 0, opacity: 1})
-      // .addIndicators()
       .addTo(scrollController);
    });
    
-   // Black to White
+   // Hello to projects - Black to White
    new ScrollMagic.Scene({
          triggerElement: "#projects",
          triggerHook: 1,
@@ -51,24 +50,14 @@ $(document).ready(function(){
                TweenMax.to('#hello', 1, {opacity: 0})
             ])
       );
-   
-   // new ScrollMagic.Scene({
-   //       triggerElement: "#projects",
-   //       triggerHook: 0.5,
-   //       offset: -250,
-   //       // duration: "100%",
-   //    })
-   //    .setClassToggle("#menu", "menu-white")
-   //    // .addIndicators()
-   //    .addTo(scrollController);
 
-   // PIN Projects title
-   var maskTween = new TimelineMax()
+   // PROJECTS Mask intro
+   let maskTween = new TimelineMax()
       .add([
          TweenMax.to("#projects .pin-wrapper", 1, {
             webkitMaskSize:70000+'px',
             webkitMaskPosition: 46.5+'% ' + 70+'%',
-            maskSize:70000+'px',
+            maskSize:60000+'px',
             maskPosition: 46.5+'% ' + 70+'%',
             ease:Power2.easeIn,
          }),
@@ -87,36 +76,30 @@ $(document).ready(function(){
       .setTween(maskTween)
       .addTo(scrollController);
 
-   // PIN HexKingdom
-   new ScrollMagic.Scene({
-         triggerElement: "#project__hexkingdom",
-         triggerHook: 0,
-         duration: "200%",
-      })
-      .setPin("#project__hexkingdom .pin-wrapper", {pushFollowers: true})
-      .addTo(scrollController);
-   
-   
-   // PIN DataKillers
-   new ScrollMagic.Scene({
-         triggerElement: "#project__hexkingdom",
-         triggerHook: 0,
-         // duration: "200%",
-      })
-      .setPin("#project__datakillers .pin-wrapper", {pushFollowers: false})
-      .addTo(scrollController);
-
-
    $('.project').each(function(index){
       let text = $(this).find('.section__content'),
-          previousProject = $('.project')[index-1],
-          hook = 1;
+          hook = 1,
+          pinDuration = '',
+          pushFollowers = false,
+          wrapper = '#' + $(this).attr('id') + ' .pin-wrapper' ;
       
-      if(typeof previousProject == 'undefined') {
-         //Firstproject
+      //Firstproject
+      if(index == 0) {
          hook = 0;
+         pinDuration = "200%";
+         pushFollowers = true;
       }
-
+      
+      // PIN projects
+      new ScrollMagic.Scene({
+            triggerElement: this,
+            triggerHook: hook,
+            duration: pinDuration,
+         })
+         .setPin(wrapper, {pushFollowers: pushFollowers})
+         .addTo(scrollController);
+   
+      // Projects text parallax
       new ScrollMagic.Scene({
             triggerElement: this,
             triggerHook: hook,
@@ -125,6 +108,16 @@ $(document).ready(function(){
          .setTween(text, {y: -50})
          .addTo(scrollController);
    });
+
+   // DATAVIZ lines
+   let dataLines = TweenMax.staggerFromTo(".data-line", 2, {scaleY: 0}, {scaleY: 1, ease:Power2.easeOut}, 0.15);
+   new ScrollMagic.Scene({
+         triggerElement: "#project__datakillers",
+         triggerHook: 1,
+         duration: "110%",
+      })
+      .setTween(dataLines)
+      .addTo(scrollController);
 
    /************* Misc **************/
    // let oldHeight = 0;
