@@ -60,21 +60,15 @@
 	<!-- FIN Hello -->
 
 	<span id="anchor__projects" class="section__anchor"></span>
-<!-- 
-	<section id="projects__intro" class="section">		
-		<h2 id="projects__intro__title">My work</h2>
-	</section> -->
-
 	<section id="projects" class="section section__white">
-		
 		<article id="project__hexkingdom" class="project ">
-			<h2 id="projects__title">My work</h2>
 			<div class="pin-wrapper">
 				<div class="container-big section__block">
+					<img src="img/hexkingdom.png" alt="HexKingdom" class="project__laptop" width="840" height="490"/>
 					<div class="section__content">
-						<img src="img/hexkingdom.png" alt="HexKingdom" class="project__laptop" width="920" height="489"/>
-
 						<h3>HexKingdom</h3>
+						<p>Round by round game imagined for multiplayer. Created as part of my end-of-study project</p>
+						<p><a href="/projects/hexkingdom/" class="btn">See the project</a></p>
 					</div>
 				</div>
 			</div>
@@ -82,10 +76,11 @@
 		<article id="project__datakillers" class="project ">
 			<div class="pin-wrapper">
 				<div class="container-big section__block">
+					<img src="img/datakillers.png" alt="DataKillers" class="project__laptop" width="840" height="490"/>
 					<div class="section__content">
-						<img src="img/datakillers.png" alt="DataKillers" class="project__laptop" width="920" height="489"/>
-
 						<h3>DataKillers</h3>
+						<p>Data visualisation on serial killers in the world</p>
+						<p><a href="/projects/datakillers/" class="btn">See the project</a></p>
 					</div>
 				</div>
 			</div>

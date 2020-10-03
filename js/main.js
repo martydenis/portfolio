@@ -63,13 +63,28 @@ $(document).ready(function(){
    //    .addTo(scrollController);
 
    // PIN Projects title
+   var maskTween = new TimelineMax()
+      .add([
+         TweenMax.to("#projects .pin-wrapper", 1, {
+            webkitMaskSize:70000+'px',
+            webkitMaskPosition: 46.5+'% ' + 70+'%',
+            maskSize:70000+'px',
+            maskPosition: 46.5+'% ' + 70+'%',
+            ease:Power2.easeIn,
+         }),
+         TweenMax.to("#projects .pin-wrapper", 1, {
+            webkitFilter:'brightness('+1+')',
+            filter:'brightness('+1+')',
+            ease:Power2.easeOut,
+         })
+      ]);
+
    new ScrollMagic.Scene({
          triggerElement: "#projects",
          triggerHook: 0,
          duration: "100%",
       })
-      .setPin("#projects__title")
-      .setTween("#projects .pin-wrapper", 1, {clipPath: 'circle('+ 100 +'%)', ease: Circ.easeIn})
+      .setTween(maskTween)
       .addTo(scrollController);
 
    // PIN HexKingdom
@@ -90,6 +105,26 @@ $(document).ready(function(){
       })
       .setPin("#project__datakillers .pin-wrapper", {pushFollowers: false})
       .addTo(scrollController);
+
+
+   $('.project').each(function(index){
+      let text = $(this).find('.section__content'),
+          previousProject = $('.project')[index-1],
+          hook = 1;
+      
+      if(typeof previousProject == 'undefined') {
+         //Firstproject
+         hook = 0;
+      }
+
+      new ScrollMagic.Scene({
+            triggerElement: this,
+            triggerHook: hook,
+            duration: "200%"
+         })
+         .setTween(text, {y: -50})
+         .addTo(scrollController);
+   });
 
    /************* Misc **************/
    // let oldHeight = 0;
@@ -121,13 +156,13 @@ $(document).ready(function(){
 
    /*************** SCROLL TROTTLE ****************/
    
-   let now = new Date().getTime();
-   $(window).on('scroll', function() {
-      if (new Date().getTime() - now > 100) {
-         updateWithScroll();
-         now = new Date().getTime();
-      }
-   });
+   // let now = new Date().getTime();
+   // $(window).on('scroll', function() {
+   //    if (new Date().getTime() - now > 100) {
+   //       updateWithScroll();
+   //       now = new Date().getTime();
+   //    }
+   // });
 
    /************* FORM de VALIDATION *************/
    $("#form").on("submit", function(e) {
