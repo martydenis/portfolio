@@ -1,12 +1,39 @@
-var anchors = $('.section__anchor'),
+// detect if mobile browser. regex -> http://detectmobilebrowsers.com
+var isMobile = (function(a){return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))})(navigator.userAgent||navigator.vendor||window.opera);
+
+var scrollController,
     currentSection = 0;
 
 $(document).ready(function(){
+   if (isMobile) {
+      // init the controller
+      scrollController = new ScrollMagic.Controller({
+         container: "#content-wrapper"
+      });
+
+      $("#body").addClass("is-mobile");
+
+      // manual set height (so height 100% is available within scroll container)
+      let oldHeight = 0;
+      $(window).on("orientationchange", function () {
+         $(".section")
+             .css("min-height", $(window).innerHeight())
+             .parent(".scrollmagic-pin-spacer").css("min-height", $(window).innerHeight());
+         
+         if(oldHeight != $(window).innerHeight()){
+            updateVhValue();
+         }
+      });
+      $(window).trigger("orientationchange"); // trigger to init
+   } else {
+      // init the controller
+      scrollController = new ScrollMagic.Controller();
+   }
+
    /************ Scroll Magic ***********/
-   let scrollController = new ScrollMagic.Controller();
-   
+
    new ScrollMagic.Scene({
-         duration: "150%",
+         duration: "110%",
       })
       .setPin("#hello")
       .addTo(scrollController);
@@ -16,7 +43,7 @@ $(document).ready(function(){
          triggerHook: 0,
          duration: "60%",
       })
-      .setTween("#hello-anim-1", {
+      .setTween("#hello-anim-h1", {
          color: '#a4a4a4',
          fontWeight: '100',
          scale: '1',
@@ -28,7 +55,7 @@ $(document).ready(function(){
       new ScrollMagic.Scene({
          triggerElement: "#hello",
          triggerHook: 0,
-         offset: 50+(150*(index+1)),
+         offset: 200+(150*index),
          duration: "60%",
       })
       .setTween(this, {y: 0, opacity: 1})
@@ -39,32 +66,33 @@ $(document).ready(function(){
    new ScrollMagic.Scene({
          triggerElement: "#projects",
          triggerHook: 1,
-         duration: 500,
+         duration: '62%',
          // offset: -600
       })
       .addTo(scrollController)
       .setTween(
          new TimelineMax({delay: 1})
             .add([
-               TweenMax.to('#overlay, #projects__intro', 1, {opacity: 1}),
+               TweenMax.fromTo('#overlay, #projects', 1, {opacity: 0}, {opacity: 1}),
                TweenMax.to('#hello', 1, {opacity: 0})
             ])
       );
 
    // PROJECTS Mask intro
+   let maskSize = $(document).outerWidth() * 40;
    let maskTween = new TimelineMax()
       .add([
          TweenMax.to("#projects .pin-wrapper", 1, {
-            webkitMaskSize:70000+'px',
+            webkitMaskSize: maskSize+'px',
+            maskSize: maskSize+'px',
             webkitMaskPosition: 46.5+'% ' + 70+'%',
-            maskSize:60000+'px',
             maskPosition: 46.5+'% ' + 70+'%',
-            ease:Power2.easeIn,
+            ease: Power2.easeIn,
          }),
          TweenMax.to("#projects .pin-wrapper", 1, {
-            webkitFilter:'brightness('+1+')',
-            filter:'brightness('+1+')',
-            ease:Power2.easeOut,
+            webkitFilter: 'brightness('+1+')',
+            filter: 'brightness('+1+')',
+            ease: Power2.easeOut,
          })
       ]);
 
@@ -79,32 +107,22 @@ $(document).ready(function(){
    $('.project').each(function(index){
       let text = $(this).find('.section__content'),
           hook = 1,
-          pinDuration = '',
           pushFollowers = false,
           wrapper = '#' + $(this).attr('id') + ' .pin-wrapper' ;
-      
+
       //Firstproject
       if(index == 0) {
          hook = 0;
-         pinDuration = "200%";
          pushFollowers = true;
       }
-      
-      // PIN projects
+
+      // PIN projects + text parallax
       new ScrollMagic.Scene({
             triggerElement: this,
             triggerHook: hook,
-            duration: pinDuration,
+            duration: '203%', // 203% to avoid a small glitch, caused by the time of detection and applying of the pin
          })
          .setPin(wrapper, {pushFollowers: pushFollowers})
-         .addTo(scrollController);
-   
-      // Projects text parallax
-      new ScrollMagic.Scene({
-            triggerElement: this,
-            triggerHook: hook,
-            duration: "200%"
-         })
          .setTween(text, {y: -50})
          .addTo(scrollController);
    });
@@ -119,43 +137,7 @@ $(document).ready(function(){
       .setTween(dataLines)
       .addTo(scrollController);
 
-   /************* Misc **************/
-   // let oldHeight = 0;
-   // $(window).on('orientationChange', function(){
-      
-   //    if(oldHeight != $(window).outerHeigth()){
-   //       updateVhValue();
-   //    }
-   // });
 
-   // updateVhValue();
-
-   $("#menu a").click(function(e){
-      // Effectue l'animation du scroll quand cliqué sur un lien de la NAV.
-      e.preventDefault();
-      let $this = $(this),
-          $body = $('body, html'),
-          href = $this.attr('href');
-
-      if($(href).length > 0){
-         $body.stop().animate({
-            scrollTop: $(href).offset().top
-         }, 500, "swing");
-      }
-
-      // $('.menu .current').removeClass('current');
-      // $('.menu a[href="'+href+'"]').parent().addClass('current');
-   });
-
-   /*************** SCROLL TROTTLE ****************/
-   
-   // let now = new Date().getTime();
-   // $(window).on('scroll', function() {
-   //    if (new Date().getTime() - now > 100) {
-   //       updateWithScroll();
-   //       now = new Date().getTime();
-   //    }
-   // });
 
    /************* FORM de VALIDATION *************/
    $("#form").on("submit", function(e) {
@@ -199,35 +181,6 @@ $(document).ready(function(){
    });
 });
 
-// Update l'état du menu en fonction du scroll
-function updateWithScroll() {
-   let scrollTop = $(this).scrollTop(),
-       sectionsPassed = -1,
-       polygon = [[16, 11],[20, 14],[32, 14],[32, 34],[20, 34],[16, 38],[12, 34],[0, 34],[0, 14],[12, 14]];
-
-   anchors.each(function() {
-      if(scrollTop + $(window).height()/2 >= $(this).offset().top) {
-         sectionsPassed ++;
-      }
-   });
-
-   if(currentSection != sectionsPassed){
-      currentSection = sectionsPassed;
-      $('#menu .current').removeClass("current");
-      
-      let newPath = '';
-      for (let index = 0; index < polygon.length; index++) {
-         let point = polygon[index];
-         if(index != 0)
-            newPath += ', '
-         newPath += point[0]+ 'px ' + (point[1]+(48*currentSection)) + 'px';
-      }
-
-      $('#menu .clip-path').css('clip-path', 'polygon('+newPath+')');
-      $("#menu a[href='#" + $(anchors[currentSection]).attr('id') + "']").parent().addClass("current");
-   }
-}
-
 function updateVhValue(){
    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
    let vh = window.innerHeight * 0.01;
@@ -239,7 +192,3 @@ function isEmailValid(email) { //compare l'email entré à l'expression réguli�
    var regExpPattern = /^[0-9a-zA-Z][-._a-zA-Z0-9]*@([0-9a-zA-Z][-._0-9a-zA-Z]*\.)+[a-zA-Z]{2,4}$/;
    return (email.match(regExpPattern)!=null);
 }
-
-jQuery.fn.outerHTML = function() {
-   return jQuery('<div />').append(this.eq(0).clone()).html();
-};

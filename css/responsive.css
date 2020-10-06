@@ -14,7 +14,7 @@
 		padding-right: 16px;
 	}
 
-	#menu,
+	/* #menu,
 	#menu a {
 		width: 48px;
 	}
@@ -32,15 +32,55 @@
 	}
 	#menu .clip-path {
 		right: 8px;
+	} */
+
+	#project__hexkingdom .pin-wrapper {
+      -webkit-mask-size: 180px;
+      mask-size: 180px;
+	}
+
+	#projects .section__block {
+		flex-direction: column;
+		justify-content: center;
+	}
+	
+	#projects .section__content {
+		width: auto;
+		padding-top: 24px;
+	}
+	
+	#projects .section__image {
+		margin-left: -56px;
+		margin-right: -56px;
 	}
 
 	.hidden-sm {
 		display: none !important;
+	}
+
+	#footer {
+		padding: 3em 0;
 	}
 }
 
 @media screen and (max-width: 439px) {
 	html, body {
 		font-size: 14px;
+	}
+
+	#hello h1 {
+		font-size: 2em;
+	}
+
+	.project h3 {
+		font-size: 2.5rem;
+	}
+
+	.project .btn-container {
+		margin-top: 1.25rem;
+	}
+
+	#footer {
+		padding: 1.6em 0;
 	}
 }
