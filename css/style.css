@@ -42,7 +42,7 @@ html, body {
    max-width: 1320px;
 }
 .container-small {
-   max-width: 740px;
+   max-width: 880px;
 }
 
 .section {
@@ -64,24 +64,12 @@ html, body {
 .section__white {
    color: #7f7f7f;
    position: relative;
-   overflow: hidden;
 }
 
 .section__pause {
    margin-bottom: 100vh;
    margin-bottom: calc(var(--vh, 1vh) * 100);
 
-}
-
-#overlay {
-   position: fixed;
-   left: 0;
-   top: 0;
-   width: 100%;
-   height: 100%;
-   display: block;
-   background: #fff;
-   opacity: 0;
 }
 
 img {
@@ -101,8 +89,8 @@ h1 {
 }
 
 h2 {
-   font-size: 48px;
-   text-align: center;
+   font-size: 2.4rem;
+   line-height: 1;
    color: #111111;
    font-weight: 800;
 }
@@ -158,10 +146,11 @@ p:last-child {
 /* Projects
 /******************/
 
-/* #projects {
+#projects {
+   overflow: hidden;
    margin-top: -15vh;
    margin-top: calc(var(--vh, 1vh) * -15);
-} */
+}
 
 .project {
    position: relative;
@@ -213,7 +202,7 @@ p:last-child {
 }
 #projects .section__content {
    position: relative;
-   z-index: 1;
+   z-index: 10;
    width: 33%;
    font-weight: 400;
    transform: translate3d(0,50px,0);
@@ -227,9 +216,11 @@ p:last-child {
 }
 #projects .scrollmagic-pin-spacer {
    clip: rect(auto, auto, auto, auto);
-   clip-path: polygon(0 0px, 100% 00%, 100% 100%, 0% 100%);
+   /* clip-path: polygon(0 0px, 100% 00%, 100% 100%, 0% 100%); */
    position: absolute !important;
 }
+
+
 
 #project__hexkingdom {
    margin-bottom: 100vh;
@@ -242,15 +233,71 @@ p:last-child {
       background: #51b2ed;
       background: -webkit-linear-gradient(to bottom, #0084d4 0%,#7cd6ff 100%);
       background: linear-gradient(to bottom, #0084d4 0%,#7cd6ff 100%);
+   }
+   
+   #mask-img {
+      visibility: hidden;
+      width: 300px;
+      height: auto;
       
-      -webkit-mask: url(../img/work-mask.svg) no-repeat;
-      mask: url('../img/work-mask.svg') no-repeat;
-      -webkit-mask-position: 50% 50%;
-      mask-position: 50% 50%;
-      -webkit-mask-size: 360px;
-      mask-size: 360px;
+      opacity: 0;
+      position: absolute;
+      left: -9999px;
+   }
 
-      filter: brightness(0);
+   #mask-overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: #ffffff;
+      opacity: 1;
+      z-index: 100;
+      transform: translate3d(0, 0, 0);
+   } 
+
+   #mask-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 200;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+   }
+
+   .hexkingdom_tile {
+      filter: drop-shadow(13px 35px 20px rgba(0,0,0,0.15));
+      position: absolute;
+      transform: translate3d(-50%,-50%,0);
+      pointer-events: none;
+   }
+   #hexkingdom_tile_1 {
+      width: 160px;
+      top: 45%;
+      left: 9%;
+   }
+   #hexkingdom_tile_2 {
+      filter: blur(2px) drop-shadow(13px 35px 20px rgba(0,0,0,0.15));
+      width: 192px;
+      top: 32%;
+      left: 83%;
+   }
+   #hexkingdom_tile_3 {
+      z-index: 20;
+      width: 260px;
+      top: 83%;
+      left: 19%;
+      filter: blur(7px) drop-shadow(13px 35px 40px rgba(0,0,0,0.15));
+   }
+   #hexkingdom_tile_4 {
+      z-index: 20;
+      width: 210px;
+      top: 80%;
+      left: 92%;
+      filter: blur(5px) drop-shadow(13px 35px 40px rgba(0,0,0,0.15));
    }
 
 #project__datakillers .btn {
@@ -287,8 +334,137 @@ p:last-child {
 #project__artinmov .btn {
    color: #200409;
 }
+#artinmov_frames {
+   position: absolute;
+   top: -10%;
+   left: -25%;
+   width: 135%;
+   height: 200%;
+   pointer-events: none;
+   display: flex;
+   z-index: -10;
+   opacity: 0.27;
+}
+.artinmov_frame {
+   width: 100%;
+   transform: rotate(10deg);
+}
+.artinmov_frame_slide {
+   width: 100%;
+   height: 100%;
+   background: url('../img/artinmov_frames.svg') repeat-y center 0;
+   background-size: 100%;
+}
 
+/*
+/* CONTACT
+/******************/
 
+#contact {
+   z-index: 30;
+   background-color: white;
+}
+
+#contact .container-small {
+   padding-top: 3em;
+   padding-bottom: 6em;
+}
+
+#contact h2 {
+   margin-bottom: 1em;
+}
+
+#contact_form {
+   padding: 48px;
+   width: 100%;
+   max-width: 480px;
+   margin: -6em auto 0;
+   border-radius: 24px;
+   background-color: white;
+   box-shadow: 0 12px 17px rgba(43,44,45,0.15);
+}
+
+label {
+   display: block;
+   color: #111111;
+   margin-top: 12px;
+   margin-bottom: 8px;
+}
+
+label:first-child {
+   margin-top: 0;
+}
+
+button {
+   padding: 8px 12px;
+   height: 48px;
+   border-radius: 4px;
+   width: 100%;
+   outline: none;
+   margin: 12px 0 0;
+   -webkit-appearance: none;
+   color: white;
+   background-color: #111111;
+   border: none;
+   font-weight: 700;
+   font-size: 1rem;
+   font-family: 'Heebo', Arial, Helvetica, sans-serif;
+   cursor: pointer;
+   box-shadow: inset 0 0 0 2px #111111;
+   transition: color 0.20s ease-out, background 0.20s ease-out;
+}
+
+button:hover {
+   background-color: white;
+   color: #111111;
+}
+
+input,
+textarea {
+   margin: 0;
+   width: 100%;
+   height: 40px;
+   padding: 8px 12px;
+   font-size: 16px;
+   font-family: 'Heebo', Arial, Helvetica, sans-serif;
+
+   outline: none;
+   -webkit-appearance: none;
+   border: none;
+   border-radius: 4px;
+   color: #111111;
+   background-color: #f4f6f9;
+}
+
+.subject {
+   display: none;
+}
+
+textarea {
+   height: 80px;
+   min-height: 80px;
+   max-height: 200px;
+   resize: vertical;
+}
+
+input.error,
+textarea.error {
+   box-shadow: inset 0 0 0 2px #ef3315;
+}
+
+.error-text {
+   color: #ef3315;
+   font-weight: 500;
+   font-size: 0.85rem;
+   margin: 8px 0 0;
+}
+
+.success-text {
+   color: #74bb23;
+   font-weight: 500;
+   font-size: 1rem;
+   margin: 8px 0 0;
+}
 
 /*
 /* footer
@@ -300,106 +476,5 @@ p:last-child {
    padding: 5em 0;
    position: relative;
    font-size: 0.85rem;
+   text-align: center;
 }
-
-
-/*
-/* MENU
-/******************/
-
-/* #menu {
-   right: 0;
-   top: 50%;
-
-   transform: translate(0,-50%);
-   z-index: 10;
-   position: fixed;
-   font-size: 1rem;
-}
-   #menu ul {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-   }
-   #menu li {
-      position: relative;
-   }
-   #menu a {
-      display: block;
-      padding: 12px 64px 12px 24px;
-      line-height: 24px;
-      height: 48px;
-      text-decoration: none;
-      color: #a4a4a4;
-      text-align: right;
-      position: relative;
-      z-index: 1;
-      outline: none;
-   }
-      #menu a:before {
-         width: 6px;
-         height: 6px;
-         background: #a4a4a4;
-         transition: background 0.30s ease-out;
-         content: '';
-         position: absolute;
-         right: 32px;
-         top: 50%;
-         transform-origin: center center;
-         transform: translate3d(50%,-50%,0) rotate(45deg);
-      }
-      #menu .clip-path {
-         position: absolute;
-         right: 16px;
-         top: 0;
-         transition: clip-path 0.40s ease-out;
-         clip-path: polygon(16px 11px, 20px 14px, 32px 14px, 32px 34px, 20px 34px, 16px 38px, 12px 34px, 0px 34px, 0px 14px, 12px 14px);
-      }
-      #menu svg {
-         width: 32px;
-         pointer-events: none;
-      }
-      #menu polyline {
-         fill: transparent;
-         stroke: white;
-         stroke-width: 2px;
-         stroke-miterlimit:10;
-      }
-      #menu .current #menu-selection {
-         stroke-dasharray: 64;
-         stroke-dashoffset: 0;
-      }
-   #menu .current a {
-      color: white;
-   }
-      #menu .current a:before {
-         background: white;
-      }
-   #menu a:hover {
-      color: white;
-   }
-   #menu a:hover:before {
-      background: white;
-   }
-
-#menu.menu-white a {
-   color: #cccfd4;
-}
-   #menu.menu-white .current a {
-      color: #111111;
-   }
-   #menu.menu-white a:before {
-      background: #cccfd4;
-   }
-      #menu.menu-white .current a:before {
-         background: #111111;
-      }
-      #menu.menu-white a:hover {
-         color: #111111;
-      }
-      #menu.menu-white a:hover:before {
-         background: #111111;
-      }
-   #menu.menu-white polyline {
-      stroke: #111111;
-   } */

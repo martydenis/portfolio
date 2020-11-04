@@ -1,10 +1,32 @@
+@media screen and (max-width: 1399px) {
+	#artinmov_frame_9,
+	#artinmov_frame_10 {
+		display: none;
+	}
+}
+
 @media screen and (max-width: 1199px) {
+	#artinmov_frame_7,
+	#artinmov_frame_8 {
+		display: none;
+	}
 
-
-	
+	#hexkingdom_tile_3,
+	#hexkingdom_tile_2 {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 689px) {
+	#artinmov_frame_6,
+	#artinmov_frame_5 {
+		display: none;
+	}
+
+	#hexkingdom_tile_1 {
+		display: none;
+	}
+
 	html, body {
 		font-size: 16px;
 	}
@@ -34,9 +56,8 @@
 		right: 8px;
 	} */
 
-	#project__hexkingdom .pin-wrapper {
-      -webkit-mask-size: 180px;
-      mask-size: 180px;
+	#mask-img {
+      width: 180px;
 	}
 
 	#projects .section__block {
@@ -68,9 +89,21 @@
 		font-size: 14px;
 	}
 
+	#artinmov_frame_4 {
+		display: none;
+	}
+
 	#hello h1 {
 		font-size: 2em;
 	}
+
+	#contact_form {
+		padding: 30px;
+	}
+
+	/* #contact_form h2 { */
+		/* font-size: ; */
+	/* } */
 
 	.project h3 {
 		font-size: 2.5rem;

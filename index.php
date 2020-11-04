@@ -1,11 +1,105 @@
 <?php
-	$birthDate = "09/17/1993";
-	//explode the date to get month, day and year
-	$birthDate = explode("/", $birthDate);
-	//get age from date or birthdate
-	$age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
-	  ? ((date("Y") - $birthDate[2]) - 1)
-	  : (date("Y") - $birthDate[2]));
+	/*
+	MON PREMIER FORMULAIRE DE CONTACT EN PHP.
+	
+	auteur: alexandre AT pixeline.be (le script fonctionne. Aucun support n'est fourni, cherche sur internet)
+	pour: étudiants DWM
+	version: 03.02.2013
+	
+*/
+
+// POUR VERIFIER CE QU'ENVOIE TON FORMULAIRE, DECOMMENTE LES LIGNES SUIVANTES: (décommenter = enlever les double-slash // et/ou les /* et */ )
+/*
+echo '<pre>';
+print_r($_SERVER);
+echo '</pre>';
+exit;
+*/
+
+
+error_reporting(0);
+// touche pas à ceci
+$config = array();
+
+$config['email'] = "martin.2nis@gmail.com";
+$config['sujet'] = "Formulaire du PORTFOLIO";
+// Messages d'erreur
+$config['no_name'] = "I need your name.";
+$config['no_email'] = "Please enter your email address, so that i can contact you back";
+$config['wrong_email'] = "Oops, your address email seems wrong.";
+$config['no_message'] = "Please tell me something.";
+
+
+// NE RIEN TOUCHER CI-DESSOUS
+$errors = array();
+$messageSent = false;
+
+if(isset($_POST) && count($_POST)>0){
+	if(!strpos($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST'])){
+		// si la requête ne vient pas de ce serveur, l'interrompre, quelqu'un tente de l'utiliser pour envoyer du spam.
+		die("You shouldn't be here.");
+	}
+	
+	$name = trim($_POST['name']);
+	$email = trim($_POST['email']);
+	$subject = trim($_POST['subject']);
+	$message = trim($_POST['message']);
+
+	if ($subject != '') {
+		die('Get out robot');
+	}
+
+	if ($name == '') {
+		// Le nom a-t-il bien été introduit?
+		$errors['name'] = $config['no_name'];
+	}
+
+	if ($email == '') {
+		// L'adresse email a-t-elle bien été encodée?
+		$errors['email'] = $config['no_email'];
+	} else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		// l'adresse email est-elle valide?
+		$errors['email'] = $config['wrong_email'];
+	}
+
+
+	if ($message == '') {
+		// Le message a-t-il bien été introduit?
+		$errors['message'] = $config['no_message'];
+	}
+
+	if (count($errors) < 1) {
+		$message= "$name ($email) a écrit: \n\r$message";
+		foreach ($_POST as $k=>$v){
+			if (!in_array($k, array('name','email', 'subject','message'))){
+				if(is_array($v)){
+					$message.="\n\r$k = ".implode(',', $v);
+				} else {
+					$message.="\n\r$k = $v";
+				}
+			}
+		}
+
+		$message = wordwrap($message, 70, "\r\n");
+		// send the email
+		if(empty($config['email'])){
+			die("tu as oublié d'encoder l'adresse email, banane. (regarde pour config['email']) dans le code php");
+		}
+		mail($config['email'], $config['sujet'], $message);
+		// redirect to thank you page
+
+		$messageSent = true;
+	}
+}
+
+$birthDate = "09/17/1993";
+//explode the date to get month, day and year
+$birthDate = explode("/", $birthDate);
+//get age from date or birthdate
+$age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
+	? ((date("Y") - $birthDate[2]) - 1)
+	: (date("Y") - $birthDate[2]));
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -22,14 +116,14 @@
 </head>
 <body id="body">
 	<div id="content-wrapper">
-		<div id="overlay"></div>
+		<!-- <div id="overlay"></div> -->
 		<header id="hello" class="section">
 			<div class="section__block">
 				<div class="container-small">
 					<div class="hello-anim section__content">
 						<h1 id="hello-anim-h1">Hi, I am Martin</h1>
 						<p class="hello-anim-p">I'm a <?php echo $age; ?> years old front-end developer and webdesigner, <br class="hidden-sm">living in Louvain-la-Neuve, Belgium</p>
-						<p class="hello-anim-p">I graduated from the <a href="http://www.infographie-sup.be/" target="_blank">ESIAJ</a> in 2015 <br class="hidden-sm">and have been working at <a href="https://www.e-net-b.be/" target="_blank">E-net Business</a> ever since.</p1250>
+						<p class="hello-anim-p">I graduated from the <a href="http://www.infographie-sup.be/" target="_blank">ESIAJ</a> in 2015 <br class="hidden-sm">and have been working at <a href="https://www.e-net-b.be/" target="_blank">E-net Business</a> ever since.</p>
 					</div>
 				</div>
 			</div>
@@ -39,6 +133,10 @@
 		<section id="projects" class="section__white">
 			<article id="project__hexkingdom" class="project section">
 				<div class="pin-wrapper">
+					<div id="mask-overlay"></div>
+					<img id="mask-img" src="img/work-mask.svg" alt="mask">
+					<canvas id="mask-canvas" width="1903" height="628"></canvas>
+
 					<div class="container-big section__block">
 						<div class="section__image">
 							<img src="img/hexkingdom.png" alt="HexKingdom" class="project__laptop" width="840" height="490"/>
@@ -52,6 +150,11 @@
 								<a href="/projects/pathfinding/" class="btn-link" target="_blank">Experimentation</a>
 							</p>
 						</div>
+
+						<img src="img/hexkingdom_tile_1.svg" alt="toto" id="hexkingdom_tile_1" class="hexkingdom_tile">
+						<img src="img/hexkingdom_tile_2.svg" alt="toto" id="hexkingdom_tile_2" class="hexkingdom_tile">
+						<img src="img/hexkingdom_tile_3.svg" alt="toto" id="hexkingdom_tile_3" class="hexkingdom_tile">
+						<img src="img/hexkingdom_tile_4.svg" alt="toto" id="hexkingdom_tile_4" class="hexkingdom_tile">
 					</div>
 				</div>
 			</article>
@@ -183,19 +286,67 @@
 							<p class="btn-container"><a href="https://www.art-in-mov.com/fr/" class="btn" target="_blank">See the e-shop</a></p>
 						</div>
 					</div>
+					<div id="artinmov_frames">
+						<?php for ($i = 1; $i <= 10; $i++) { ?>
+						<div id="artinmov_frame_<?php echo $i ?>" class="artinmov_frame">
+							<div class="artinmov_frame_slide"></div>	
+						</div>
+						<?php } ?>
+					</div>
 				</div>
 			</article>
 		</section>
 		<!-- FIN PROJECTS -->
 
-		<section id="contact" class="section section__white">
-			<div class="section__block"></div>
+		<section id="contact" class="section__white">
+			<div class="container-small">
+				<form action="#contact_form" method="post" id="contact_form">
+					<h2>Contact me</h2>
+					<?php
+						if(!$messageSent){
+					?>
+						<label for="name">Your name</label>
+						<input type="text" id="name" value="<?php echo ($name!='') ? $name: '' ?>"<?php if($_POST && $errors['name']) echo ' class="error"' ?> name="name">
+						<?php
+							if($_POST && $errors['name']){
+								echo '<p class="error-text">'.$errors['name'].'</p>';
+							}
+						?>
+
+						<label for="email">Your email</label>
+						<input type="email" id="email" value="<?php echo ($email!='') ? $email: '' ?>"<?php if($_POST && $errors['email']) echo ' class="error"' ?> name="email">
+						<?php
+							if($_POST && $errors['email']){
+								echo '<p class="error-text">'.$errors['email'].'</p>';
+							}
+						?>
+
+						<label for="subject" class="subject">What it it about ?</label>
+						<input type="text" id="subject" value='' name="subject" class="subject">
+
+						<label for="message">What would you like to tell me ?</label>
+						<textarea id="message"<?php if($_POST && $errors['message']) echo ' class="error"' ?>name="message"><?php echo ($_POST['message']!='') ? $_POST['message']: '' ?></textarea>
+						<?php
+							if($_POST && $errors['message']){
+								echo '<p class="error-text">'.$errors['message'].'</p>';
+							}
+						?>
+
+						<button type="submit">Send your message</button>
+					<?php
+						}
+						else {
+							echo '<p class="success-text">Thanks for your message, i\'ll read it soon.</p>';
+						}
+					?>
+				</form>
+			</div>
 		</section>
 		<!-- FIN CONTACT -->
 
 		<footer id="footer">
 			<div class="container-small">
-				<p>Created with ❤️ by Martin Denis in Louvain-la-Neuve, Belgium</p>
+				<p>Created with ❤️ by Martin Denis in Belgium</p>
 			</div>
 		</footer>
 	</div>
