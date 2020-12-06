@@ -10,14 +10,14 @@ $(document).ready(function(){
    if (isMobile) {
       // init the controller
       scrollController = new ScrollMagic.Controller({
-         container: "#content-wrapper"
+         // container: "#content-wrapper"
       });
 
       $("#body").addClass("is-mobile");
 
       // manual set height (so height 100% is available within scroll container)
       let oldHeight = 0;
-      $(window).on("orientationchange", function () {
+      $(window).on("resize orientationchange", function () {
          $(".section")
              .css("min-height", $(window).innerHeight())
              .parent(".scrollmagic-pin-spacer").css("min-height", $(window).innerHeight());
