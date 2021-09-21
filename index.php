@@ -16,13 +16,11 @@ echo '</pre>';
 exit;
 */
 
-
 error_reporting(0);
 // touche pas à ceci
 $config = array();
 
 $config['email'] = "martin.2nis@gmail.com";
-$config['sujet'] = "Formulaire du PORTFOLIO";
 // Messages d'erreur
 $config['no_name'] = "I need your name.";
 $config['no_email'] = "Please enter your email address, so that i can contact you back";
@@ -69,25 +67,25 @@ if(isset($_POST) && count($_POST)>0){
 	}
 
 	if (count($errors) < 1) {
-		$message= "$name ($email) a écrit: \n\r$message";
-		foreach ($_POST as $k=>$v){
-			if (!in_array($k, array('name','email', 'subject','message'))){
-				if(is_array($v)){
-					$message.="\n\r$k = ".implode(',', $v);
+		foreach ($_POST as $key => $val){
+			if (!in_array($key, array('name', 'email', 'subject', 'message'))){
+				if(is_array($val)){
+					$message.="\n\r$key = ".implode(',', $val);
 				} else {
-					$message.="\n\r$k = $v";
+					$message.="\n\r$key = $val";
 				}
 			}
 		}
 
+		$message .= "\n\r($name : $email)";
 		$message = wordwrap($message, 70, "\r\n");
-		// send the email
-		if(empty($config['email'])){
-			die("tu as oublié d'encoder l'adresse email, banane. (regarde pour config['email']) dans le code php");
-		}
-		mail($config['email'], $config['sujet'], $message);
-		// redirect to thank you page
 
+		$subject = "Message de " . $name . " depuis le portfolio";
+		$headers = "From:'" . $name . "' <info@martindenis.be>\r\n" .
+      "Reply-To:" . $email . "\r\n";
+
+		mail($config['email'], $subject, $message, $headers);
+		
 		$messageSent = true;
 	}
 }
@@ -104,27 +102,24 @@ $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birt
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<title>Portfolio - Martin Denis | Front-end developer & Webdesigner</title>
+	<title>Martin Denis | Front-end developer & Webdesigner</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="Webdesigner et webdeveloper à Gembloux - Namur. Je m'occuperai de la réalisation de votre site web de A à Z">
+	<meta name="description" content="Discover my work, projects and playground I worked on as a Webdesigner & Front-end developer">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimal-ui"/>
 	
-	<!-- <link rel="icon" type="image/png" href="img/favicon.png"/> -->
-	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
-	<!-- <link rel="stylesheet" type="text/css" href="css/style.css<?php echo '?'.time() ; ?>"/>
-	<link rel="stylesheet" type="text/css" href="css/responsive.css<?php echo '?'.time() ; ?>"/> -->
+	<link rel="icon" type="image/svg" href="favicon.svg"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
-	<link rel="stylesheet" type="text/css" href="css/responsive.css"/>
 </head>
 <body id="body">
 	<div id="content-wrapper">
+		<!-- <div id="content-scroller"> -->
 			<!-- <div id="overlay"></div> -->
 			<header id="hello" class="section">
 				<div class="section__block">
 					<div class="container-small">
 						<div class="hello-anim section__content">
 							<h1 id="hello-anim-h1">Hi, I am Martin</h1>
-							<p class="hello-anim-p">I'm a <?php echo $age; ?> years old front-end developer and webdesigner, <br class="hidden-sm">living in Louvain-la-Neuve, Belgium</p>
+							<p class="hello-anim-p">I'm a <?php echo $age; ?> years old front-end developer and webdesigner, <br class="hidden-sm">living in Aiseau-Presles, Belgium</p>
 							<p class="hello-anim-p">I graduated from the <a href="http://www.infographie-sup.be/" target="_blank">ESIAJ</a> in 2015 <br class="hidden-sm">and have been working at <a href="https://www.e-net-b.be/" target="_blank">E-net Business</a> ever since.</p>
 						</div>
 					</div>
@@ -136,7 +131,7 @@ $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birt
 				<article id="project__hexkingdom" class="project section">
 					<div class="pin-wrapper">
 						<div id="mask-overlay"></div>
-						<img id="mask-img" src="img/work-mask.svg" alt="mask">
+						<img id="mask-img" src="img/work-mask.svg" alt="mask" width="346" height="90">
 						<canvas id="mask-canvas" width="1903" height="628"></canvas>
 
 						<div class="container-big section__block">
@@ -308,7 +303,7 @@ $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birt
 							if(!$messageSent){
 						?>
 							<label for="name">Your name</label>
-							<input type="text" id="name" value="<?php echo ($name!='') ? $name: '' ?>"<?php if($_POST && $errors['name']) echo ' class="error"' ?> name="name">
+							<input type="text" id="name" required value="<?php echo ($name!='') ? $name: '' ?>"<?php if($_POST && $errors['name']) echo ' class="error"' ?> name="name">
 							<?php
 								if($_POST && $errors['name']){
 									echo '<p class="error-text">'.$errors['name'].'</p>';
@@ -316,18 +311,18 @@ $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birt
 							?>
 
 							<label for="email">Your email</label>
-							<input type="email" id="email" value="<?php echo ($email!='') ? $email: '' ?>"<?php if($_POST && $errors['email']) echo ' class="error"' ?> name="email">
+							<input type="email" id="email" required value="<?php echo ($email!='') ? $email: '' ?>"<?php if($_POST && $errors['email']) echo ' class="error"' ?> name="email">
 							<?php
 								if($_POST && $errors['email']){
 									echo '<p class="error-text">'.$errors['email'].'</p>';
 								}
 							?>
-
-							<label for="subject" class="subject">What it it about ?</label>
+		
+							<label for="subject" class="subject">What is it about ?</label>
 							<input type="text" id="subject" value='' name="subject" class="subject">
 
 							<label for="message">What would you like to tell me ?</label>
-							<textarea id="message"<?php if($_POST && $errors['message']) echo ' class="error"' ?>name="message"><?php echo ($_POST['message']!='') ? $_POST['message']: '' ?></textarea>
+							<textarea id="message"<?php if($_POST && $errors['message']) echo ' class="error"' ?>name="message" required ><?php echo ($_POST['message']!='') ? $_POST['message']: '' ?></textarea>
 							<?php
 								if($_POST && $errors['message']){
 									echo '<p class="error-text">'.$errors['message'].'</p>';
@@ -338,7 +333,7 @@ $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birt
 						<?php
 							}
 							else {
-								echo '<p class="success-text">Thanks for your message, i\'ll read it soon.</p>';
+								echo '<p class="success-text">Thanks for your message, i\'ll soon reply to you.</p>';
 							}
 						?>
 					</form>
@@ -351,17 +346,20 @@ $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birt
 					<p>Created with ❤️ by Martin Denis in Belgium</p>
 				</div>
 			</footer>
+		<!-- </div> -->
 	</div>
 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..800&display=swap" rel="stylesheet">
-	<script src="js/jquery.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll-probe.js"></script>
-	<script src="js/main.js<?php echo '?'.time() ; ?>"></script> -->
-	<script src="js/main.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll-probe.js"></script> -->
+	<script src="js/jquery.min.js"></script>
+	<!-- <script src="js/main.js<?php echo '?'.time() ; ?>"></script> -->
+	<script src="js/main.min.js"></script>
 </body>
 </html>

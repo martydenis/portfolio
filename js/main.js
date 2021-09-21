@@ -4,29 +4,18 @@ var isMobile = (function(a){return /(android|bb\d+|meego).+mobile|avantgo|bada\/
 var scrollController,
     maskScene,
     maskInitialSize = 300,
-    currentSection = 0;
+    currentSection = 0,
+    dpi = window.devicePixelRatio;;
 
 $(document).ready(function(){
    if (isMobile) {
       // init the controller
-      scrollController = new ScrollMagic.Controller({
-         // container: "#content-wrapper"
-      });
-
       $("#body").addClass("is-mobile");
-
-      // manual set height (so height 100% is available within scroll container)
-      let oldHeight = 0;
-      $(window).on("resize orientationchange", function () {
-         $(".section")
-             .css("min-height", $(window).innerHeight())
-             .parent(".scrollmagic-pin-spacer").css("min-height", $(window).innerHeight());
-         
-         if(oldHeight != $(window).innerHeight()){
-            updateVhValue();
-         }
+      updateVhValue();
+      
+      scrollController = new ScrollMagic.Controller({
+         container: "#content-wrapper"
       });
-      $(window).trigger("orientationchange"); // trigger to init
    } else {
       // init the controller
       scrollController = new ScrollMagic.Controller();
@@ -176,45 +165,45 @@ $(document).ready(function(){
    onResize();
 
    /************* FORM de VALIDATION *************/
-   // $("#form").on("submit", function(e) {
-   //    var field, value = null;
-   //    var valid = true;
+   $("#form").on("submit", function(e) {
+      var field, value = null;
+      var valid = true;
 
-   //    // Teste le nom.
-   //    field = $("#nom");
-   //    value = field.val();
-   //    if ( value ) {
-   //       field.parent().removeClass("erreur");
-   //    } else {
-   //       field.parent().addClass("erreur");
-   //       valid = false;
-   //    }
+      // Teste le nom.
+      field = $("#nom");
+      value = field.val();
+      if ( value ) {
+         field.parent().removeClass("erreur");
+      } else {
+         field.parent().addClass("erreur");
+         valid = false;
+      }
 
-   //    // Teste l'email.
-   //    field = $("#email");
-   //    value = field.val();
-   //    if ( isEmailValid(value) ) {
-   //       field.parent().removeClass("erreur");
-   //    } else {
-   //       field.parent().addClass("erreur");
-   //       valid = false;
-   //    }
+      // Teste l'email.
+      field = $("#email");
+      value = field.val();
+      if ( isEmailValid(value) ) {
+         field.parent().removeClass("erreur");
+      } else {
+         field.parent().addClass("erreur");
+         valid = false;
+      }
 
-   //    // Teste le message.
-   //    field = $("#message");
-   //    value = field.val();
-   //    if ( value ) {
-   //       field.parent().removeClass("erreur");
-   //    } else {
-   //       field.parent().addClass("erreur");
-   //       valid = false;
-   //    }
+      // Teste le message.
+      field = $("#message");
+      value = field.val();
+      if ( value ) {
+         field.parent().removeClass("erreur");
+      } else {
+         field.parent().addClass("erreur");
+         valid = false;
+      }
 
-   //    // Termine la validation.
-   //    if (!valid) {
-   //       e.preventDefault();
-   //    }
-   // });
+      // Termine la validation.
+      if (!valid) {
+         e.preventDefault();
+      }
+   });
 });
 
 $(window).on('resize', function() {
@@ -222,9 +211,9 @@ $(window).on('resize', function() {
 });
 
 function onResize() {
-   $('#mask-canvas').attr({
-      'width': $(window).width(),
-      'height': $(window).height()
+   $(canvas).attr({
+      'width': $(canvas).width() * dpi,
+      'height': $(canvas).height() * dpi
    });
 
    maskInitialSize = $('#mask-img').outerWidth();
@@ -246,13 +235,16 @@ function drawCanvasMask(progress) {
 
    ctx.globalCompositeOperation = 'destination-out';
 
-   let img = document.getElementById("mask-img"),
-       multiplier = Math.pow(progress, 4),
-       destWidth = $(document).width() * 80,
-       currentWidth = maskInitialSize + (destWidth - maskInitialSize)*multiplier,
-       currentHeight = currentWidth * (img.height/img.width);
+   const img = document.getElementById("mask-img"),
+         imgRatio = img.height / img.width,
+         multiplier = Math.pow(progress, 4),
+         targetWidth = $(document).width() * 80,
+         newWidth = (maskInitialSize + (targetWidth - maskInitialSize) * multiplier) * dpi,
+         newHeight = newWidth * imgRatio;
    
-   ctx.drawImage(img, (canvas.width - currentWidth)/2, (canvas.height - currentHeight)/2, currentWidth, currentHeight);
+   console.log((canvas.width - newWidth) / 2, (canvas.height - newHeight) / 2, newWidth, newHeight);
+   
+   ctx.drawImage(img, (canvas.width - newWidth) / 2, (canvas.height - newHeight) / 2, newWidth, newHeight);
 }
 
 function updateVhValue(){
