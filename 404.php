@@ -6,12 +6,12 @@
 	<meta name="description" content="Discover my work, projects and playground I worked on as a Webdesigner & Front-end developer">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1"/>
 
-	<link rel="icon" type="image/svg" href="favicon.svg"/>
-	<link rel="stylesheet" type="text/css" href="css/404.css"/>
+	<link rel="icon" type="image/svg" href="./favicon.svg"/>
+	<link rel="stylesheet" type="text/css" href="./css/404.css"/>
 </head>
 <body id="erreur404">
 	<main id="content">
-		<div class="big-container">
+		<div class="container-small">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 388.7 342.68" preserveAspectRatio="xMidYMid meet">
 				<defs>
 					<mask id="text-mask-1">
@@ -24,10 +24,10 @@
 				</g>
 			</svg>
 
-			<p>Seriously! This website only has one page.<br>
-			Stop messing around.</p>
+			<p>Seriously! This website only has one page.<br>Stop messing around.</p>
+			<p>Update : Ok it has two now</p>
 
-			<p>
+			<p class="btn-container">
 				<a href="index.php" class="btn">Save me</a>
 			</p>
 		</div>

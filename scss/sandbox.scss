@@ -1,0 +1,83 @@
+@import "mixins";
+@import "variables";
+@import "reset";
+@import "base";
+@import "game";
+
+#body {
+   padding-top: 6em;
+}
+
+h1 {
+   overflow: hidden;
+   position: relative;
+
+   &:after {
+      content: '';
+      margin-left: var(--grid-gap);
+      width: 1px;
+      height: 1px;
+      display: inline-block;
+      vertical-align: baseline;
+      background-color: var(--dark-border-color);
+
+      transform: scale3d(1260,1,1);
+      transform-origin: top left;
+   }
+}
+
+hr {
+   margin: 3em 0;
+   height: 1px;
+   background-color: var(--dark-border-color);
+   border: none;
+}
+
+#projects {
+   --gap: var(--grid-gap);
+   @media screen and (min-width: 1200px) {
+      --gap: calc(var(--grid-gap) * 2);
+   }
+
+   list-style: none;
+
+   display: flex;
+   flex-wrap: wrap;
+   margin-left: calc(-1 * var(--gap));
+   margin-right: calc(-1 * var(--gap));
+
+   li {
+      padding: var(--gap);
+
+      @media screen and (min-width: 690px) {
+         width: 50%;
+      }
+   }
+   
+   .thumb-container {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 1rem;
+
+      img {
+         transition: all 3s ease;
+      }
+   }
+
+   h3 {
+      font-size: 1.15em;
+      color: var(--dark-highlight);
+      margin-bottom: 0.2em;
+   }
+
+   p {
+      font-size: 0.9em;
+   }
+
+   a:hover {
+      img {
+         transform: scale3d(1.15, 1.15, 1.15);
+         opacity: 0.75;
+      }
+   }
+}

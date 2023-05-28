@@ -1,0 +1,35 @@
+@import "mixins";
+@import "variables";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+#back {
+  position: fixed;
+  display: flex;
+  align-items: center;
+
+  color: var(--dark-highlight);
+  text-decoration: none;
+  z-index: 100;
+  font-family: 'Gill Sans', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  top: var(--grid-gap);
+  left: calc((var(--container-padding) - 12px) / 2);
+  line-height: 24px;
+
+  user-select: none;
+  mix-blend-mode: difference;
+
+  &:before {
+    content: '';
+    height: 1px;
+    background-color: var(--dark-highlight);
+    width: 12px;
+    margin-right: calc((var(--container-padding) - 12px) / 2);
+  }
+}

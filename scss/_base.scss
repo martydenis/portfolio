@@ -1,0 +1,153 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--dark-bg);
+
+  color: var(--dark-color);
+  font-family: 'Manrope', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.container-big,
+.container-small {
+  margin: 0 auto;
+  width: 100%;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container-big {
+  max-width: 1360px;
+}
+
+.container-small {
+  max-width: 720px;
+}
+
+.btn-container {
+  margin-top: 1.6rem;
+
+  *:last-child {
+    margin-right: 0;
+  }
+
+  > * + * {
+    margin-left: var(--grid-gap);
+  }
+}
+
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 0.38rem;
+  padding: 12px 24px;
+  height: 56px;
+  line-height: 32px;
+  border: none;
+  border-radius: 50px;
+  letter-spacing: 0.02em;
+  font-size: 1.1rem;
+  font-weight: 400;
+  outline: none;
+  text-decoration: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  font-family: 'DM Serif Text', serif;
+  cursor: pointer;
+  color: var(--dark-highlight);
+  background-color: var(--primary-color);
+
+  transition: color 0.20s ease-out, background 0.20s ease-out;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--dark-bg);
+    background-color: var(--dark-highlight);
+  }
+}
+
+/*
+/* footer
+/******************/
+
+#footer {
+  color: var(--dark-color);
+  padding: 5em 0;
+  position: relative;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*****************************************/
+/*                 TYPO                  */
+/*****************************************/
+
+h1, h2, h3 {
+  // letter-spacing: 0.03em;
+
+  .cursive {
+    display: block;
+    padding-left: 0.5em;
+  }
+}
+
+h1 {
+  color: var(--dark-highlight);
+  font-size: 2.8em;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 0.33em;
+}
+
+h2 {
+  font-size: unquote('min(2.5em, 10vw)');
+  line-height: 1;
+  color: var(--dark-highlight);
+  font-weight: 300;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 1.8em;
+  line-height: 1;
+  color: var(--dark-highlight);
+  font-weight: 200;
+}
+
+a {
+  color: var(--dark-color);
+  text-decoration: none;
+  transition: color 0.30s ease-out;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+p {
+  margin: 0 0 0.8em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
