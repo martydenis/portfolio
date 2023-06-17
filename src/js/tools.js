@@ -1,5 +1,4 @@
-
-function AdjustingInterval(func, interval, errorFunc) {
+export function AdjustingInterval(func, interval, errorFunc) {
   /**
    * Add support for tab out tab in
    */
@@ -28,35 +27,35 @@ function AdjustingInterval(func, interval, errorFunc) {
   }
 }
 
-function getAngleBetweenPoints(p1, p2) {
+export function getAngleBetweenPoints(p1, p2) {
   const dX = p2.x - p1.x;
   const dY = p2.y - p1.y;
   return Math.atan2(dY, dX);
 }
 
-function toDegrees(rad) {
+export function toDegrees(rad) {
   return rad * 180 / Math.PI;
 }
 
-function roundToTwo(num) {
+export function roundToTwo(num) {
   return +(Math.round(num + "e+2") + "e-2");
 }
 
-function getDistance(x1, y1, x2, y2) {
+export function getDistance(x1, y1, x2, y2) {
   const xDiff = x2 - x1;
   const yDiff = y2 - y1;
   return Math.sqrt(Math.pow(xDiff, 2) + Math.pow(yDiff, 2));
 }
 
-function dpi(value) {
+export function dpi(value) {
   return value * window.devicePixelRatio;
 }
 
-function easeInOutCubic(x) {
+export function easeInOutCubic(x) {
   return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
 }
 
-function randomIntFromRange(min, max, round = true) {
+export function randomIntFromRange(min, max, round = true) {
   if (round) {
     return Math.floor(min + Math.random() * (max - min + 1));
   } else {
@@ -64,11 +63,11 @@ function randomIntFromRange(min, max, round = true) {
   }
 }
 
-function randomValueFromArray(array) {
+export function randomValueFromArray(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
-function hexToRGB(hex, alpha) {
+export function hexToRGB(hex, alpha) {
   const r = parseInt(hex.slice(1, 3), 16),
     g = parseInt(hex.slice(3, 5), 16),
     b = parseInt(hex.slice(5, 7), 16);
@@ -81,7 +80,7 @@ function hexToRGB(hex, alpha) {
 }
 
 // Throttle function from Lodash
-function throttle(func, wait, options) {
+export function throttle(func, wait, options) {
   var context, args, result;
   var timeout = null;
   var previous = 0;
@@ -111,14 +110,9 @@ function throttle(func, wait, options) {
     }
     return result;
   };
-};
+}
 
-if (document.getElementById('back')) {
-  document.getElementById('back').addEventListener('touchend', function(e) {
-    e.stopPropagation();
-  });
-  
-  document.getElementById('back').addEventListener('click', function(e) {
-    e.stopPropagation();
-  });
+export function validateEmailAddress(email) { //compare l'email entré à l'expression régulière.
+  var regExpPattern = /^[0-9a-zA-Z][-._a-zA-Z0-9]*@([0-9a-zA-Z][-._0-9a-zA-Z]*\.)+[a-zA-Z]{2,4}$/;
+  return (email.match(regExpPattern) != null);
 }

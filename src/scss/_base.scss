@@ -46,14 +46,24 @@ body {
 }
 
 .btn {
+  --btn-height: 56px;
+  --btn-color: var(--dark-highlight);
+  --btn-bg: var(--primary-color);
+  --btn-border-color: transparent;
+  --btn-color-hover: var(--dark-bg);
+  --btn-bg-hover: var(--dark-highlight);
+  --btn-border-color-hover: var(--btn-border-color);
+
   display: inline-block;
+  justify-content: center;
+  align-items: center;
   vertical-align: middle;
   margin-top: 0.38rem;
-  padding: 12px 24px;
-  height: 56px;
-  line-height: 32px;
-  border: none;
-  border-radius: 50px;
+  padding: 8px 24px;
+  height: var(--btn-height);
+  line-height: 1.25;
+  border: 1px solid var(--btn-border-color);
+  border-radius: calc(var(--btn-height) / 2);
   letter-spacing: 0.02em;
   font-size: 1.1rem;
   font-weight: 400;
@@ -64,16 +74,17 @@ body {
 
   font-family: 'DM Serif Text', serif;
   cursor: pointer;
-  color: var(--dark-highlight);
-  background-color: var(--primary-color);
+  color: var(--btn-color);
+  background-color: var(--btn-bg);
 
   transition: color 0.20s ease-out, background 0.20s ease-out;
 
   &:hover,
   &:active,
   &:focus {
-    color: var(--dark-bg);
-    background-color: var(--dark-highlight);
+    color: var(--btn-color-hover);
+    background-color: var(--btn-bg-hover);
+    border-color: var(--btn-border-color-hover);
   }
 }
 

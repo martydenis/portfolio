@@ -9,15 +9,15 @@
 	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=5, minimal-ui"/>
 
 	<link rel="icon" type="image/svg" href="<?php echo $favicon_path; ?>favicon.svg" />
-	<link rel="stylesheet" type="text/css" href="<?php echo $css_path; ?>sandbox.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="<?php echo $dist_path; ?>sandbox.css" media="screen" />
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..800&display=swap" rel="stylesheet" media="screen">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Manrope:wght@200..800&display=swap" rel="stylesheet" media="screen">
 </head>
 
 <body id="body">
-	<a href="/" id="back">Back</a>
+	<a href="<?php echo $home_url?>" id="back">Back</a>
 
 	<div class="container-big">
 		<h1>My sandbox projects</h1>
