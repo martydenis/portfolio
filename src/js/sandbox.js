@@ -1,4 +1,5 @@
 import Lenis from '@studio-freight/lenis'
+import { initAppearances } from './animate.js'
 import "@scss/sandbox.scss"
 
 /**
@@ -16,3 +17,8 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf)
+
+
+window.addEventListener('load', function() {
+  initAppearances();
+});

@@ -94,23 +94,34 @@ img {
   height: auto;
 }
 
+hr {
+  margin: var(--spacer) 0;
+  height: 1px;
+  background-color: var(--dark-border-color);
+  border: none;
+}
+
 /*
 /* footer
 /******************/
 
 #footer {
   color: var(--dark-color);
-  padding: 0 0 5em;
+  padding: 0 0 var(--spacer);
   position: relative;
   font-size: 0.85rem;
 
   hr {
-    margin: 5em 0;
     flex: 1 0 100%;
+  }
+
+  p {
+    margin: 0;
   }
 
   .container-big {
     display: flex;
+    gap: var(--grid-gap);
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
@@ -131,6 +142,7 @@ img {
   }
 
   svg {
+    display: block;
     width: 32px;
     height: auto;
   }

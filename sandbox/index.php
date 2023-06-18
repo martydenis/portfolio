@@ -9,6 +9,7 @@
 
 		<link rel="stylesheet" type="text/css" href="<?php echo $dist_path; ?>sandbox.css" media="screen" />
 		<script defer src="<?php echo $dist_path; ?>sandbox.bundle.js"></script>
+		<noscript><style> .anim-appear { opacity: 1; } </style></noscript>
 	</head>
 
 	<body id="body">
@@ -20,7 +21,7 @@
 			<p>Here you will find my <strike>latest</strike>, <strike>best</strike>, and most polished JavaScript experiments.</p>
 
 			<ul id="projects">
-				<li>
+				<li class="anim-appear">
 					<article>
 						<a href="<?php echo $sandbox_path; ?>pewpew/">
 							<div class="thumb-container">
@@ -31,7 +32,7 @@
 						</a>
 					</article>
 				</li>	
-				<li>
+				<li class="anim-appear">
 					<article>
 						<a href="<?php echo $sandbox_path; ?>double-pendulum/">
 							<div class="thumb-container">
@@ -42,7 +43,7 @@
 						</a>
 					</article>
 				</li>
-				<li>
+				<li class="anim-appear">
 					<article>
 						<a href="<?php echo $sandbox_path; ?>snake/">
 							<div class="thumb-container">
@@ -53,8 +54,7 @@
 						</a>
 					</article>
 				</li>
-				
-				<li>
+				<li class="anim-appear">
 					<article>
 						<a href="<?php echo $sandbox_path; ?>gravity-circular/">
 							<div class="thumb-container">
@@ -65,7 +65,7 @@
 						</a>
 					</article>
 				</li>
-				<li>
+				<li class="anim-appear">
 					<article>
 						<a href="<?php echo $sandbox_path; ?>scratch-game/">
 							<div class="thumb-container">
@@ -76,7 +76,7 @@
 						</a>
 					</article>
 				</li>
-				<li>
+				<li class="anim-appear">
 					<article>
 						<a href="<?php echo $sandbox_path; ?>gravity/">
 							<div class="thumb-container">
@@ -87,7 +87,6 @@
 						</a>
 					</article>
 				</li>
-				
 			</ul>
 		</div>
 

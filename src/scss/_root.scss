@@ -11,7 +11,14 @@ $transition-default: 0.30s ease-out;
 
    --container-padding: calc(var(--grid-gap) * 2);
    --grid-gap: 12px;
+   --spacer: 5rem;
+
    @media screen and (min-width: 689px) {
       --grid-gap: 24px;
+      --spacer: 3rem;
+   }
+
+   @media screen and (max-width: 439px) {
+      --spacer: 2rem;
    }
 }

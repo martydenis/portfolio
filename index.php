@@ -15,7 +15,7 @@
 
 		<link rel="stylesheet" type="text/css" href="<?php echo $dist_path; ?>index.css" media="screen" />
 		<script src="<?php echo $dist_path; ?>index.bundle.js" defer></script>
-		<noscript><style> .anim-text-wrapper { opacity: 1; } </style></noscript>
+		<noscript><style> .anim-appear { opacity: 1; } </style></noscript>
 	</head>
 
 	<body id="body">
@@ -24,12 +24,12 @@
 				<div class="container-big">
 					<div class="section__content">
 						<h1>
-							<span class="anim-text-wrapper" data-anim-type="letter">Hello</span>
-							<span class="anim-text-wrapper" data-anim-type="letter" data-delay="0.25">I am Martin,</span>
-							<span class="anim-text-wrapper bigger" data-anim-type="letter" data-delay="0.66">Frontend developer</span>
+							<span class="anim-appear" data-anim-type="letter">Hello</span>
+							<span class="anim-appear" data-anim-type="letter" data-delay="0.25">I am Martin,</span>
+							<span class="anim-appear bigger" data-anim-type="letter" data-delay="0.66">Frontend developer</span>
 						</h1>
-						<p class="anim-text-wrapper" data-delay="1">I design web interfaces and develop frontend applications using cutting edge technologies</p>
-						<!-- <p class="anim-text-wrapper" data-delay="5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, ipsam possimus! Totam, ex vitae iusto minus eaque tempore blanditiis? Voluptatem.</p> -->
+						<p class="anim-appear" data-delay="1">I design web interfaces and develop frontend applications using cutting edge technologies</p>
+						<!-- <p class="anim-appear" data-delay="5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, ipsam possimus! Totam, ex vitae iusto minus eaque tempore blanditiis? Voluptatem.</p> -->
 					</div>
 				</div>
 			</div>
@@ -49,7 +49,7 @@
 			<div id="projects__intro__wrapper">
 				<div id="projects__intro">
 					<h2 id="projects__intro__title">My work</h2>
-					<p class="anim-text-wrapper">A selected list of recent work</p>
+					<p class="anim-appear">A selected list of recent work</p>
 				</div>
 			</div>
 
@@ -283,7 +283,7 @@
 
 		<section id="contact" class="section">
 			<div class="container-small">
-				<form action="#contact__form" method="post" id="contact__form" class="anim-text-wrapper">
+				<form action="#contact__form" method="post" id="contact__form" class="anim-appear">
 					<h2>Let's <span class="cursive">get in touch</span></h2>
 					<?php
 						if(!$messageSent){

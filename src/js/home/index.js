@@ -30,9 +30,7 @@ gsap.registerPlugin(ScrollTrigger);
  * Initialize text appear animations
  */
 window.addEventListener('load', function() {
-  const animatedTextLines = document.querySelectorAll('.anim-text-wrapper');
-
-  initAppearances(animatedTextLines);
+  initAppearances();
   document.body.classList.add('page-loaded');
 });
 

@@ -1,5 +1,7 @@
 import { gsap } from 'gsap'
-// import { ScrollTrigger  } from 'gsap/ScrollTrigger'
+import { ScrollTrigger  } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger);
 
 const fadeIn = (line, delay) => {
   gsap.fromTo(line, {
@@ -50,7 +52,9 @@ const animateLettersIn = (line, delay) => {
   })
 }
 
-export const initAppearances = (elements) => {
+export const initAppearances = () => {
+  const elements = document.querySelectorAll('.anim-appear');
+
   for (let i = 0; i < elements.length; i++) {
     const line = elements[i];
     const delay = parseFloat(line.dataset.delay) || 0;

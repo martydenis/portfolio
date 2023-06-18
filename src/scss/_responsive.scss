@@ -1,8 +1,4 @@
 @media screen and (max-width: 689px) {
-  // html, body {
-  // 	font-size: 16px;
-  // }
-
   #hello {
     h1 {
       // font-size: calc((82vw - var(--grid-gap) * 4) * 0.215);
@@ -56,10 +52,6 @@
   .hidden-sm {
     display: none !important;
   }
-
-  #footer {
-    padding: 3em 0;
-  }
 }
 
 @media screen and (max-width: 439px) {
@@ -79,9 +71,5 @@
     .btn-container {
       margin-top: 1.25rem;
     }
-  }
-
-  #footer {
-    padding: 2em 0;
   }
 }
