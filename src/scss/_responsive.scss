@@ -1,34 +1,12 @@
-// @media screen and (max-width: 1399px) {
-  // #project__artinmov__frame {
-  //   width: 12.5%;
-  // }
-// }
-
-@media screen and (max-width: 1199px) {
-  // #project__artinmov__frame {
-  //   width: 16.6667%;
-  // }
-
-  // #hexkingdom_tile_3,
-  // #hexkingdom_tile_2 {
-  //   display: none;
-  // }
-
-  .hello-anim {
-    padding-left: 3rem;
-  }
-}
-
 @media screen and (max-width: 689px) {
   // html, body {
   // 	font-size: 16px;
   // }
 
   #hello {
-    padding-top: calc(var(--vh) * 25);
     h1 {
       // font-size: calc((82vw - var(--grid-gap) * 4) * 0.215);
-      font-size: unquote('min(15vw, 60px)');
+      font-size: unquote('min(15vw, 46px)');
 
       // span {
         // font-size: unquote('min(1em, 60px)');

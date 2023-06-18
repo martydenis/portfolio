@@ -1,35 +1,20 @@
-<?php require_once 'includes.php'; ?>
-<?php require_once 'form.php'; ?>
+<?php require_once '_includes.php'; ?>
+<?php require_once '_form-validation.php'; ?>
 <?php
 
-error_reporting(0);
-
-
-// $birthDate = "09/17/1993";
-// //explode the date to get month, day and year
-// $birthDate = explode("/", $birthDate);
-// //get age from date or birthdate
-// $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
-// 	? ((date("Y") - $birthDate[2]) - 1)
-// 	: (date("Y") - $birthDate[2]));
+	error_reporting(0);
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $language_iso; ?>">
 	<head>
+		<?php include_once '_head.php'; ?>
+
 		<title>Martin Denis | Front-end developer & Webdesigner</title>
-		<meta charset="UTF-8">
-		<meta name="description" content="Discover my work, projects and sandbox I worked on as a Webdesigner & Front-end developer">
-		<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=5, minimal-ui"/>
+		<meta name="description" content="Discover my work, projects and JavaScript experiments I worked on as a Webdesigner & Front-end developer">
 
-		<link rel="icon" type="image/svg" href="<?php echo $favicon_path; ?>favicon.svg" />
-		<link rel="stylesheet" type="text/css" href="dist/index.css" media="screen" />
-
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Manrope:wght@200..800&display=swap" rel="stylesheet" media="screen">
-
-		<script src="dist/index.bundle.js" defer></script>
+		<link rel="stylesheet" type="text/css" href="<?php echo $dist_path; ?>index.css" media="screen" />
+		<script src="<?php echo $dist_path; ?>index.bundle.js" defer></script>
 		<noscript><style> .anim-text-wrapper { opacity: 1; } </style></noscript>
 	</head>
 
@@ -37,13 +22,13 @@ error_reporting(0);
 		<header id="hello" class="section">
 			<div class="section__fullheight">
 				<div class="container-big">
-					<div class="hello-anim section__content">
-						<h1 id="hello-anim-h1">
+					<div class="section__content">
+						<h1>
 							<span class="anim-text-wrapper" data-anim-type="letter">Hello</span>
-							<span class="anim-text-wrapper" data-anim-type="letter" data-delay="0.75">I am Martin,</span>
-							<span class="anim-text-wrapper" data-anim-type="letter" data-delay="1.75">Frontend developer</span>
+							<span class="anim-text-wrapper" data-anim-type="letter" data-delay="0.25">I am Martin,</span>
+							<span class="anim-text-wrapper bigger" data-anim-type="letter" data-delay="0.66">Frontend developer</span>
 						</h1>
-						<p class="anim-text-wrapper" data-delay="3.5">I design web interfaces and develop frontend applications using cutting edge technologies</p>
+						<p class="anim-text-wrapper" data-delay="1">I design web interfaces and develop frontend applications using cutting edge technologies</p>
 						<!-- <p class="anim-text-wrapper" data-delay="5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, ipsam possimus! Totam, ex vitae iusto minus eaque tempore blanditiis? Voluptatem.</p> -->
 					</div>
 				</div>
@@ -56,7 +41,7 @@ error_reporting(0);
 
 		<!-- <div id="mask"> -->
 			<!-- <div id="mask__overlay"></div> -->
-			<!-- <img id="mask__img" src="src/img/work-mask.svg" alt="mask" width="346" height="90"> -->
+			<!-- <img id="mask__img" src="static/img/work-mask.svg" alt="mask" width="346" height="90"> -->
 			<!-- <canvas id="mask__canvas" class="fullsize-canvas" width="300" height="200"></canvas> -->
 		<!-- </div> -->
 
@@ -87,9 +72,9 @@ error_reporting(0);
 					<div class="container-big section__fullheight">
 						<div class="section__image">
 							<picture>
-								<source srcset="src/img/datakillers.webp" type="image/webp">
-								<source srcset="src/img/datakillers.png" type="image/png"> 
-								<img src="src/img/datakillers.png" alt="DataKillers" class="project__laptop" width="840" height="490" >
+								<source srcset="static/img/datakillers.webp" type="image/webp">
+								<source srcset="static/img/datakillers.png" type="image/png"> 
+								<img src="static/img/datakillers.png" alt="DataKillers" class="project__laptop" width="840" height="490" >
 							</picture>
 						</div>
 						<div class="section__content">
@@ -209,9 +194,9 @@ error_reporting(0);
 					<div class="container-big section__fullheight">
 						<div class="section__image">
 							<picture>
-								<source srcset="src/img/easy-alarm.webp" type="image/webp">
-								<source srcset="src/img/easy-alarm.png" type="image/png"> 
-								<img src="src/img/easy-alarm.png" alt="Art In Mov" class="project__laptop" width="840" height="490" >
+								<source srcset="static/img/easy-alarm.webp" type="image/webp">
+								<source srcset="static/img/easy-alarm.png" type="image/png"> 
+								<img src="static/img/easy-alarm.png" alt="Art In Mov" class="project__laptop" width="840" height="490" >
 							</picture>
 						</div>
 						<div class="section__content">
@@ -229,9 +214,9 @@ error_reporting(0);
 					<div class="container-big section__fullheight">
 						<div class="section__image">
 							<picture>
-								<source srcset="src/img/artinmov.webp" type="image/webp">
-								<source srcset="src/img/artinmov.png" type="image/png"> 
-								<img src="src/img/artinmov.png" alt="Art In Mov" class="project__laptop" width="840" height="490" >
+								<source srcset="static/img/artinmov.webp" type="image/webp">
+								<source srcset="static/img/artinmov.png" type="image/png"> 
+								<img src="static/img/artinmov.png" alt="Art In Mov" class="project__laptop" width="840" height="490" >
 							</picture>
 						</div>
 						<div class="section__content">
@@ -241,7 +226,7 @@ error_reporting(0);
 						</div>
 					</div>
 					<canvas id="project__artinmov__canvas" class="fullsize-canvas" width="300" height="200"></canvas>
-					<!-- <img src="src/img/artinmov_frames.svg" id="project__artinmov__frame" alt="Art In Mov background" width="16" height="150"> -->
+					<!-- <img src="static/img/artinmov_frames.svg" id="project__artinmov__frame" alt="Art In Mov background" width="16" height="150"> -->
 				<!-- </div> -->
 			</article>
 
@@ -251,9 +236,9 @@ error_reporting(0);
 					<div class="container-big section__fullheight">
 						<div class="section__image">
 							<picture>
-								<source srcset="src/img/hexkingdom.webp" type="image/webp">
-								<source srcset="src/img/hexkingdom.png" type="image/png"> 
-								<img src="src/img/hexkingdom.png" alt="HexKingdom" class="project__laptop" width="840" height="490" >
+								<source srcset="static/img/hexkingdom.webp" type="image/webp">
+								<source srcset="static/img/hexkingdom.png" type="image/png"> 
+								<img src="static/img/hexkingdom.png" alt="HexKingdom" class="project__laptop" width="840" height="490" >
 							</picture>
 						</div>
 						<div class="section__content">
@@ -267,27 +252,27 @@ error_reporting(0);
 						</div>
 
 						<picture>
-							<source srcset="src/img/hexkingdom_tile_1.webp" type="image/webp">
-							<source srcset="src/img/hexkingdom_tile_1.png" type="image/png"> 
-							<img src="src/img/hexkingdom_tile_1.png" alt="HexKingdom" id="hexkingdom_tile_1" class="hexkingdom_tile" width="180" height="256" >
+							<source srcset="static/img/hexkingdom_tile_1.webp" type="image/webp">
+							<source srcset="static/img/hexkingdom_tile_1.png" type="image/png"> 
+							<img src="static/img/hexkingdom_tile_1.png" alt="HexKingdom" id="hexkingdom_tile_1" class="hexkingdom_tile" width="180" height="256" >
 						</picture>
 
 						<picture>
-							<source srcset="src/img/hexkingdom_tile_2.webp" type="image/webp">
-							<source srcset="src/img/hexkingdom_tile_2.png" type="image/png"> 
-							<img src="src/img/hexkingdom_tile_2.png" alt="HexKingdom" id="hexkingdom_tile_2" class="hexkingdom_tile" width="224" height="336" >
+							<source srcset="static/img/hexkingdom_tile_2.webp" type="image/webp">
+							<source srcset="static/img/hexkingdom_tile_2.png" type="image/png"> 
+							<img src="static/img/hexkingdom_tile_2.png" alt="HexKingdom" id="hexkingdom_tile_2" class="hexkingdom_tile" width="224" height="336" >
 						</picture>
 
 						<picture>
-							<source srcset="src/img/hexkingdom_tile_3.webp" type="image/webp">
-							<source srcset="src/img/hexkingdom_tile_3.png" type="image/png"> 
-							<img src="src/img/hexkingdom_tile_3.png" alt="HexKingdom" id="hexkingdom_tile_3" class="hexkingdom_tile" width="328" height="385" >
+							<source srcset="static/img/hexkingdom_tile_3.webp" type="image/webp">
+							<source srcset="static/img/hexkingdom_tile_3.png" type="image/png"> 
+							<img src="static/img/hexkingdom_tile_3.png" alt="HexKingdom" id="hexkingdom_tile_3" class="hexkingdom_tile" width="328" height="385" >
 						</picture>
 
 						<picture>
-							<source srcset="src/img/hexkingdom_tile_4.webp" type="image/webp">
-							<source srcset="src/img/hexkingdom_tile_4.png" type="image/png"> 
-							<img src="src/img/hexkingdom_tile_4.png" alt="HexKingdom" id="hexkingdom_tile_4" class="hexkingdom_tile" width="256" height="303" >
+							<source srcset="static/img/hexkingdom_tile_4.webp" type="image/webp">
+							<source srcset="static/img/hexkingdom_tile_4.png" type="image/png"> 
+							<img src="static/img/hexkingdom_tile_4.png" alt="HexKingdom" id="hexkingdom_tile_4" class="hexkingdom_tile" width="256" height="303" >
 						</picture>
 					</div>
 				</div>
@@ -350,10 +335,6 @@ error_reporting(0);
 		</section>
 		<!-- FIN CONTACT -->
 
-		<footer id="footer">
-			<div class="container-small">
-				<p>Created with ❤️ by Martin Denis in Belgium</p>
-			</div>
-		</footer>
+		<?php include '_footer.php' ?>
 	</body>
 </html>

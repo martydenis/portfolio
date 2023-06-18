@@ -1,8 +1,7 @@
-
 import { gsap } from 'gsap'
 import { ScrollTrigger  } from 'gsap/ScrollTrigger'
 import { throttle } from '../tools.js'
-import { initSmoothScroll } from '../lenis.js'
+import { initSmoothScroll } from './lenis.js'
 import { initAppearances } from '../animate.js'
 import { Artinmov, EasyAlarm, Sandbox } from './projects.js'
 import validateContactForm from './form.js'
@@ -17,7 +16,7 @@ initSmoothScroll();
 const updateVhValue = () => {
   document.documentElement.style.setProperty('--vh', `${innerHeight * 0.01}px`);
 }
-window.addEventListener('resize', throttle(updateVhValue, 200));
+window.addEventListener('resize', throttle(updateVhValue, 100));
 updateVhValue();
 
 

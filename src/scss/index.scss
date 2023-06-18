@@ -56,14 +56,14 @@ body {
   // }
 
   h1 {
-    font-size: 4em;
+    font-size: 3.75em;
     margin-bottom: 1.62rem;
     color: var(--dark-highlight);
     line-height: 1;
-    white-space: nowrap;
 
-    .cursive {
-      color: var(--dark-highlight);
+    .bigger {
+      font-size: 1.33em;
+      margin-top: 0.2em;
     }
   }
 
@@ -84,11 +84,15 @@ body {
   overflow: hidden;
   display: block;
   position: relative;
-  padding-top: 0.2em;
+  padding-top: 0.1em;
   padding-right: 0.05em;
   padding-bottom: 0.1em;
 
-  .letter {
+  w {
+    white-space: nowrap;
+  }
+
+  w, l {
     transform-origin: 0 100%;
     display: inline-block;
     line-height: 1em;
@@ -119,13 +123,13 @@ body {
     justify-content: center;
 
     h2 {
-      --shadow-offset: 4.35em;
+      --shadow-offset: 4.5em;
 
       font-family: 'DM Serif Text', serif;
       margin-bottom: 0.25em;
       white-space: nowrap;
 
-      font-size: calc((60vw - var(--grid-gap) * 4) * 0.215);
+      font-size: calc((max(60vw, 500px) - var(--grid-gap) * 4) * 0.215);
       font-weight: 200;
       line-height: 0.9;
       color: var(--dark-border-color);

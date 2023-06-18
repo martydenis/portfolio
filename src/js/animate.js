@@ -18,11 +18,18 @@ const fadeIn = (line, delay) => {
   })
 }
 
-const animateLettersIn = (line, delay) => {
-  line.innerHTML = line.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-  line.style.opacity = 1
+const wrapLetters = (text) => {
+  return text.replace(/\S/g, "<l>$&</l>");
+}
 
-  gsap.fromTo(line.querySelectorAll('.letter'), {
+const animateLettersIn = (line, delay) => {
+  const wordsList = line.textContent.split(/[ ]+/i);
+  const wordsWithLettersHTML = wordsList.map(word => wrapLetters(word));
+
+  line.innerHTML = '<w>' + wordsWithLettersHTML.join('</w><space> </space><w>') + '</w>';
+  line.style.opacity = 1;
+
+  gsap.fromTo(line.querySelectorAll('l'), {
     rotateZ: 5,
     xPercent: 12,
     yPercent: 15,
@@ -38,7 +45,7 @@ const animateLettersIn = (line, delay) => {
     scrollTrigger: {
       trigger: line,
       once: true,
-      start: 'top 80%',
+      start: 'top 85%',
     }
   })
 }
@@ -48,7 +55,7 @@ export const initAppearances = (elements) => {
     const line = elements[i];
     const delay = parseFloat(line.dataset.delay) || 0;
     const animationType = line.dataset.animType || 'fade';
-  
+
     switch (animationType) {
       case 'letter':
         animateLettersIn(line, delay)

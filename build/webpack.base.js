@@ -4,8 +4,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   entry: {
     index: './src/js/home/index.js',
-    sandbox: './src/scss/sandbox.scss',
-    // 404: './src/scss/index.js',
+    sandbox: './src/js/sandbox.js',
+    pagenotfound: './src/scss/404.scss',
+    game: ['./src/js/game.js', './src/scss/game.scss'],
   },
   output: {
     filename: '[name].bundle.js',
@@ -46,6 +47,10 @@ module.exports = {
           // Compiles Sass to CSS
           "sass-loader",
         ],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },
