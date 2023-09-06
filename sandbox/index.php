@@ -21,21 +21,32 @@
 			<p>Here you will find my <strike>latest</strike>, <strike>best</strike>, and most polished JavaScript experiments.</p>
 
 			<ul id="projects">
-				<li class="anim-appear">
+				<li class="project anim-appear">
+					<article>
+						<a href="//wishr.martindenis.be">
+							<div class="project-thumb-container">
+								<img src="wishr/thumb.webp" alt="Wishr" width="588" height="420">
+							</div>
+							<h3>Wishr</h3>
+							<p>Wishlist web application using Laravel, Vue.js and Tailwind.css</p>
+						</a>
+					</article>
+				</li>
+				<li class="project anim-appear">
 					<article>
 						<a href="<?php echo $sandbox_path; ?>pewpew/">
-							<div class="thumb-container">
+							<div class="project-thumb-container">
 								<img src="pewpew/thumb.png" alt="Pew Pew" width="588" height="420">
 							</div>
 							<h3>Pew Pew</h3>
 							<p>Simulation of gravity, again. This time in space.</p>
 						</a>
 					</article>
-				</li>	
-				<li class="anim-appear">
+				</li>
+				<li class="project anim-appear">
 					<article>
 						<a href="<?php echo $sandbox_path; ?>double-pendulum/">
-							<div class="thumb-container">
+							<div class="project-thumb-container">
 								<img src="double-pendulum/thumb.png" alt="Double pendulum" width="588" height="420">
 							</div>
 							<h3>Double pendulum</h3>
@@ -43,10 +54,10 @@
 						</a>
 					</article>
 				</li>
-				<li class="anim-appear">
+				<li class="project anim-appear">
 					<article>
 						<a href="<?php echo $sandbox_path; ?>snake/">
-							<div class="thumb-container">
+							<div class="project-thumb-container">
 								<img src="snake/thumb.png" alt="Snake" width="588" height="420">
 							</div>
 							<h3>Snake</h3>
@@ -54,10 +65,10 @@
 						</a>
 					</article>
 				</li>
-				<li class="anim-appear">
+				<li class="project anim-appear">
 					<article>
 						<a href="<?php echo $sandbox_path; ?>gravity-circular/">
-							<div class="thumb-container">
+							<div class="project-thumb-container">
 								<img src="gravity-circular/thumb.png" alt="Circular gravity" width="588" height="420">
 							</div>
 							<h3>Circular gravity</h3>
@@ -65,10 +76,10 @@
 						</a>
 					</article>
 				</li>
-				<li class="anim-appear">
+				<li class="project anim-appear">
 					<article>
 						<a href="<?php echo $sandbox_path; ?>scratch-game/">
-							<div class="thumb-container">
+							<div class="project-thumb-container">
 								<img src="scratch-game/thumb.jpg" alt="Scrath game" width="588" height="420">
 							</div>
 							<h3>Scrath game</h3>
@@ -76,10 +87,10 @@
 						</a>
 					</article>
 				</li>
-				<li class="anim-appear">
+				<li class="project anim-appear">
 					<article>
 						<a href="<?php echo $sandbox_path; ?>gravity/">
-							<div class="thumb-container">
+							<div class="project-thumb-container">
 								<img src="gravity/thumb.png" alt="Gravity" width="588" height="420">
 							</div>
 							<h3>Gravity</h3>

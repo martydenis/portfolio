@@ -38,33 +38,27 @@ h1 {
    flex-wrap: wrap;
    margin-left: calc(-1 * var(--gap));
    margin-right: calc(-1 * var(--gap));
+}
 
-   li {
-      padding: var(--gap);
+.project {
+   padding: var(--gap);
 
-      @media screen and (min-width: 690px) {
-         width: 50%;
-      }
-   }
-   
-   .thumb-container {
-      position: relative;
-      overflow: hidden;
-      margin-bottom: 1rem;
-
-      img {
-         transition: all 3s ease;
-      }
+   @media screen and (min-width: 690px) {
+      width: 50%;
    }
 
    h3 {
       font-size: 1.15em;
       color: var(--dark-highlight);
-      margin-bottom: 0.2em;
+      margin-bottom: 0.25em;
+      font-weight: 400;
+      transition: color $transition-default;
    }
 
    p {
+      font-weight: 500;
       font-size: 0.9em;
+      color: var(--dark-color);
    }
 
    a:hover {
@@ -72,5 +66,19 @@ h1 {
          transform: scale3d(1.15, 1.15, 1.15);
          opacity: 0.75;
       }
+
+      h3 {
+         color: var(--primary-color);
+      }
+   }
+}
+
+.project-thumb-container {
+   position: relative;
+   overflow: hidden;
+   margin-bottom: 1rem;
+
+   img {
+      transition: all 3s ease;
    }
 }

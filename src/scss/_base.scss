@@ -101,6 +101,26 @@ hr {
   border: none;
 }
 
+.anim-appear {
+  opacity: 0;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+
+  w {
+    white-space: nowrap;
+  }
+
+  w, l {
+    transform-origin: 0 100%;
+    display: inline-block;
+    line-height: 1em;
+  }
+}
+
 /*
 /* footer
 /******************/
@@ -121,7 +141,7 @@ hr {
 
   .container-big {
     display: flex;
-    gap: var(--grid-gap);
+    column-gap: var(--grid-gap);
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;

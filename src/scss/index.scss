@@ -79,26 +79,6 @@ body {
   }
 }
 
-.anim-appear {
-  opacity: 0;
-  overflow: hidden;
-  display: block;
-  position: relative;
-  padding-top: 0.1em;
-  padding-right: 0.05em;
-  padding-bottom: 0.1em;
-
-  w {
-    white-space: nowrap;
-  }
-
-  w, l {
-    transform-origin: 0 100%;
-    display: inline-block;
-    line-height: 1em;
-  }
-}
-
 
 /*
 /* Projects
@@ -157,7 +137,6 @@ body {
     z-index: 10;
     width: 33%;
     // transform: translate3d(0, 50px, 0);
-    font-weight: 400;
     font-weight: 400;
   }
 
