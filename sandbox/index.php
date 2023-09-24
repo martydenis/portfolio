@@ -4,7 +4,7 @@
 	<head>
 		<?php include_once '../_head.php'; ?>
 
-		<title>Sandbox & experiments | Martin Denis</title>
+		<title>Js experiments and personal projects | Martin Denis</title>
 		<meta name="description" content="This is my sandbox, the place where I play around and try new stuff">
 
 		<link rel="stylesheet" type="text/css" href="<?php echo $dist_path; ?>sandbox.css" media="screen" />
@@ -16,18 +16,18 @@
 		<a href="<?php echo $home_url?>" id="back">Back</a>
 
 		<div class="container-big">
-			<h1>My sandbox projects</h1>
+			<h1>My personal projects</h1>
 			<p>This is my playground, the place where I play around and try new stuff.</p>
-			<p>Here you will find my <strike>latest</strike>, <strike>best</strike>, and most polished JavaScript experiments.</p>
+			<p>Here you will find my <strike>latest</strike>, <strike>best</strike>, and most polished JavaScript experiments, as well as my latest personal work.</p>
 
 			<ul id="projects">
 				<li class="project anim-appear">
 					<article>
-						<a href="//wishr.martindenis.be">
+						<a href="//wishy.martindenis.be" target="_blank">
 							<div class="project-thumb-container">
-								<img src="wishr/thumb.webp" alt="Wishr" width="588" height="420">
+								<img src="wishy/thumb.webp" alt="Wishy" width="588" height="420">
 							</div>
-							<h3>Wishr</h3>
+							<h3>Wishy</h3>
 							<p>Wishlist web application using Laravel, Vue.js and Tailwind.css</p>
 						</a>
 					</article>

@@ -61,7 +61,7 @@ class Sandbox extends Project {
   }
 
   populate () {
-    const ballAmount = Math.min(Math.round(outerWidth / 40), 25);
+    const ballAmount = Math.min(Math.round(outerWidth / 60), 25);
     // const ballAmount = 1;
     this.balls = [];
 

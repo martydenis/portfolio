@@ -11,6 +11,7 @@
 h1 {
    overflow: hidden;
    position: relative;
+   padding-bottom: 0.15em;
 
    &:after {
       content: '';
