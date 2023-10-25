@@ -89,18 +89,20 @@ body {
 
   &__intro,
   &__intro__wrapper {
-    height: calc(var(--vh, 1vh) * 85);
+    height: calc(var(--vh, 1vh) * 66);
   }
 
   &__intro__wrapper {
-    background: #fff;
+    // background: #1a212f;
     overflow: hidden;
   }
 
   &__intro {
     display: flex;
+    padding-top: 10vh;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
+    color: var(--dark-color);
 
     h2 {
       --shadow-offset: 4.5em;
@@ -109,9 +111,10 @@ body {
       margin-bottom: 0.25em;
       white-space: nowrap;
 
-      font-size: calc((max(60vw, 500px) - var(--grid-gap) * 4) * 0.215);
+      font-size: calc((max(60vw, 440px) - var(--grid-gap) * 4) * 0.215);
       font-weight: 200;
       line-height: 0.9;
+      text-indent: 2em;
       color: var(--dark-border-color);
       text-shadow:
         calc(var(--shadow-offset) * -2) 0 var(--dark-border-color),
@@ -127,7 +130,7 @@ body {
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       text-align: center;
     }
   }
@@ -359,8 +362,8 @@ body {
   color: #264653;
 
   background: #2a9d8f;
-  background: -webkit-linear-gradient(to bottom, #477080 0%, #44c5b6 100%);
-  background: linear-gradient(to bottom, #477080 0%, #44c5b6 100%);
+  background: -webkit-linear-gradient(to bottom, #135168 0%, #2a9d8f 100%);
+  background: linear-gradient(to bottom, #135168 0%, #2a9d8f 100%);
 
   &__canvas {
     mix-blend-mode: hard-light;

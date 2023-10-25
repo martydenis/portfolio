@@ -49,6 +49,7 @@ gsap.to('#projects__intro', {
 
 gsap.to('#projects__intro__title', {
   textIndent: '-4em',
+  ease: 'none',
   scrollTrigger: {
     trigger: '#projects__intro__wrapper',
     scrub: true

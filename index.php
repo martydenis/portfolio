@@ -49,7 +49,7 @@
 			<div id="projects__intro__wrapper">
 				<div id="projects__intro">
 					<h2 id="projects__intro__title">My work</h2>
-					<p class="anim-appear">A selected list of recent work</p>
+					<p class="anim-appear">A handpicked list of recent projects</p>
 				</div>
 			</div>
 

@@ -27,8 +27,13 @@
 							<div class="project-thumb-container">
 								<img src="wishy/thumb.webp" alt="Wishy" width="588" height="420">
 							</div>
+							<ul class="project-tags">
+								<li class="tag-laravel">Laravel</li>
+								<li class="tag-tailwind">Tailwind.css</li>
+								<li class="tag-vue">Vue.js</li>
+							</ul>
 							<h3>Wishy</h3>
-							<p>Wishlist web application using Laravel, Vue.js and Tailwind.css</p>
+							<p>Wishlist web application created for self-training purposes</p>
 						</a>
 					</article>
 				</li>
@@ -38,6 +43,9 @@
 							<div class="project-thumb-container">
 								<img src="pewpew/thumb.png" alt="Pew Pew" width="588" height="420">
 							</div>
+							<ul class="project-tags">
+								<li class="tag-js">JavaScript</li>
+							</ul>
 							<h3>Pew Pew</h3>
 							<p>Simulation of gravity, again. This time in space.</p>
 						</a>
@@ -49,6 +57,9 @@
 							<div class="project-thumb-container">
 								<img src="double-pendulum/thumb.png" alt="Double pendulum" width="588" height="420">
 							</div>
+							<ul class="project-tags">
+								<li class="tag-js">JavaScript</li>
+							</ul>
 							<h3>Double pendulum</h3>
 							<p>Simulation of the physics behind a double pendulum</p>
 						</a>
@@ -60,6 +71,9 @@
 							<div class="project-thumb-container">
 								<img src="snake/thumb.png" alt="Snake" width="588" height="420">
 							</div>
+							<ul class="project-tags">
+								<li class="tag-js">JavaScript</li>
+							</ul>
 							<h3>Snake</h3>
 							<p>Recreation of the famous Nokia game</p>
 						</a>
@@ -71,6 +85,9 @@
 							<div class="project-thumb-container">
 								<img src="gravity-circular/thumb.png" alt="Circular gravity" width="588" height="420">
 							</div>
+							<ul class="project-tags">
+								<li class="tag-js">JavaScript</li>
+							</ul>
 							<h3>Circular gravity</h3>
 							<p>Simulation of gravity physics, but around a disc, not a plane</p>
 						</a>
@@ -82,6 +99,9 @@
 							<div class="project-thumb-container">
 								<img src="scratch-game/thumb.jpg" alt="Scrath game" width="588" height="420">
 							</div>
+							<ul class="project-tags">
+								<li class="tag-js">JavaScript</li>
+							</ul>
 							<h3>Scrath game</h3>
 							<p>Well, it's a scratch game</p>
 						</a>
@@ -93,6 +113,9 @@
 							<div class="project-thumb-container">
 								<img src="gravity/thumb.png" alt="Gravity" width="588" height="420">
 							</div>
+							<ul class="project-tags">
+								<li class="tag-js">JavaScript</li>
+							</ul>
 							<h3>Gravity</h3>
 							<p>Simulation of gravity physics. Click to throw the balls in the air</p>
 						</a>

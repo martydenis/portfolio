@@ -139,9 +139,9 @@ hr {
     margin: 0;
   }
 
-  .container-big {
+  &__content {
     display: flex;
-    column-gap: var(--grid-gap);
+    gap: var(--grid-gap);
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
