@@ -154,10 +154,10 @@ hr {
   }
 
   a {
-    color: var(--dark-highlight);
+    color: inherit;
 
     &:hover {
-      color: var(--dark-color);
+      color: var(--dark-highlight);
     }
   }
 
