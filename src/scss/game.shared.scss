@@ -108,7 +108,7 @@ body:not(.js-is-controls-open) .controls--closed {
 
 #controls__panel li {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
@@ -119,6 +119,7 @@ body:not(.js-is-controls-open) .controls--closed {
 #controls__panel strong {
   display: block;
   color: var(--dark-highlight);
+  margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
 
