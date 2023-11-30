@@ -6,7 +6,7 @@ module.exports = {
     index: './src/js/home/index.js',
     sandbox: './src/js/sandbox.js',
     pagenotfound: './src/scss/404.scss',
-    game: ['./src/js/game.js', './src/scss/game.scss'],
+    game: ['./src/js/game.shared.js'],
   },
   output: {
     filename: '[name].bundle.js',

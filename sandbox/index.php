@@ -97,9 +97,9 @@
 					<article>
 						<a href="<?php echo $sandbox_path; ?>scratch-game/">
 							<div class="project-thumb-container">
-								<img src="scratch-game/thumb.jpg" alt="Scrath game" width="588" height="420">
+								<img src="scratch-game/thumb.jpg" alt="Scratch game" width="588" height="420">
 							</div>
-							<h3>Scrath game</h3>
+							<h3>Scratch game</h3>
 							<p>Well, it's a scratch game</p>
 							<ul class="project-tags">
 								<li class="tag-js">JavaScript</li>

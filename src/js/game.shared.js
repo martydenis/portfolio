@@ -1,13 +1,28 @@
-if (document.getElementById('back')) {
-  document.getElementById('back').addEventListener('touchend', function(e) {
+import '../scss/game.shared.scss';
+
+const $controlsTogglers = document.getElementsByClassName('js-controls-toggler')
+for (let i = 0; i < $controlsTogglers.length; i++) {
+  const $el = $controlsTogglers[i];
+
+  $el.addEventListener('click', function(e) {
+    document.body.classList.toggle('js-is-controls-open')
+  });
+}
+
+const $stopPropagationElements = document.getElementsByClassName('js-stop-propagation')
+
+for (let i = 0; i < $stopPropagationElements.length; i++) {
+  const $el = $stopPropagationElements[i];
+
+  $el.addEventListener('touchend', function(e) {
     e.stopPropagation();
   });
 
-  document.getElementById('back').addEventListener('click', function(e) {
+  $el.addEventListener('click', function(e) {
     e.stopPropagation();
   });
 
-  document.getElementById('back').addEventListener('mousedown', function(e) {
+  $el.addEventListener('mousedown', function(e) {
     e.stopPropagation();
   });
 }
