@@ -3,10 +3,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
-    index: './src/js/home/index.js',
-    sandbox: './src/js/sandbox.js',
-    pagenotfound: './src/scss/404.scss',
-    game: ['./src/js/game.shared.js'],
+    index: './static/src/js/home/index.js',
+    sandbox: './static/src/js/sandbox.js',
+    pagenotfound: './static/src/scss/404.scss',
+    // game: ['./static/src/js/game.shared.js'],
   },
   output: {
     filename: '[name].bundle.js',
@@ -14,8 +14,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      "@js": path.resolve(__dirname, '../src/js/'),
-      "@scss": path.resolve(__dirname, '../src/scss/'),
+      "@js": path.resolve(__dirname, '../static/src/js/'),
+      "@scss": path.resolve(__dirname, '../static/src/scss/'),
     },
   },
   module: {

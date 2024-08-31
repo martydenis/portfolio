@@ -1,0 +1,163 @@
+@import "mixins";
+@import "root";
+@import "reset";
+@import "base";
+// @import "game.shared";
+
+#body {
+  padding-top: 6em;
+}
+
+#back {
+  position: fixed;
+  display: flex;
+  align-items: center;
+
+  color: var(--dark-highlight);
+  text-decoration: none;
+  z-index: 100;
+  font-family: 'Gill Sans', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  top: var(--grid-gap);
+  left: var(--container-padding);
+  line-height: 24px;
+
+  user-select: none;
+  mix-blend-mode: difference;
+
+  &:before {
+    content: '';
+    height: 1px;
+    background-color: var(--dark-highlight);
+    width: 12px;
+    margin-right: 0.5em;
+  }
+}
+
+h1 {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 0.15em;
+
+  &:after {
+    content: '';
+    margin-left: var(--grid-gap);
+    width: 1px;
+    height: 1px;
+    display: inline-block;
+    vertical-align: baseline;
+    background-color: var(--dark-border-color);
+
+    transform: scale3d(1260, 1, 1);
+    transform-origin: top left;
+  }
+}
+
+#projects {
+  --gap: var(--grid-gap);
+
+  @media screen and (min-width: 1200px) {
+    --gap: calc(var(--grid-gap) * 2);
+  }
+
+  list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--gap));
+  margin-right: calc(-1 * var(--gap));
+}
+
+.project {
+  padding: var(--gap);
+
+  @media screen and (min-width: 690px) {
+    width: 50%;
+
+    &:nth-child(2n) {
+      margin-top: calc(var(--spacer) * 2);
+    }
+  }
+
+  h3 {
+    font-size: 1.15em;
+    color: var(--dark-highlight);
+    margin-top: 1rem;
+    font-weight: 400;
+    transition: color $transition-default;
+  }
+
+  p {
+    margin-top: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9em;
+    color: var(--dark-color);
+  }
+
+  a:hover {
+    img {
+      transform: scale3d(1.15, 1.15, 1.15);
+      opacity: 0.75;
+    }
+
+    h3 {
+      color: var(--dark-color);
+    }
+  }
+}
+
+.project-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+
+  li {
+    font-size: 0.75rem;
+    line-height: 1.25;
+    font-weight: 600;
+    border-radius: 99px;
+    color: var(--dark-muted);
+
+    &:before {
+      color: var(--accent-color);
+      content: '•';
+      display: inline-block;
+      transform: scale(1.7);
+      transform-origin: center center;
+      margin-right: 0.5em;
+    }
+  }
+}
+
+.tag-laravel {
+  --accent-color: #F9322C;
+}
+
+.tag-tailwind {
+  --accent-color: #38bdf8;
+}
+
+.tag-vue {
+  --accent-color: #42b883;
+}
+
+.tag-js {
+  --accent-color: #d5bc3f;
+}
+
+.project-thumb-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    border-radius: 10px;
+    transition: all 4s ease;
+  }
+}
