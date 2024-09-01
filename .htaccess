@@ -97,7 +97,7 @@
       Header set Cache-Control "max-age=600, private, must-revalidate"
    </FilesMatch>
 
-   Header set Content-Security-Policy "default-src 'self'; script-src 'self' cdnjs.cloudflare.com; img-src * 'self' data: image/svg+xml; style-src 'unsafe-inline' *; font-src *;"
+   Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-eval' cdnjs.cloudflare.com; img-src * 'self' data: image/svg+xml; style-src 'unsafe-inline' *; font-src *;"
 </IfModule>
 # END Cache-Control Headers
 
