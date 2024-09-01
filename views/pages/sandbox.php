@@ -17,7 +17,7 @@
                     <article>
                         <a href="//wishy.martindenis.be" target="_blank">
                             <div class="project-thumb-container">
-                                <img src="./static/img/sandbox/wishy.webp" alt="Wishy" width="588" height="420">
+                                <img src="./static/img/projects/wishy.webp" alt="Wishy" width="588" height="420">
                             </div>
                             <h3>Wishy</h3>
                             <p>Wishlist web application created for self-training purposes</p>
@@ -33,7 +33,7 @@
                     <article>
                         <a href="/project/pewpew">
                             <div class="project-thumb-container">
-                                <img src="./static/img/sandbox/pewpew.png" alt="Pew Pew" width="588" height="420">
+                                <img src="./static/img/projects/pewpew.png" alt="Pew Pew" width="588" height="420">
                             </div>
                             <h3>Pew Pew</h3>
                             <p>Simulation of gravity, again. This time in space.</p>
@@ -47,7 +47,7 @@
                     <article>
                         <a href="/project/double-pendulum">
                             <div class="project-thumb-container">
-                                <img src="./static/img/sandbox/double-pendulum.png" alt="Double pendulum" width="588" height="420">
+                                <img src="./static/img/projects/double-pendulum.png" alt="Double pendulum" width="588" height="420">
                             </div>
                             <h3>Double pendulum</h3>
                             <p>Simulation of the physics behind a double pendulum</p>
@@ -61,7 +61,7 @@
                     <article>
                         <a href="/project/snake">
                             <div class="project-thumb-container">
-                                <img src="./static/img/sandbox/snake.png" alt="Snake" width="588" height="420">
+                                <img src="./static/img/projects/snake.png" alt="Snake" width="588" height="420">
                             </div>
                             <h3>Snake</h3>
                             <p>Recreation of the famous Nokia game</p>
@@ -75,7 +75,7 @@
                     <article>
                         <a href="/project/gravity-circular">
                             <div class="project-thumb-container">
-                                <img src="./static/img/sandbox/gravity-circular.png" alt="Circular gravity" width="588" height="420">
+                                <img src="./static/img/projects/gravity-circular.png" alt="Circular gravity" width="588" height="420">
                             </div>
                             <h3>Circular gravity</h3>
                             <p>Simulation of gravity physics, but around a disc, not a plane</p>
@@ -87,9 +87,9 @@
                 </li>
                 <li class="project anim-appear">
                     <article>
-                        <a href="/project/scratch-game">
+                        <a href="/project/scratch">
                             <div class="project-thumb-container">
-                                <img src="./static/img/sandbox/scratch.jpg" alt="Scratch game" width="588" height="420">
+                                <img src="./static/img/projects/scratch.jpg" alt="Scratch game" width="588" height="420">
                             </div>
                             <h3>Scratch game</h3>
                             <p>Well, it's a scratch game</p>
@@ -101,9 +101,9 @@
                 </li>
                 <li class="project anim-appear">
                     <article>
-                        <a href="/project/gravit">
+                        <a href="/project/gravity">
                             <div class="project-thumb-container">
-                                <img src="./static/img/sandbox/gravity.png" alt="Gravity" width="588" height="420">
+                                <img src="./static/img/projects/gravity.png" alt="Gravity" width="588" height="420">
                             </div>
                             <h3>Gravity</h3>
                             <p>Simulation of gravity physics. Click to throw the balls in the air</p>

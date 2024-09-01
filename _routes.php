@@ -12,19 +12,22 @@ return [
         'meta_description' => 'This is my sandbox, the place where I play around and try new stuff',
     ],
     '/project/pewpew' => [
-        'path' => 'projects/pewpew/index',
+        'path' => 'projects/pewpew/',
     ],
     '/project/double-pendulum' => [
-        'path' => 'projects/double-pendulum/index',
+        'path' => 'projects/double-pendulum/',
     ],
-    '/project/circular-gravity' => [
-        'path' => 'projects/circular-gravity/index',
+    '/project/snake' => [
+        'path' => 'projects/snake/',
+    ],
+    '/project/gravity-circular' => [
+        'path' => 'projects/gravity-circular/',
     ],
     '/project/scratch' => [
-        'path' => 'projects/scratch/index',
+        'path' => 'projects/scratch-game/',
     ],
     '/project/gravity' => [
-        'path' => 'projects/gravity/index',
+        'path' => 'projects/gravity/',
     ],
     '/404' => [
         'name' => 'pagenotfound',

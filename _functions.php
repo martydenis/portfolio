@@ -31,7 +31,7 @@ function run(string $url, array $routes): void
 function get_page_file_path(array $route): string
 {
     if (!empty($route['path'])) {
-        return BASE_PATH . $route['path'] . '.php';
+        return BASE_PATH . $route['path'] . 'index.php';
     }
 
     return PAGES_PATH . $route['name'] . '.php';
