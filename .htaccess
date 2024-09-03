@@ -101,15 +101,13 @@
 </IfModule>
 # END Cache-Control Headers
 
-
-RewriteEngine On
-
-# Redirect all requests to index.php
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php [L,QSA]
-
 #Redirect to playground to sandbox
 RedirectMatch 301 /playground/(.*) /sandbox/$1
-#Redirect to 404 page
-ErrorDocument 404 /404.php
+
+<IfModule mod_rewrite.c>
+   RewriteEngine On
+   # Redirect all requests to index.php
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteRule ^(.*)$ index.php [L,QSA]
+</IfModule>
