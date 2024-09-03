@@ -9,24 +9,33 @@
 	</head>
 	<body id="body">
 		<header id="hello" class="section">
-			<div class="section__fullheight">
-				<div class="container-big">
-					<div class="section__content">
-						<h1>
-							<span class="anim-appear" data-anim-type="letter">Hello</span>
-							<span class="anim-appear" data-anim-type="letter" data-delay="0.25">I am Martin,</span>
-							<span class="anim-appear bigger" data-anim-type="letter" data-delay="0.66">Frontend developer</span>
-						</h1>
-						<p class="anim-appear" data-delay="1">I design web interfaces and develop frontend applications using cutting edge technologies</p>
-						<!-- <p class="anim-appear" data-delay="5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, ipsam possimus! Totam, ex vitae iusto minus eaque tempore blanditiis? Voluptatem.</p> -->
-					</div>
+			<div class="section__fullheight container-fluid align-end">
+				<div class="section__content">
+					<h1>
+						<span class="d-block anim-appear" data-anim-type="letter">Hello there, I am</span>
+						<span class="d-block anim-appear fs-full font-serif" data-anim-type="letter" data-delay="1.5">Martin Denis</span>
+						<!-- <span class="d-block anim-appear" data-anim-type="letter" data-delay="1.25">Frontend developer</span> -->
+					</h1>
+					<!-- <p class="anim-appear" data-delay="2">I design web interfaces and develop frontend applications using cutting edge technologies</p> -->
+					<!-- <p class="anim-appear" data-delay="5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, ipsam possimus! Totam, ex vitae iusto minus eaque tempore blanditiis? Voluptatem.</p> -->
 				</div>
 			</div>
 		</header>
+
+		<section id="presentation_01" class="container-big section__fullheight">
+            <div class="section__content text-center">
+                <h2 class="anim-appear">Hi, I'm Martin Denis, a Web Designer and Frontend Developer based in Brussels.</h2>
+                <p class="anim-appear h2" data-delay="0.25">I design web interfaces and develop frontend applications using cutting edge technologies, blah blah blah...</p>
+            </div>
+		</section>
+
+        <section id="presentation_02" class="container-big section__fullheight">
+            <div class="section__content text-center">
+                <p class="h2" data-delay="0.25">Nah, I just do what I love, really. The rest matters little.</p>
+                <p class="h2" data-delay="0.25">I craft things that excite me, using tools don't know and learn new stuff with each project.</p>
+            </div>
+		</section>
 		<!-- FIN Hello -->
-
-		<!-- <h2 id="projects__title" class="show-mobile container-small">Latest <span class="cursive">projects</span></h2> -->
-
 
 		<!-- <div id="mask"> -->
 			<!-- <div id="mask__overlay"></div> -->
@@ -37,8 +46,8 @@
 		<section id="projects" class="section__white">
 			<div id="projects__intro__wrapper">
 				<div id="projects__intro">
-					<h2 id="projects__intro__title">My work</h2>
-					<p class="anim-appear">A handpicked list of recent projects</p>
+					<h2 id="projects__intro__title" class="font-serif">My work</h2>
+					<p class="anim-appear">A selection of recent projects</p>
 				</div>
 			</div>
 
@@ -185,7 +194,7 @@
 							<picture>
 								<source srcset="static/img/easy-alarm.webp" type="image/webp">
 								<source srcset="static/img/easy-alarm.png" type="image/png"> 
-								<img src="static/img/easy-alarm.png" alt="Art In Mov" class="project__laptop" width="840" height="490" >
+								<img src="static/img/easy-alarm.png" alt="Easy Alarm" class="project__laptop" width="840" height="490" >
 							</picture>
 						</div>
 						<div class="section__content">
@@ -273,7 +282,7 @@
 		<section id="contact" class="section">
 			<div class="container-small">
 				<form action="#contact__form" method="post" id="contact__form" class="anim-appear">
-					<h2>Let's <span class="cursive">get in touch</span></h2>
+					<h2>Let's <span class="font-serif heading-emphasis">get in touch</span></h2>
 					<?php
 						if(!$messageSent){
 					?>

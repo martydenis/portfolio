@@ -1,6 +1,5 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger  } from 'gsap/ScrollTrigger'
-import { throttle } from '../tools.js'
 import { initSmoothScroll } from './lenis.js'
 import { initAppearances } from '../animate.js'
 import { Artinmov, EasyAlarm, Sandbox } from './projects.js'
@@ -8,16 +7,6 @@ import validateContactForm from './form.js'
 import "@scss/index.scss"
 
 initSmoothScroll();
-
-/**
- * In mobile devices, browsers sometimes resize the viewport height.
- * This function forces the viewport height to the height retrieved by JavaScript
- */
-const updateVhValue = () => {
-  document.documentElement.style.setProperty('--vh', `${innerHeight * 0.01}px`);
-}
-window.addEventListener('resize', throttle(updateVhValue, 100));
-updateVhValue();
 
 
 /**
@@ -48,7 +37,7 @@ gsap.to('#projects__intro', {
 })
 
 gsap.to('#projects__intro__title', {
-  textIndent: '-4em',
+  textIndent: '-1em',
   ease: 'none',
   scrollTrigger: {
     trigger: '#projects__intro__wrapper',
