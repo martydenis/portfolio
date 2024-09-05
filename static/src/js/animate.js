@@ -24,22 +24,79 @@ const fadeIn = (line, delay) => {
     );
 };
 
-const wrapLetters = (text) => {
-    return text.replace(/\S/g, "<l>$&</l>");
+const wrapLetters = (string) => {
+    return string.replace(/\S/g, "<span class='fx-letter'>$&</span>");
 };
 
-const animateLettersIn = (line, delay) => {
-    const wordsList = line.textContent.split(/[ ]+/i);
-    const wordsWithLettersHTML = wordsList.map((word) => wrapLetters(word));
+const wrapWords = (words) => {
+    return "<span class='fx-word'>" + words.join("</span> <span class='fx-word'>") + "</span>"
+}
 
-    line.innerHTML = "<w>" + wordsWithLettersHTML.join("</w><space> </space><w>") + "</w>";
-    line.style.opacity = 1;
+const wrapLines = (el) => {
+    const wordsList = el.innerText.split(/[ ]+/i);
+    const wrappedWords = wrapWords(wordsList);
+
+    el.innerHTML = wrappedWords;
+
+    const words = el.querySelectorAll(".fx-word");
+    let lastOffsetTop = null;
+    let html = "<span class='fx-line'><span class='fx-line-inner'>";
+
+    for (const word of words) {
+        const currentWordOffsetTop = word.getBoundingClientRect().top;
+
+        if (lastOffsetTop != null && lastOffsetTop < currentWordOffsetTop) {
+            html += "</span></span><span class='fx-line'><span class='fx-line-inner'>";
+        }
+
+        html += " " + word.innerText;
+
+        lastOffsetTop = currentWordOffsetTop;
+    }
+
+    html += "</span></span>";
+    return html;
+}
+
+const animateLines = (el, delay) => {
+    const lines = wrapLines(el);
+
+    el.innerHTML = lines;
 
     gsap.fromTo(
-        line.querySelectorAll("l"),
+        el.querySelectorAll('.fx-line-inner'),
+        {
+            yPercent: 100,
+            opacity: 0
+        },
+        {
+            yPercent: 0,
+            opacity: 1,
+            delay: delay,
+            duration: 1,
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: el,
+                scrub: true,
+                start: "top 80%",
+                end: "+=30%"
+            },
+        },
+    );
+};
+
+const animateLetters = (el, delay) => {
+    const wordsList = el.textContent.split(/[ ]+/i);
+    const wordsWithLettersHTML = wordsList.map((word) => wrapLetters(word));
+
+    el.innerHTML = wrapWords(wordsWithLettersHTML);
+    el.style.opacity = 1;
+
+    gsap.fromTo(
+        el.querySelectorAll(".fx-letter"),
         {
             rotateZ: 5,
-            xPercent: 12,
+            xPercent: 2,
             yPercent: 15,
             opacity: 0,
         },
@@ -50,9 +107,9 @@ const animateLettersIn = (line, delay) => {
             opacity: 1,
             delay: delay,
             duration: 1.4,
-            stagger: 0.1,
+            stagger: 0.05,
             scrollTrigger: {
-                trigger: line,
+                trigger: el,
                 once: true,
                 start: "top 85%",
             },
@@ -60,20 +117,23 @@ const animateLettersIn = (line, delay) => {
     );
 };
 
-export const initAppearances = () => {
-    const elements = document.querySelectorAll(".anim-appear");
+export const initTextAnimations = () => {
+    const elements = document.querySelectorAll(".animate-text");
 
     for (let i = 0; i < elements.length; i++) {
-        const line = elements[i];
-        const delay = parseFloat(line.dataset.delay) || 0;
-        const animationType = line.dataset.animType || "fade";
+        const el = elements[i];
+        const delay = parseFloat(el.dataset.delay) || 0;
+        const animationType = el.dataset.animType || "fade";
 
         switch (animationType) {
-            case "letter":
-                animateLettersIn(line, delay);
+            case "letters":
+                animateLetters(el, delay);
+                break;
+            case "lines":
+                animateLines(el, delay);
                 break;
             default:
-                fadeIn(line, delay);
+                fadeIn(el, delay);
                 break;
         }
     }

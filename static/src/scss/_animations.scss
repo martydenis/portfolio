@@ -1,0 +1,29 @@
+.animate-text[data-anim-type="letters"] {
+    opacity: 0;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+
+    .fx-word {
+        white-space: nowrap;
+    }
+
+    .fx-word, .fx-letter {
+        transform-origin: 0 100%;
+        display: inline-block;
+    }
+}
+
+// .animate-text[data-anim-type="lines"] {
+//     overflow: hidden;
+// }
+
+.fx-line {
+    display: block;
+    overflow: hidden;
+}
+
+.fx-line-inner {
+    display: block;
+}

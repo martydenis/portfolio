@@ -1,13 +1,13 @@
 @import "mixins";
-@import "root";
 @import "reset";
 @import "variables";
+@import "root";
 @import "utilities";
 @import "base";
 @import "lenis";
 
 body {
-    min-height: 100vh;
+    min-height: 100svh;
 }
 
 .section {
@@ -44,10 +44,10 @@ body {
 }
 
 /*
-/* Hello
+/* hero
 /******************/
 
-#hello {
+#hero {
     // color: var(--dark-highlight);
     z-index: 20;
     overflow: hidden;
@@ -55,11 +55,11 @@ body {
     h1 {
         color: var(--dark-color);
         font-size: 2.5em;
-        margin: 0;
-        line-height: 0.8;
+        margin: 0.5em 0 0;
+        line-height: 0.7;
 
         .fs-full {
-            font-size: 15.3vw;
+            font-size: 18.8vw;
             white-space: nowrap;
             color: var(--dark-highlight);
         }
@@ -90,6 +90,7 @@ body {
     &__intro__wrapper {
         // background: #1a212f;
         overflow: hidden;
+        margin-bottom: 40svh;
     }
 
     &__intro {
@@ -101,8 +102,8 @@ body {
         h2 {
             --shadow-offset: 4.5em;
 
-            font-family: "Gloock", serif;
-            margin-bottom: 0.25em;
+            font-family: $serif-font-family;
+            margin-bottom: 0;
             white-space: nowrap;
 
             font-size: calc((110vw - var(--grid-gap) * 4) * 0.215);
@@ -137,21 +138,6 @@ body {
         font-weight: 400;
     }
 
-    // margin-top: calc(var(--vh, 1vh) * -170);
-
-    // .project:first-of-type {
-    //   height: calc(var(--vh, 1vh) * 170);
-    //   // margin-bottom: calc(var(--vh, 1vh) * 100);
-
-    //   .pin-wrapper {
-    //     height: calc(var(--vh, 1vh) * 100);
-    //   }
-
-    //   .pin-spacer {
-    //     height: 100% !important;
-    //   }
-    // }
-
     .section__fullheight {
         height: 100%;
         flex-direction: row;
@@ -165,6 +151,7 @@ body {
     // }
 
     // .pin-spacer {
+        // margin-top: -100svh !important;
     //   height: 100% !important;
     //   padding: 0 !important;
     //   clip: rect(0, auto, auto, 0);
@@ -180,6 +167,11 @@ body {
     z-index: 0;
     height: 100svh;
     color: rgba(255, 255, 255, 0.8);
+    margin-top: -40svh;
+
+    &:not(:last-child) {
+        height: calc(120svh + 80px);
+    }
 
     h3 {
         font-size: 3em;
@@ -199,7 +191,7 @@ body {
 
         line-height: 1.41em;
         height: auto;
-        padding: 0.588em 1.647em;
+        padding: 0.15em 1.4em;
         overflow: hidden;
         position: relative;
         text-transform: none;
@@ -352,7 +344,7 @@ body {
 /******************/
 
 #project__sandbox {
-    color: #264653;
+    color: #142b34;
 
     background: #2a9d8f;
     background: -webkit-linear-gradient(to bottom, #135168 0%, #2a9d8f 100%);
@@ -365,13 +357,13 @@ body {
 
     h3 {
         font-size: unquote("min(18vw, 4.5em)");
-        color: #1a3742;
+        color: #142b34;
     }
 
     .btn {
-        --btn-color: #264653;
+        --btn-color: #142b34;
         --btn-border-color: var(--btn-color);
-        --btn-bg-hover: #264653;
+        --btn-bg-hover: #142b34;
         --btn-color-hover: #ffffff;
     }
 
@@ -395,6 +387,7 @@ body {
 /******************/
 
 #contact {
+    background-color: var(--dark-bg);
     z-index: 30;
 
     .container-small {
@@ -441,7 +434,7 @@ textarea {
     height: 48px;
     padding: 8px 12px;
     font-size: 17px;
-    font-family: "Manrope", Arial, Helvetica, sans-serif;
+    font-family: $sans-serif-font-family;
 
     outline: none;
     -webkit-appearance: none;
@@ -492,59 +485,5 @@ textarea {
 .font-serif {
     font-size: 1.15em;
 }
-
-// #hello {
-//   h1 {
-//     font-size: 2.5em;
-//     width: 50%;
-//     transform-origin: left center;
-//     transform: translate3d(0, 33%, 0) scale3d(1.8, 1.8, 1);
-
-//     left: 0;
-//   }
-
-//   p {
-//     opacity: 0;
-//     transform: translate3d(0, 50px, 0);
-//   }
-// }
-
-// #mask {
-//   display: block;
-//   height: calc(var(--vh, 1vh) * 100);
-//   margin-top: calc(var(--vh, 1vh) * -70 + 14rem);
-//   margin-bottom: calc(var(--vh, 1vh) * 100);
-
-//   &__img {
-//     visibility: hidden;
-//     width: 300px;
-//     height: auto;
-
-//     opacity: 0;
-//     position: absolute;
-//     left: -9999px;
-//   }
-
-//   &__canvas,
-//   &__overlay {
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     width: 100%;
-//     height: 100%;
-//   }
-
-//   &__overlay {
-//     background: #ffffff;
-//     opacity: 1;
-//     z-index: 100;
-//     transform: translate3d(0, 0, 0);
-//     pointer-events: none;
-//   }
-
-//   &__canvas {
-//     z-index: 200;
-//   }
-// }
 
 @import "responsive";

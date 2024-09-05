@@ -8,60 +8,57 @@
 		<?php include_once PARTIALS_PATH . '_head.php'; ?>
 	</head>
 	<body id="body">
-		<header id="hello" class="section">
+		<header id="header">
+            <a href="/" class="font-serif logo">md</a>
+		</header>
+
+		<section id="hero" class="section">
 			<div class="section__fullheight container-fluid align-end">
 				<div class="section__content">
+                    <p class="d-block animate-text" data-anim-type="letters">Hi there, I'm</p>
 					<h1>
-						<span class="d-block anim-appear" data-anim-type="letter">Hello there, I am</span>
-						<span class="d-block anim-appear fs-full font-serif" data-anim-type="letter" data-delay="1.5">Martin Denis</span>
-						<!-- <span class="d-block anim-appear" data-anim-type="letter" data-delay="1.25">Frontend developer</span> -->
+						<span class="d-block animate-text fs-full font-serif" data-anim-type="letters" data-delay="1.5">Martin Denis</span>
+						<!-- <span class="d-block animate-text" data-anim-type="letters" data-delay="1.25">Frontend developer</span> -->
 					</h1>
-					<!-- <p class="anim-appear" data-delay="2">I design web interfaces and develop frontend applications using cutting edge technologies</p> -->
-					<!-- <p class="anim-appear" data-delay="5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, ipsam possimus! Totam, ex vitae iusto minus eaque tempore blanditiis? Voluptatem.</p> -->
+					<!-- <p class="animate-text" data-delay="2">I design web interfaces and develop frontend applications using cutting edge technologies</p> -->
+					<!-- <p class="animate-text" data-delay="5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, ipsam possimus! Totam, ex vitae iusto minus eaque tempore blanditiis? Voluptatem.</p> -->
 				</div>
 			</div>
-		</header>
+		</section>
 
 		<section id="presentation_01" class="container-big section__fullheight">
             <div class="section__content text-center">
-                <h2 class="anim-appear">Hi, I'm Martin Denis, a Web Designer and Frontend Developer based in Brussels.</h2>
-                <p class="anim-appear h2" data-delay="0.25">I design web interfaces and develop frontend applications using cutting edge technologies, blah blah blah...</p>
+                <h2 class="animate-text m-0" data-anim-type="lines">I'm a Web Designer and Frontend Developer based in Brussels.</h2>
+                <p class="animate-text h2" data-anim-type="lines">I design web interfaces and develop frontend applications using cutting edge technologies. I craft digital experiences, unique journeys... blah blah blah</p>
             </div>
 		</section>
 
         <section id="presentation_02" class="container-big section__fullheight">
             <div class="section__content text-center">
-                <p class="h2" data-delay="0.25">Nah, I just do what I love, really. The rest matters little.</p>
-                <p class="h2" data-delay="0.25">I craft things that excite me, using tools don't know and learn new stuff with each project.</p>
+                <p class="animate-text h2" data-anim-type="lines">Enough of this! I just do what I love, really. The rest matters little. I create things that excite me. I try to make them, you know, not ugly. And most importantly, have fun along the way.</p>
             </div>
 		</section>
 		<!-- FIN Hello -->
-
-		<!-- <div id="mask"> -->
-			<!-- <div id="mask__overlay"></div> -->
-			<!-- <img id="mask__img" src="static/img/work-mask.svg" alt="mask" width="346" height="90"> -->
-			<!-- <canvas id="mask__canvas" class="fullsize-canvas" width="300" height="200"></canvas> -->
-		<!-- </div> -->
 
 		<section id="projects" class="section__white">
 			<div id="projects__intro__wrapper">
 				<div id="projects__intro">
 					<h2 id="projects__intro__title" class="font-serif">My work</h2>
-					<p class="anim-appear">A selection of recent projects</p>
+					<p class="animate-text">A selection of recent projects</p>
 				</div>
 			</div>
 
 			<article id="project__sandbox" class="project section">
-				<!-- <div class="pin-wrapper"> -->
+				<div class="pin-wrapper">
 					<div class="container-big section__fullheight">
 						<div class="section__content">
-							<h3><a href="sandbox/">Sandbox</a></h3>
-							<p>My personal JavaScript experiments & challenges</p>
+							<h3><a href="/sandbox">Sandbox</a></h3>
+							<p>My personal coding experiments & challenges. This is where I test out new ideas or explore different techniques.</p>
 							<p class="btn-container"><a href="/sandbox" class="btn">Play around</a></p>
 						</div>
 					</div>
 					<canvas id="project__sandbox__canvas" class="fullsize-canvas" width="300" height="200"></canvas>
-				<!-- </div> -->
+				</div>
 			</article>
 
 			<?php /*
@@ -188,7 +185,7 @@
 			*/ ?>
 
 			<article id="project__easy-alarm" class="project section">
-				<!-- <div class="pin-wrapper"> -->
+				<div class="pin-wrapper">
 					<div class="container-big section__fullheight">
 						<div class="section__image">
 							<picture>
@@ -204,11 +201,11 @@
 						</div>
 					</div>
 					<canvas id="project__easy-alarm__canvas" class="fullsize-canvas" width="300" height="200"></canvas>
-				<!-- </div> -->
+				</div>
 			</article>
 
 			<article id="project__artinmov" class="project section">
-				<!-- <div class="pin-wrapper"> -->
+				<div class="pin-wrapper">
 					<div class="container-big section__fullheight">
 						<div class="section__image">
 							<picture>
@@ -219,13 +216,13 @@
 						</div>
 						<div class="section__content">
 							<h3><a href="https://www.art-in-mov.com/fr/" target="_blank">Art in Mov</a></h2>
-							<p>E-shop selling contemporary african art.</p>
+							<p>E-shop selling contemporary African art.</p>
 							<p class="btn-container"><a href="https://www.art-in-mov.com/fr/" rel="noopener" class="btn" target="_blank">See the e-shop</a></p>
 						</div>
 					</div>
 					<canvas id="project__artinmov__canvas" class="fullsize-canvas" width="300" height="200"></canvas>
 					<!-- <img src="static/img/artinmov_frames.svg" id="project__artinmov__frame" alt="Art In Mov background" width="16" height="150"> -->
-				<!-- </div> -->
+				</div>
 			</article>
 
 			<?php /*
@@ -281,7 +278,7 @@
 
 		<section id="contact" class="section">
 			<div class="container-small">
-				<form action="#contact__form" method="post" id="contact__form" class="anim-appear">
+				<form action="#contact__form" method="post" id="contact__form" class="animate-text">
 					<h2>Let's <span class="font-serif heading-emphasis">get in touch</span></h2>
 					<?php
 						if(!$messageSent){
