@@ -1,6 +1,6 @@
 import Lenis from '@studio-freight/lenis'
-import { initTextAnimations } from './animate.js'
-import "@scss/sandbox.scss"
+import { initTextAnimations } from '../animate.js'
+import "@scss/pages/projects.scss"
 
 /**
  * Initialize smooth scroll behaviour with Lenis.

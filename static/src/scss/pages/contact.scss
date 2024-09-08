@@ -1,0 +1,102 @@
+@import "@scss/base/mixins";
+@import "@scss/base/variables";
+
+/*
+/* CONTACT
+/******************/
+
+#contact {
+    background-color: var(--dark-bg);
+    z-index: 30;
+
+    .container-small {
+        padding-top: 3em;
+        padding-bottom: 3em;
+    }
+
+    h3 {
+        font-weight: 800;
+        margin-bottom: 0.62em;
+    }
+}
+
+#contact__form {
+    padding: calc(var(--grid-gap) * 2);
+    width: 100%;
+    max-width: 480px;
+    margin: -5em auto 0;
+    border-radius: 24px;
+    background-color: var(--dark-bg);
+    border: var(--dark-border);
+    box-shadow: 0 12px 17px rgba(43, 44, 45, 0.15);
+
+    .btn {
+        min-width: 62%;
+        margin: 12px 0 0;
+    }
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 8px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+input,
+textarea {
+    margin: 0;
+    width: 100%;
+    height: 48px;
+    padding: 8px 12px;
+    font-size: 17px;
+    font-family: $sans-serif-font-family;
+
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: var(--dark-border);
+    border-radius: 4px;
+    color: var(--dark-highlight);
+    background-color: var(--dark-bg);
+
+    transition: border-color $transition;
+
+    &:active,
+    &:focus,
+    &:hover {
+        border-color: var(--dark-color);
+    }
+
+    &.error {
+        box-shadow: inset 0 0 0 2px #ef3315;
+    }
+}
+
+textarea {
+    height: 80px;
+    min-height: 80px;
+    max-height: 200px;
+    resize: vertical;
+}
+
+.subject {
+    display: none;
+}
+
+.error-text {
+    color: #ef3315;
+    font-weight: 400;
+    font-size: 0.85rem;
+    margin: 8px 0 0;
+}
+
+.success-text {
+    color: #74bb23;
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 8px 0 0;
+}
