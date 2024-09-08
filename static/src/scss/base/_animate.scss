@@ -1,4 +1,4 @@
-.animate-text[data-anim-type="letters"] {
+.animate[data-anim-type="letters"] {
     opacity: 0;
     overflow: hidden;
     display: inline-block;
@@ -14,10 +14,6 @@
         display: inline-block;
     }
 }
-
-// .animate-text[data-anim-type="lines"] {
-//     overflow: hidden;
-// }
 
 .fx-line {
     display: block;

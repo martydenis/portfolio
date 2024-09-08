@@ -78,7 +78,7 @@ const animateLines = (el, delay) => {
             scrollTrigger: {
                 trigger: el,
                 scrub: true,
-                start: "top 80%",
+                start: "top 65%",
                 end: "+=30%"
             },
         },
@@ -95,7 +95,7 @@ const animateLetters = (el, delay) => {
     gsap.fromTo(
         el.querySelectorAll(".fx-letter"),
         {
-            rotateZ: 5,
+            rotateZ: 4,
             xPercent: 2,
             yPercent: 15,
             opacity: 0,
@@ -118,7 +118,7 @@ const animateLetters = (el, delay) => {
 };
 
 export const initTextAnimations = () => {
-    const elements = document.querySelectorAll(".animate-text");
+    const elements = document.querySelectorAll(".animate");
 
     for (let i = 0; i < elements.length; i++) {
         const el = elements[i];

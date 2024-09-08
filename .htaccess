@@ -97,16 +97,20 @@
       Header set Cache-Control "max-age=600, private, must-revalidate"
    </FilesMatch>
 
-   Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-eval' cdnjs.cloudflare.com; img-src * 'self' data: image/svg+xml; style-src 'unsafe-inline' *; font-src *;"
+   Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' cdnjs.cloudflare.com; img-src * 'self' data: image/svg+xml; style-src 'unsafe-inline' *; font-src *;"
 </IfModule>
 # END Cache-Control Headers
 
 #Redirect to playground to sandbox
-RedirectMatch 301 /playground/(.*) /sandbox/$1
+RedirectMatch 301 /playground/(.*) /projects$1
+RedirectMatch 301 /sandbox/(.*) /projects$1
 
 <IfModule mod_rewrite.c>
    RewriteEngine On
-   # Redirect all requests to index.php
+   # Redirect all folder requests to index.php
+   RewriteCond %{REQUEST_FILENAME} -d
+   RewriteRule ^ /index.php [L]
+   # Redirect all 404 requests to index.php
    RewriteCond %{REQUEST_FILENAME} !-f
    RewriteCond %{REQUEST_FILENAME} !-d
    RewriteRule ^(.*)$ index.php [L,QSA]

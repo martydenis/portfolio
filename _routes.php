@@ -3,13 +3,18 @@
 return [
     '/' => [
         'name' => 'index',
-        'meta_title' => 'Martin Denis | Front-end developer & Webdesigner',
+        'meta_title' => 'Front-end developer & Webdesigner in Brussels | Martin Denis',
         'meta_description' => 'Discover my work, projects and JavaScript experiments I worked on as a Webdesigner & Front-end developer',
     ],
-	'/sandbox' => [
-        'name' => 'sandbox',
-        'meta_title' => 'Martin Denis | Js experiments and personal projects',
-        'meta_description' => 'This is my sandbox, the place where I play around and try new stuff',
+    '/contact' => [
+        'name' => 'contact',
+        'meta_title' => 'Contact me | Martin Denis',
+        'meta_description' => 'Feel like getting in touch with me?',
+    ],
+	'/projects' => [
+        'name' => 'projects',
+        'meta_title' => 'My personal & professional projects | Martin Denis',
+        'meta_description' => 'Discover some of my professional projects, websites, e-shops aswell as my most polished coding personal challenges.',
     ],
     '/project/pewpew' => [
         'path' => 'projects/pewpew/',

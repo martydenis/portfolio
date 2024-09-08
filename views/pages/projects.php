@@ -5,10 +5,10 @@
     </head>
 
     <body id="body">
-        <a href="/" id="back">Back</a>
+        <?php include_once PARTIALS_PATH . '_header.php'; ?>
 
         <div class="container-big">
-            <h1>My personal projects</h1>
+            <h1 class="font-serif">My personal and professional projects</h1>
             <p>This is my playground, the place where I play around and try new stuff.</p>
             <p>Here you will find my <strike>latest</strike>, <strike>best</strike>, and most polished JavaScript experiments, as well as my latest personal work.</p>
 

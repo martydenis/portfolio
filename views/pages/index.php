@@ -1,67 +1,74 @@
 <?php require_once PARTIALS_PATH . '_form-validation.php'; ?>
 <?php
-	error_reporting(0);
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo LANG_ISO; ?>">
-	<head>
-		<?php include_once PARTIALS_PATH . '_head.php'; ?>
-	</head>
-	<body id="body">
-		<header id="header">
-            <a href="/" class="font-serif logo">md</a>
-		</header>
 
-		<section id="hero" class="section">
-			<div class="section__fullheight container-fluid align-end">
-				<div class="section__content">
-                    <p class="d-block animate-text" data-anim-type="letters">Hi there, I'm</p>
-					<h1>
-						<span class="d-block animate-text fs-full font-serif" data-anim-type="letters" data-delay="1.5">Martin Denis</span>
-						<!-- <span class="d-block animate-text" data-anim-type="letters" data-delay="1.25">Frontend developer</span> -->
-					</h1>
-					<!-- <p class="animate-text" data-delay="2">I design web interfaces and develop frontend applications using cutting edge technologies</p> -->
-					<!-- <p class="animate-text" data-delay="5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, ipsam possimus! Totam, ex vitae iusto minus eaque tempore blanditiis? Voluptatem.</p> -->
-				</div>
-			</div>
-		</section>
+<head>
+    <?php include_once PARTIALS_PATH . '_head.php'; ?>
+</head>
 
-		<section id="presentation_01" class="container-big section__fullheight">
-            <div class="section__content text-center">
-                <h2 class="animate-text m-0" data-anim-type="lines">I'm a Web Designer and Frontend Developer based in Brussels.</h2>
-                <p class="animate-text h2" data-anim-type="lines">I design web interfaces and develop frontend applications using cutting edge technologies. I craft digital experiences, unique journeys... blah blah blah</p>
+<body id="body">
+    <?php include_once PARTIALS_PATH . '_header.php'; ?>
+
+    <section id="hero" class="section">
+        <div class="section__fullheight container-fluid align-end">
+            <div class="section__content">
+                <p class="d-block animate" data-anim-type="letters">Hi there, I'm</p>
+                <h1>
+                    <span class="d-block animate fs-full font-serif" data-anim-type="letters" data-delay="1">Martin Denis</span>
+                    <!-- <span class="d-block animate" data-anim-type="letters" data-delay="1.25">Frontend developer</span> -->
+                </h1>
+                <!-- <p class="animate" data-delay="2">I design web interfaces and develop frontend applications using cutting edge technologies</p> -->
+                <!-- <p class="animate" data-delay="5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, ipsam possimus! Totam, ex vitae iusto minus eaque tempore blanditiis? Voluptatem.</p> -->
             </div>
-		</section>
+        </div>
+    </section>
 
-        <section id="presentation_02" class="container-big section__fullheight">
-            <div class="section__content text-center">
-                <p class="animate-text h2" data-anim-type="lines">Enough of this! I just do what I love, really. The rest matters little. I create things that excite me. I try to make them, you know, not ugly. And most importantly, have fun along the way.</p>
+    <section id="presentation_01" class="container-big section__fullheight">
+        <div class="section__content text-center">
+            <h2 class="animate m-0" data-anim-type="lines">I'm a Web Designer and Frontend Developer based in Brussels.</h2>
+            <p class="animate h2" data-anim-type="lines">I design web interfaces and develop frontend applications using cutting edge technologies. I craft digital experiences, unique journeys... blah blah blah</p>
+        </div>
+    </section>
+
+    <section id="presentation_02" class="container-big section__fullheight">
+        <div class="section__content text-center">
+            <p class="animate h2" data-anim-type="lines">Enough of this! I just do what I love, really. The rest matters little. I create things that excite me. I try to make them, you know, not ugly. And most importantly, have fun doing it.</p>
+        </div>
+    </section>
+    <!-- FIN Hello -->
+
+    <section id="projects" class="section__white">
+        <div id="projects__intro__wrapper">
+            <div id="projects__intro">
+                <h2 id="projects__intro__title" class="font-serif">My work</h2>
+                <p class="animate">A selection of recent projects</p>
             </div>
-		</section>
-		<!-- FIN Hello -->
+        </div>
 
-		<section id="projects" class="section__white">
-			<div id="projects__intro__wrapper">
-				<div id="projects__intro">
-					<h2 id="projects__intro__title" class="font-serif">My work</h2>
-					<p class="animate-text">A selection of recent projects</p>
-				</div>
-			</div>
+        <article id="project__sandbox" class="project section">
+            <div class="pin-wrapper">
+                <div class="container-big section__fullheight">
+                    <div class="section__content">
+                        <h3>Sandbox</h3>
+                        <p>My personal coding experiments & challenges. This is where I test out new ideas or explore different techniques.</p>
+                        <p class="btn-container">
+                            <a href="/projects" class="btn btn-link hover-icon-effect">
+                                Play around
+                                <svg class="icon">
+                                    <use href="/static/img/icons/icons.svg#arrow-right"></use>
+                                </svg>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <canvas id="project__sandbox__canvas" class="fullsize-canvas" width="300" height="200"></canvas>
+            </div>
+        </article>
 
-			<article id="project__sandbox" class="project section">
-				<div class="pin-wrapper">
-					<div class="container-big section__fullheight">
-						<div class="section__content">
-							<h3><a href="/sandbox">Sandbox</a></h3>
-							<p>My personal coding experiments & challenges. This is where I test out new ideas or explore different techniques.</p>
-							<p class="btn-container"><a href="/sandbox" class="btn">Play around</a></p>
-						</div>
-					</div>
-					<canvas id="project__sandbox__canvas" class="fullsize-canvas" width="300" height="200"></canvas>
-				</div>
-			</article>
-
-			<?php /*
+        <?php /*
 			<article id="project__datakillers" class="project section">
 				<div class="pin-wrapper">
 					<div class="container-big section__fullheight">
@@ -184,48 +191,53 @@
 			</article>
 			*/ ?>
 
-			<article id="project__easy-alarm" class="project section">
-				<div class="pin-wrapper">
-					<div class="container-big section__fullheight">
-						<div class="section__image">
-							<picture>
-								<source srcset="static/img/easy-alarm.webp" type="image/webp">
-								<source srcset="static/img/easy-alarm.png" type="image/png"> 
-								<img src="static/img/easy-alarm.png" alt="Easy Alarm" class="project__laptop" width="840" height="490" >
-							</picture>
-						</div>
-						<div class="section__content">
-							<h3>Easy-Alarm</h3>
-							<p>E-shop selling domestic safety systems.</p>
-							<p class="btn-container"><a href="https://www.easy-alarm.be/" rel="noopener" class="btn" target="_blank">See the e-shop</a></p>
-						</div>
-					</div>
-					<canvas id="project__easy-alarm__canvas" class="fullsize-canvas" width="300" height="200"></canvas>
-				</div>
-			</article>
+        <article id="project__easy-alarm" class="project section">
+            <div class="pin-wrapper">
+                <div class="container-big section__fullheight">
+                    <div class="section__image">
+                        <img src="static/img/easy-alarm.webp" alt="Easy Alarm" class="project__laptop" width="840" height="490">
+                    </div>
+                    <div class="section__content">
+                        <h3>Easy-Alarm</h3>
+                        <p>E-shop selling domestic safety systems.</p>
+                        <p class="btn-container">
+                            <a href="https://www.easy-alarm.be/" rel="noopener" class="btn btn-link hover-icon-effect" target="_blank">
+                                See the e-shop
+                                <svg class="icon">
+                                    <use href="/static/img/icons/icons.svg#arrow-right"></use>
+                                </svg>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <canvas id="project__easy-alarm__canvas" class="fullsize-canvas" width="300" height="200"></canvas>
+            </div>
+        </article>
 
-			<article id="project__artinmov" class="project section">
-				<div class="pin-wrapper">
-					<div class="container-big section__fullheight">
-						<div class="section__image">
-							<picture>
-								<source srcset="static/img/artinmov.webp" type="image/webp">
-								<source srcset="static/img/artinmov.png" type="image/png"> 
-								<img src="static/img/artinmov.png" alt="Art In Mov" class="project__laptop" width="840" height="490" >
-							</picture>
-						</div>
-						<div class="section__content">
-							<h3><a href="https://www.art-in-mov.com/fr/" target="_blank">Art in Mov</a></h2>
-							<p>E-shop selling contemporary African art.</p>
-							<p class="btn-container"><a href="https://www.art-in-mov.com/fr/" rel="noopener" class="btn" target="_blank">See the e-shop</a></p>
-						</div>
-					</div>
-					<canvas id="project__artinmov__canvas" class="fullsize-canvas" width="300" height="200"></canvas>
-					<!-- <img src="static/img/artinmov_frames.svg" id="project__artinmov__frame" alt="Art In Mov background" width="16" height="150"> -->
-				</div>
-			</article>
+        <article id="project__artinmov" class="project section">
+            <div class="pin-wrapper">
+                <div class="container-big section__fullheight">
+                    <div class="section__image">
+                        <img src="static/img/artinmov.webp" alt="Art In Mov" class="project__laptop" width="840" height="490">
+                    </div>
+                    <div class="section__content">
+                        <h3><a href="https://www.art-in-mov.com/fr/" target="_blank">Art in Mov</a></h2>
+                            <p>E-shop selling contemporary African art.</p>
+                            <p class="btn-container">
+                                <a href="https://www.art-in-mov.com/fr/" rel="noopener" class="btn btn-link hover-icon-effect" target="_blank">
+                                    See the e-shop
+                                    <svg class="icon">
+                                        <use href="/static/img/icons/icons.svg#arrow-right"></use>
+                                    </svg>
+                                </a>
+                            </p>
+                    </div>
+                </div>
+                <canvas id="project__artinmov__canvas" class="fullsize-canvas" width="300" height="200"></canvas>
+            </div>
+        </article>
 
-			<?php /*
+        <?php /*
 			<article id="project__hexkingdom" class="project section">
 				<div class="pin-wrapper">
 					<div class="container-big section__fullheight">
@@ -273,63 +285,10 @@
 				</div>
 			</article>
 			*/ ?>
-		</section>
-		<!-- FIN PROJECTS -->
+    </section>
+    <!-- FIN PROJECTS -->
 
-		<section id="contact" class="section">
-			<div class="container-small">
-				<form action="#contact__form" method="post" id="contact__form" class="animate-text">
-					<h2>Let's <span class="font-serif heading-emphasis">get in touch</span></h2>
-					<?php
-						if(!$messageSent){
-					?>
+    <?php include PARTIALS_PATH . '_footer.php' ?>
+</body>
 
-						<?php
-							if($_POST && $errors['time']){
-								echo '<p class="error-text">'.$errors['time'].'</p>';
-							}
-						?>
-
-						<label for="name">Your name</label>
-						<input type="hidden" name="timestamp" value="<?php echo time() ?>">
-						<input type="text" id="name" required value="<?php echo ($name!='') ? $name: '' ?>"<?php if($_POST && $errors['name']) echo ' class="error"' ?> name="name">
-						<?php
-							if($_POST && $errors['name']){
-								echo '<p class="error-text">'.$errors['name'].'</p>';
-							}
-						?>
-
-						<label for="email">Your email</label>
-						<input type="email" id="email" required value="<?php echo ($email!='') ? $email: '' ?>"<?php if($_POST && $errors['email']) echo ' class="error"' ?> name="email">
-						<?php
-							if($_POST && $errors['email']){
-								echo '<p class="error-text">'.$errors['email'].'</p>';
-							}
-						?>
-
-						<label for="subject" class="subject">What is it about ?</label>
-						<input type="text" id="subject" value='' name="subject" class="subject">
-
-						<label for="message">What would you like to tell me ?</label>
-						<textarea id="message"<?php if($_POST && $errors['message']) echo ' class="error"' ?>name="message" required ><?php echo ($_POST['message']!='') ? $_POST['message']: '' ?></textarea>
-						<?php
-							if($_POST && $errors['message']){
-								echo '<p class="error-text">'.$errors['message'].'</p>';
-							}
-						?>
-
-						<button type="submit" class="btn">Send your message</button>
-					<?php
-						}
-						else {
-							echo '<p class="success-text">Thanks for your message, I\'ll soon reply to you.</p>';
-						}
-					?>
-				</form>
-			</div>
-		</section>
-		<!-- FIN CONTACT -->
-
-		<?php include PARTIALS_PATH . '_footer.php' ?>
-	</body>
 </html>
