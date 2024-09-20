@@ -14,8 +14,25 @@
     margin-top: 0 !important;
 }
 
+.mt-section {
+    margin-top: 40svh !important;
+}
+
 .mb-0 {
     margin-bottom: 0 !important;
+}
+
+.pt-section {
+    padding-top: 20svh !important;
+}
+
+.py-section {
+    padding-top: 20svh !important;
+    padding-bottom: 20svh !important;
+}
+
+.bottom-0 {
+    bottom: 0 !important;
 }
 
 .d-block {
@@ -38,6 +55,10 @@
     justify-content: center !important;
 }
 
+.justify-between {
+    justify-content: space-between !important;
+}
+
 .justify-end {
     justify-content: flex-end !important;
 }
@@ -58,10 +79,45 @@
     text-align: center !important;
 }
 
-.font-serif {
+.fw-light {
+    font-weight: 300 !important;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+.heading-font {
+    font-family: $headings-font-family !important;
+}
+
+.ff-serif {
     font-family: $serif-font-family !important;
+    font-weight: 400 !important;
+    line-height: 0.92 !important;
+}
+
+.lh-serif {
+    line-height: 0.75 !important;
 }
 
 .fs-huge {
-    font-size: 10vw !important;
+    font-size: 10.8vw !important;
+}
+
+.text-primary {
+    color: $primary-color !important;
+}
+
+.row {
+    display: flex;
+    gap: var(--grid-gap);
+}
+
+[class^=col] {
+    flex: 1 1 33.33334%;
+}
+
+[class^=col-2] {
+    flex-basis: 66.66667%;
 }

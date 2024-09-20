@@ -3,13 +3,19 @@ $font-size-h2: unquote("min(2.3rem, 10vw)");
 $font-size-h3: 1.8rem;
 
 $serif-font-family: "Nevrada Neue", serif;
-$sans-serif-font-family: "Geist", Arial, sans-serif;
-$sans-serif-letter-spacing: 0.01em;
+$headings-font-family: "Telegraf", "Space Grotesk", sans-serif;
+$headings-font-weight: 400;
+$body-font-family: "Telegraf", "Space Grotesk", sans-serif;
+$body-font-weight: 400;
+$sans-serif-letter-spacing: 0;
 $serif-letter-spacing: 0;
 
 $easing: cubic-bezier(.23,.05,.34,1);
-$transition: 0.30s $easing;
+$transition: 0.40s $easing;
+$primary-color: #1281ff;
 $dark: #111620;
+$error-color: #f55940;
+$success-color: #95d84a;
 
 $header-padding-y: 0.4rem;
 $header-font-size: 0.875rem;

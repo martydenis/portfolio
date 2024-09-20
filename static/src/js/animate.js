@@ -73,13 +73,14 @@ const animateLines = (el, delay) => {
             yPercent: 0,
             opacity: 1,
             delay: delay,
-            duration: 1,
+            duration: 1.4,
             stagger: 0.1,
             scrollTrigger: {
                 trigger: el,
-                scrub: true,
+                // scrub: true,
+                once: true,
                 start: "top 65%",
-                end: "+=30%"
+                // end: "+=30%"
             },
         },
     );
@@ -97,7 +98,7 @@ const animateLetters = (el, delay) => {
         {
             rotateZ: 4,
             xPercent: 2,
-            yPercent: 15,
+            yPercent: 30,
             opacity: 0,
         },
         {
@@ -107,7 +108,7 @@ const animateLetters = (el, delay) => {
             opacity: 1,
             delay: delay,
             duration: 1.4,
-            stagger: 0.05,
+            stagger: 0.07,
             scrollTrigger: {
                 trigger: el,
                 once: true,
@@ -122,7 +123,7 @@ export const initTextAnimations = () => {
 
     for (let i = 0; i < elements.length; i++) {
         const el = elements[i];
-        const delay = parseFloat(el.dataset.delay) || 0;
+        const delay = parseFloat(el.dataset.animDelay) || 0;
         const animationType = el.dataset.animType || "fade";
 
         switch (animationType) {

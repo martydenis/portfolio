@@ -5,12 +5,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 /**
  * Initialize smooth scroll behaviour with Lenis.
  */
-export const initSmoothScroll = () => {
-    const lenis = new Lenis({
+
+let lenis;
+
+const initSmoothScroll = () => {
+    lenis = new Lenis({
         lerp: 0.05,
         duration: 1.5,
         smoothTouch: true,
-    })
+    });
 
     lenis.on('scroll', ScrollTrigger.update)
 
@@ -18,3 +21,7 @@ export const initSmoothScroll = () => {
         lenis.raf(time * 1000)
     })
 }
+
+initSmoothScroll();
+
+export default lenis

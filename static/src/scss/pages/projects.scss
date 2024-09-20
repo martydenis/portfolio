@@ -1,17 +1,7 @@
 @import "@scss/base/mixins";
 @import "@scss/base/variables";
 
-#body {
-    padding-top: 6em;
-}
-
-h1 {
-    overflow: hidden;
-    position: relative;
-    padding-bottom: 0.15em;
-}
-
-#projects {
+#projects-list {
     --gap: var(--grid-gap);
 
     @media screen and (min-width: 1200px) {
@@ -107,14 +97,15 @@ h1 {
     --accent-color: #d5bc3f;
 }
 
+.tag-odoo {
+    --accent-color: #885d7d;
+}
+
 .project-thumb-container {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    overflow: hidden;
 
     img {
-        border-radius: 10px;
         transition: all 4s ease;
     }
 }

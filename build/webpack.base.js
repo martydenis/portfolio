@@ -3,14 +3,14 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: {
+        // Comomn assets
+        'global': './static/src/js/global.js',
+
         // Page specific assets
         'index': './static/src/js/pages/index.js',
         'projects': './static/src/js/pages/projects.js',
         'contact':  './static/src/js/pages/contact.js',
         '404': './static/src/scss/pages/404.scss',
-
-        // Comomn assets
-        'global': './static/src/scss/global.scss',
     },
     output: {
         filename: '[name].bundle.js',
@@ -58,20 +58,6 @@ module.exports = {
                 type: 'asset/resource',
             },
         ],
-    },
-    optimization: {
-        // Extract shared modules (like jQuery, lodash, etc.) into a separate chunk
-        splitChunks: {
-            chunks: 'all',
-            cacheGroups: {
-                common: {
-                    name: 'common',
-                    minChunks: 2,  // Split out any modules used in at least 2 entry points
-                    chunks: 'all',
-                    reuseExistingChunk: true,
-                },
-            },
-        },
     },
     plugins: [
         new MiniCssExtractPlugin({

@@ -19,10 +19,10 @@ body {
     background: var(--dark-bg);
 
     color: var(--dark-color);
-    font-family: $sans-serif-font-family;
+    font-family: $body-font-family;
     letter-spacing: $sans-serif-letter-spacing;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: $body-font-weight;
     line-height: 1.5;
 }
 
@@ -52,6 +52,7 @@ body {
     padding: 0.25rem 0.75rem;
     color: transparent !important;
     font-size: 2rem;
+    font-weight: 700;
     line-height: 1;
     background: var(--dark-highlight);
     background-image: linear-gradient(90deg, var(--dark-color) 50%, var(--dark-highlight) 50.01%);
@@ -120,7 +121,7 @@ body {
     -webkit-appearance: none;
     appearance: none;
 
-    // font-family: $serif-font-family;
+    // font-family: $headings-font-family;
     cursor: pointer;
     color: var(--btn-color);
     background-color: var(--btn-bg);
@@ -208,6 +209,33 @@ hr {
     border: none;
 }
 
+.section {
+    position: relative;
+
+    &__fullheight {
+        padding-top: 4svh;
+        padding-bottom: 4svh;
+        min-height: 100svh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__block {
+        padding-bottom: 2em;
+    }
+
+    &__white {
+        color: #7f7f7f;
+        position: relative;
+    }
+
+    &__pause {
+        margin-bottom: 100svh;
+    }
+}
+
 /*
 /* footer
 /******************/
@@ -243,7 +271,7 @@ hr {
 }
 
 #footer__content {
-    padding: $header-padding-y 0;
+    margin: $header-padding-y 0;
     gap: var(--grid-gap);
     flex-wrap: wrap;
     justify-content: space-between;
@@ -253,6 +281,12 @@ hr {
 
 #footer__socials {
     font-size: 1.25rem;
+}
+
+.absolute-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .absolute-center {
@@ -289,7 +323,8 @@ hr {
 
 h1, .h1, h2, .h2, h3, .h3 {
     color: var(--dark-highlight);
-    font-weight: 200;
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
     line-height: 1.25;
 
     .heading-emphasis {

@@ -45,6 +45,6 @@ const validateContactForm = () => {
     });
 }
 
-window.on('load', function() {
+window.addEventListener('load', function() {
     validateContactForm();
 })

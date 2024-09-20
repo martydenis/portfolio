@@ -1,23 +1,12 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { initSmoothScroll } from "../lenis.js";
-import { initTextAnimations } from "../animate.js";
 import { throttle, dpi, randomIntFromRange, randomValueFromArray } from '../tools.js'
 import "@scss/pages/index.scss";
-
-initSmoothScroll();
 
 /**
  * Initialize ScrollTrigger with gsap
  */
 gsap.registerPlugin(ScrollTrigger);
-
-/**
- * Initialize text appear animations
- */
-window.addEventListener("load", function () {
-    initTextAnimations();
-});
 
 class Project {
     constructor() {
