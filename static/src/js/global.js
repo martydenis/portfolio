@@ -1,6 +1,8 @@
 import lenis from "./lenis.js";
+import { gsap } from "gsap";
 import { initTextAnimations } from "./animate.js";
 import "@scss/global.scss";
+
 
 /**
  * Initialize text appear animations
@@ -18,4 +20,3 @@ for (const link of $anchorLinks) {
         lenis.scrollTo("#top");
     })
 }
-

@@ -7,7 +7,7 @@
                 ?>
 
                     <p class="flex-grow d-flex flex-column justify-center align-center">
-                        <a class="footer_contact_link ff-serif h1 fs-huge text-hover-effect animate mb-0" href="/contact" data-anim-type="letters">Let's get in touch</a>
+                        <a class="footer_contact_link ff-serif h1 fs-huge lh-animate text-hover-effect animate mb-0" href="/contact" data-anim-type="letters">Let's get in touch</a>
                         <a class="mb-0 btn btn-link hover-icon-effect" href="/contact">
                             Contact me
                             <svg class="icon">

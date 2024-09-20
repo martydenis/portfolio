@@ -4,7 +4,6 @@
 
 <section id="contact" class="section section__fullheight py-section container-small">
     <h1 class="fs-huge animate ff-serif lh-serif" data-anim-type="letters">Contact me</h1>
-    <p class="w-50"></p>
 
     <form action="#contact__form" method="post" id="contact__form">
         <?php

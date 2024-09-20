@@ -3,8 +3,8 @@
 <section id="hero" class="section">
     <div class="section__fullheight container-fluid justify-end">
         <div class="section__content">
-            <p class="d-block animate" data-anim-type="lines" data-anim-delay="1">Hi there, I'm</p>
-            <h1 class="d-block animate fs-full ff-serif lh-serif" data-anim-type="letters" data-anim-delay="1">Martin Denis</h1>
+            <p class="d-block animate" data-anim-type="lines">Hi there, I'm</p>
+            <h1 class="d-block animate fs-full ff-serif lh-serif" data-anim-type="letters" data-anim-delay="0.5">Martin Denis</h1>
         </div>
     </div>
 </section>
@@ -13,12 +13,12 @@
     <div class="section__content">
         <div class="row justify-content-between">
             <div class="col-2">
-                <h2 class="animate m-0 h3" data-anim-type="lines">I'm a Web Designer and Frontend Developer based in Brussels.</h2>
-                <p class="animate h3" data-anim-type="lines" data-anim-delay="0.5">I design web interfaces and build frontend applications, most of the time using modern technologies. My focus is on creating digital experiences that are both engaging and intuitive.</p>
+                <h2 class="animate m-0 h3 fw-light" data-anim-type="lines">I'm a Web Designer and Frontend Developer based in Brussels.</h2>
+                <p class="animate h3 fw-light" data-anim-type="lines" data-anim-delay="0.5">I design web interfaces and build frontend applications, most of the time using modern technologies. My focus is on creating digital experiences that are both engaging and intuitive.</p>
             </div>
             <div class="col"></div>
             <div class="col-2 mt-section">
-                <p class="animate h3" data-anim-type="lines" data-anim-delay="1">At the end of the day, I just do what I love, really. I aim to build things that inspire me and, hopefully, bring a little bit of joy to others. The goal? Keep it interesting, keep it fun—and make sure it looks, you know, not ugly.</p>
+                <p class="animate h3 fw-light" data-anim-type="lines">At the end of the day, I just do what I love, really. I aim to build things that inspire me and, hopefully, bring a little bit of joy to others. The goal? Keep it interesting, keep it fun—and make sure it looks, you know, not ugly.</p>
             </div>
         </div>
     </div>

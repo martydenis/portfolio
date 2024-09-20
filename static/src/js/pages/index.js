@@ -3,10 +3,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { throttle, dpi, randomIntFromRange, randomValueFromArray } from '../tools.js'
 import "@scss/pages/index.scss";
 
+gsap.registerPlugin(ScrollTrigger);
+
 /**
  * Initialize ScrollTrigger with gsap
  */
-gsap.registerPlugin(ScrollTrigger);
 
 class Project {
     constructor() {

@@ -1,5 +1,8 @@
-.animate[data-anim-type="letters"] {
+.animate {
     opacity: 0;
+}
+
+.animate[data-anim-type="letters"] {
     overflow: hidden;
     display: inline-block;
     vertical-align: middle;

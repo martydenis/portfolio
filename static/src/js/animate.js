@@ -62,6 +62,7 @@ const animateLines = (el, delay) => {
     const lines = wrapLines(el);
 
     el.innerHTML = lines;
+    el.style.opacity = 1;
 
     gsap.fromTo(
         el.querySelectorAll('.fx-line-inner'),
@@ -107,8 +108,8 @@ const animateLetters = (el, delay) => {
             yPercent: 0,
             opacity: 1,
             delay: delay,
-            duration: 1.4,
-            stagger: 0.07,
+            duration: 1.2,
+            stagger: 0.05,
             scrollTrigger: {
                 trigger: el,
                 once: true,

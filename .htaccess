@@ -113,5 +113,5 @@ RedirectMatch 301 /sandbox/(.*) /projects$1
    # Redirect all 404 requests to index.php
    RewriteCond %{REQUEST_FILENAME} !-f
    RewriteCond %{REQUEST_FILENAME} !-d
-   RewriteRule ^(.*)$ index.php [L,QSA]
+   RewriteRule ^ /index.php [L]
 </IfModule>
