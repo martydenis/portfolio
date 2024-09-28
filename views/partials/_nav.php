@@ -1,4 +1,4 @@
-<nav class="nav absolute-center">
+<nav class="nav">
     <ul class="navbar">
         <li><a href="/" class="nav-link<?php echo $route['name'] === 'index' ? ' active' : '' ?>">Home</a></li>
         <li><a href="/projects" class="nav-link<?php echo $route['name'] === 'projects' ? ' active' : '' ?>">Work</a></li>

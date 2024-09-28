@@ -1,6 +1,10 @@
 @import "@scss/base/mixins";
 @import "@scss/base/variables";
 
+#top {
+    padding-top: 0;
+}
+
 /*
 /* hero
 /******************/
@@ -14,18 +18,21 @@
         color: var(--dark-color);
         margin: 0.05em 0 0;
         line-height: 0.7;
-        font-size: 18.8vw;
-        white-space: nowrap;
+        font-size: calc((100vw - var(--container-padding) * 2) * 0.29);
         color: var(--dark-highlight);
 
         .fs-bigger {
             font-size: 1.33em;
             margin-top: 0.2em;
         }
+
+        @media (min-width: $sm) {
+            font-size: calc((100vw - var(--container-padding) * 2) * 0.151);
+            white-space: nowrap;
+        }
     }
 
     p {
-        // font-weight: 300;
         font-size: 1.5em;
     }
 }
@@ -53,14 +60,14 @@
         color: var(--dark-color);
 
         h2 {
-            --shadow-offset: 3.7em;
+            --shadow-offset: 4.7em;
 
             font-family: $headings-font-family;
             margin-bottom: 0;
             white-space: nowrap;
 
             font-size: min(16vw, 50svh);
-            line-height: 1;
+            line-height: 1.25;
             text-indent: 1em;
             color: var(--dark-color);
             text-shadow: calc(var(--shadow-offset) * -2) 0 var(--dark-color),
@@ -109,8 +116,7 @@
     }
 
     h3 {
-        font-size: 4em;
-        // line-height: 1.1;
+        font-size: 3.5em;
         margin-bottom: 0.2em;
         color: white;
 
@@ -194,9 +200,7 @@
 
     .btn {
         --btn-color: #14303b;
-        --btn-border-color: var(--btn-color);
-        --btn-bg-hover: #14303b;
-        --btn-color-hover: #ffffff;
+        --btn-color-hover: #0c232c;
     }
 
     .section__fullheight {

@@ -6,7 +6,7 @@
 
     <body id="body">
         <header id="header">
-            <div class="container-fluid d-flex">
+            <div class="container-fluid d-flex justify-between align-baseline">
                 <?php include PARTIALS_PATH . "_logo.php" ?>
 
                 <?php include PARTIALS_PATH . "_nav.php" ?>

@@ -21,9 +21,13 @@ body {
     color: var(--dark-color);
     font-family: $body-font-family;
     letter-spacing: $sans-serif-letter-spacing;
-    font-size: 18px;
     font-weight: $body-font-weight;
+    font-size: 15px;
     line-height: 1.5;
+
+    @media (min-width: $sm) {
+        font-size: 18px;
+    }
 }
 
 body {
@@ -47,6 +51,36 @@ body {
     margin-left: -0.75rem;
 }
 
+.nav {
+    display: flex;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.nav-link {
+    display: block;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+
+    &.active {
+        color: var(--dark-highlight);
+    }
+}
+
+@media (min-width: $sm) {
+    .nav {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
 .logo {
     display: block;
     padding: 0.25rem 0.75rem;
@@ -64,6 +98,10 @@ body {
     &:hover {
         background-position: -100%;
     }
+}
+
+#top {
+    padding-top: 0.65rem * 2 + 2rem;
 }
 
 .container-fluid,
@@ -96,12 +134,9 @@ body {
 }
 
 .btn {
-    --btn-color: var(--dark-highlight);
-    --btn-bg: var(--primary-color);
-    --btn-border-color: transparent;
-    --btn-color-hover: var(--dark-bg);
-    --btn-bg-hover: var(--dark-highlight);
-    --btn-border-color-hover: var(--btn-border-color);
+    --btn-color: var(--dark-color);
+    --btn-color-hover: var(--dark-highlight);
+    --btn-border-width: 1px;
 
     display: inline-flex;
     justify-content: center;
@@ -110,7 +145,9 @@ body {
     margin-top: 0.38rem;
     padding: 0.4em 1.5em;
     line-height: 1.25;
-    border: 1px solid var(--btn-border-color);
+    border: none;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 var(--btn-border-width) var(--btn-color);
     border-radius: 999px;
     font-size: 0.9rem;
     letter-spacing: 0.062em;
@@ -121,23 +158,29 @@ body {
     -webkit-appearance: none;
     appearance: none;
 
-    // font-family: $headings-font-family;
     cursor: pointer;
     color: var(--btn-color);
-    background-color: var(--btn-bg);
 
-    transition: color 0.2s ease-out, background 0.2s ease-out;
+    transition: color $transition, box-shadow $transition;
+
+    &:hover {
+        color: var(--btn-color-hover);
+    }
 
     &:hover,
     &:active,
     &:focus {
-        color: var(--btn-color-hover);
-        background-color: var(--btn-bg-hover);
-        border-color: var(--btn-border-color-hover);
+        --btn-border-width: 3px;
     }
 }
 
+.btn[type='submit'] {
+    margin-top: 2rem;
+}
+
 .btn-link {
+    --btn-color: inherit;
+
     padding-left: 0;
     padding-right: 0;
     border: none;
@@ -147,11 +190,11 @@ body {
 
     &,
     &:hover {
-        color: inherit;
         background: none;
     }
 
     &:hover {
+        --btn-color: var(--dark-highlight);
         box-shadow: inset 0 -4px 0 0 currentColor;
     }
 }
@@ -165,6 +208,7 @@ body {
     justify-content: center;
     align-items: center;
     border: none;
+    position: relative;
     box-shadow: inset 0 0 0 1px var(--dark-muted);
     transition: color $transition, box-shadow $transition;
     overflow: hidden;
@@ -286,10 +330,17 @@ hr {
 #footer__content {
     margin: $header-padding-y 0;
     gap: var(--grid-gap);
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     position: relative;
+}
+
+#footer__content .js-sroll-to {
+    bottom: 150%;
+
+    @media (min-width: $sm) {
+        bottom: 0;
+    }
 }
 
 #footer__socials {
@@ -300,34 +351,6 @@ hr {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
-}
-
-.absolute-center {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.nav {
-    display: flex;
-}
-
-.navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style-type: none;
-}
-
-.nav-link {
-    display: block;
-    font-weight: 700;
-    padding: 0.25rem 0.5rem;
-
-    &.active {
-        color: var(--dark-highlight);
-    }
 }
 
 /*****************************************/
@@ -377,4 +400,8 @@ p {
     &:last-child {
         margin-bottom: 0;
     }
+}
+
+.footer_contact_link {
+    font-size: calc((100vw - var(--container-padding) * 2) * 0.11);
 }

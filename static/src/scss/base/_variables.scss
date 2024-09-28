@@ -2,7 +2,7 @@ $font-size-h1: 4.5rem;
 $font-size-h2: unquote("min(2.3rem, 10vw)");
 $font-size-h3: 1.8rem;
 
-$serif-font-family: "Nevrada Neue", serif;
+$serif-font-family: "Neue Machina", serif;
 $headings-font-family: "Telegraf", "Space Grotesk", sans-serif;
 $headings-font-weight: 400;
 $body-font-family: "Telegraf", "Space Grotesk", sans-serif;
@@ -21,3 +21,5 @@ $header-padding-y: 0.4rem;
 $header-font-size: 0.875rem;
 
 $icon-size: 1.25em;
+
+$sm: 768px;

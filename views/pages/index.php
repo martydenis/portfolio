@@ -4,20 +4,20 @@
     <div class="section__fullheight container-fluid justify-end">
         <div class="section__content">
             <p class="d-block animate" data-anim-type="lines">Hi there, I'm</p>
-            <h1 class="d-block animate fs-full ff-serif lh-serif" data-anim-type="letters" data-anim-delay="0.5">Martin Denis</h1>
+            <h1 class="d-block animate ff-serif lh-serif" data-anim-type="letters" data-anim-delay="0.5">Martin Denis</h1>
         </div>
     </div>
 </section>
 
-<section id="presentation" class="container-big section__fullheight py-section">
+<section id="presentation" class="container-big section__fullheight pt-20 pb-20">
     <div class="section__content">
-        <div class="row justify-content-between">
-            <div class="col-2">
+        <div class="row justify-content-between flex-column flex-row-lg">
+            <div class="col-5">
                 <h2 class="animate m-0 h3 fw-light" data-anim-type="lines">I'm a Web Designer and Frontend Developer based in Brussels.</h2>
                 <p class="animate h3 fw-light" data-anim-type="lines" data-anim-delay="0.5">I design web interfaces and build frontend applications, most of the time using modern technologies. My focus is on creating digital experiences that are both engaging and intuitive.</p>
             </div>
-            <div class="col"></div>
-            <div class="col-2 mt-section">
+            <div class="col d-none d-block-lg"></div>
+            <div class="col-5 mt-40">
                 <p class="animate h3 fw-light" data-anim-type="lines">At the end of the day, I just do what I love, really. I aim to build things that inspire me and, hopefully, bring a little bit of joy to others. The goal? Keep it interesting, keep it fun—and make sure it looks, you know, not ugly.</p>
             </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="pin-wrapper">
             <div class="container-big section__fullheight">
                 <div class="section__content">
-                    <h3>Sandbox</h3>
+                    <h3 class="ff-serif">Sandbox</h3>
                     <p>My personal coding experiments & challenges. This is where I test out new ideas or explore different techniques.</p>
                     <p class="btn-container">
                         <a href="/projects" class="btn btn-link hover-icon-effect">
@@ -59,7 +59,7 @@
                     <img src="static/img/easy-alarm.webp" alt="Easy Alarm" class="project__laptop" width="840" height="490">
                 </div>
                 <div class="section__content">
-                    <h3>Easy-Alarm</h3>
+                    <h3 class="ff-serif">Easy-Alarm</h3>
                     <p>E-shop selling domestic safety systems.</p>
                     <p class="btn-container">
                         <a href="https://www.easy-alarm.be/" rel="noopener" class="btn btn-link hover-icon-effect" target="_blank">
@@ -82,16 +82,16 @@
                     <img src="static/img/artinmov.webp" alt="Art In Mov" class="project__laptop" width="840" height="490">
                 </div>
                 <div class="section__content">
-                    <h3><a href="https://www.art-in-mov.com/fr/" target="_blank">Art in Mov</a></h2>
-                        <p>E-shop selling contemporary African art.</p>
-                        <p class="btn-container">
-                            <a href="https://www.art-in-mov.com/fr/" rel="noopener" class="btn btn-link hover-icon-effect" target="_blank">
-                                See the e-shop
-                                <svg class="icon">
-                                    <use href="/static/img/icons/icons.svg#arrow-right"></use>
-                                </svg>
-                            </a>
-                        </p>
+                    <h3 class="ff-serif">Art in Mov</h2>
+                    <p>E-shop selling contemporary African art.</p>
+                    <p class="btn-container">
+                        <a href="https://www.art-in-mov.com/fr/" rel="noopener" class="btn btn-link hover-icon-effect" target="_blank">
+                            See the e-shop
+                            <svg class="icon">
+                                <use href="/static/img/icons/icons.svg#arrow-right"></use>
+                            </svg>
+                        </a>
+                    </p>
                 </div>
             </div>
             <canvas id="project__artinmov__canvas" class="fullsize-canvas" width="300" height="200"></canvas>
@@ -110,7 +110,7 @@
                         </picture>
                     </div>
                     <div class="section__content">
-                        <h3>HexKingdom</h3>
+                        <h3 class="ff-serif">HexKingdom</h3>
                         <p>Round by round game imagined for multiplayer. Created as part of my end-of-study project.</p>
                         
                         <p class="btn-container">

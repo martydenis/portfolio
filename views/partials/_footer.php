@@ -7,7 +7,7 @@
                 ?>
 
                     <p class="flex-grow d-flex flex-column justify-center align-center">
-                        <a class="footer_contact_link ff-serif h1 fs-huge lh-animate text-hover-effect animate mb-0" href="/contact" data-anim-type="letters">Let's get in touch</a>
+                        <a class="footer_contact_link ff-serif h1 lh-animate text-hover-effect animate mb-0 mx-auto" href="/contact" data-anim-type="letters">Let's get in touch</a>
                         <a class="mb-0 btn btn-link hover-icon-effect" href="/contact">
                             Contact me
                             <svg class="icon">
@@ -21,7 +21,7 @@
                 ?>
 
                 <div id="footer__content" class="d-flex">
-                    <a href="#top" class="js-sroll-to btn-circle absolute-center-x bottom-0">
+                    <a href="#top" class="js-sroll-to btn-circle absolute-center-x">
                         <svg class="icon">
                             <use href="/static/img/icons/icons.svg#arrow-up"></use>
                         </svg>

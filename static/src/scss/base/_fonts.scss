@@ -1,38 +1,38 @@
+// @font-face {
+//     font-family: "Nevrada Neue";
+//     src: url("/static/fonts/nevradaneue/nevradaneue.woff2") format("woff2"),
+//          url("/static/fonts/nevradaneue/nevradaneue.woff") format("woff");
+//     font-weight: normal;
+//     font-style: normal;
+//     font-display: swap;
+// }
+
 @font-face {
-    font-family: "Nevrada Neue";
-    src: url("/static/fonts/nevradaneue/nevradaneue.woff2") format("woff2"),
-         url("/static/fonts/nevradaneue/nevradaneue.woff") format("woff");
-    font-weight: normal;
+    font-family: "Neue Machina";
+    src: url("/static/fonts/neuemachina/ppneuemachina-inktraplight.woff2") format("woff2"),
+         url("/static/fonts/neuemachina/ppneuemachina-inktraplight.woff") format("woff");
+    font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 
-// @font-face {
-//     font-family: "Neue Machina";
-//     src: url("/static/fonts/neuemachina/ppneuemachina-inktraplight.woff2") format("woff2"),
-//          url("/static/fonts/neuemachina/ppneuemachina-inktraplight.woff") format("woff");
-//     font-weight: 300;
-//     font-style: normal;
-//     font-display: swap;
-// }
+@font-face {
+    font-family: "Neue Machina";
+    src: url("/static/fonts/neuemachina/ppneuemachina-inktrapregular.woff2") format("woff2"),
+         url("/static/fonts/neuemachina/ppneuemachina-inktrapregular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 
-// @font-face {
-//     font-family: "Neue Machina";
-//     src: url("/static/fonts/neuemachina/ppneuemachina-inktrapregular.woff2") format("woff2"),
-//          url("/static/fonts/neuemachina/ppneuemachina-inktrapregular.woff") format("woff");
-//     font-weight: 400;
-//     font-style: normal;
-//     font-display: swap;
-// }
-
-// @font-face {
-//     font-family: "Neue Machina";
-//     src: url("/static/fonts/neuemachina/ppneuemachina-inktrapultrabold.woff2") format("woff2"),
-//          url("/static/fonts/neuemachina/ppneuemachina-inktrapultrabold.woff") format("woff");
-//     font-weight: 700;
-//     font-style: normal;
-//     font-display: swap;
-// }
+@font-face {
+    font-family: "Neue Machina";
+    src: url("/static/fonts/neuemachina/ppneuemachina-inktrapultrabold.woff2") format("woff2"),
+         url("/static/fonts/neuemachina/ppneuemachina-inktrapultrabold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
 
 // @font-face {
 //     font-family: "Trap";
