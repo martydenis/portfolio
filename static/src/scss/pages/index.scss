@@ -70,11 +70,11 @@
             line-height: 1.25;
             text-indent: 1em;
             color: var(--dark-color);
-            text-shadow: calc(var(--shadow-offset) * -2) 0 var(--dark-color),
-                calc(var(--shadow-offset) * -1) 0 var(--dark-color),
-                calc(var(--shadow-offset) * 1) 0 var(--dark-color),
-                calc(var(--shadow-offset) * 2) 0 var(--dark-color),
-                calc(var(--shadow-offset) * 3) 0 var(--dark-color);
+            text-shadow: calc(var(--shadow-offset) * -2) 0 currentColor,
+                calc(var(--shadow-offset) * -1) 0 currentColor,
+                calc(var(--shadow-offset) * 1) 0 currentColor,
+                calc(var(--shadow-offset) * 2) 0 currentColor,
+                calc(var(--shadow-offset) * 3) 0 currentColor;
 
             &:after {
                 content: ". ";

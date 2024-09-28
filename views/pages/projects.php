@@ -2,14 +2,14 @@
 
 <section id="projects" class="section section__fullheight pt-20 container-big">
     <div class="row flex-column flex-row-lg">
-        <h1 class="col-7 ff-serif fw-light text-body lh-animate">
+        <h1 class="col-7 ff-serif text-body lh-animate">
             <span class="animate d-block" data-anim-type="lines">Personal &</span>
             <span class="animate d-block mt-n1" data-anim-type="lines" data-anim-delay="0.25">professional</span>
             <span class="animate d-block text-highlight mt-n1 fw-normal" data-anim-type="lines" data-anim-delay="0.5">projects</span>
         </h1>
         <div class="col mt-30">
-            <p class="h3 fw-light animate" data-anim-type="lines" data-anim-delay="0.5">This is my playground, the place where I play around and try new stuff.</p>
-            <p class="h3 fw-light animate" data-anim-type="lines" data-anim-delay="0.75">Here you will find my <strike>latest</strike>, <strike>best</strike>, and most polished JavaScript experiments, as well as my latest personal work.</p>
+            <p class="h3 text-body animate" data-anim-type="lines" data-anim-delay="0.5">This is my playground, the place where I play around and try new stuff.</p>
+            <p class="h3 text-body animate" data-anim-type="lines" data-anim-delay="0.75">Here you will find my <strike>latest</strike>, <strike>best</strike>, and most polished JavaScript experiments, as well as my latest personal work.</p>
         </div>
     </div>
 
