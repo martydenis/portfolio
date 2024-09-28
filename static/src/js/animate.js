@@ -80,8 +80,7 @@ const animateLines = (el, delay) => {
                 trigger: el,
                 // scrub: true,
                 once: true,
-                start: "top 65%",
-                // end: "+=30%"
+                start: "top 80%",
             },
         },
     );

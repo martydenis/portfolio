@@ -1,5 +1,4 @@
 import lenis from "./lenis.js";
-import { gsap } from "gsap";
 import { initTextAnimations } from "./animate.js";
 import "@scss/global.scss";
 
