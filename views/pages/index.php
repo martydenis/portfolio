@@ -18,7 +18,7 @@
             </div>
             <div class="col d-none d-block-lg"></div>
             <div class="col-5 mt-40">
-                <p class="animate h3" data-anim-type="lines">At the end of the day, I just do what I love, really. I aim to build things that inspire me and, hopefully, bring a little bit of joy to others. The goal? Keep it interesting, keep it fun—and make sure it looks, you know, not ugly.</p>
+                <p class="animate h3" data-anim-type="lines">At the end of the day, I just do what I love, really. I aim to build things that inspire me and, hopefully, bring a little bit of joy to others. The goal? Keep it interesting, keep it fun and make sure it looks, you know, not ugly.</p>
             </div>
         </div>
     </div>

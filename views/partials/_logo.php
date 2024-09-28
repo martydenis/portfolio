@@ -1,1 +1,1 @@
-<a href="/" class="ff-serif logo">md</a>
+<a href="/" class="ff-serif fw-light logo">md</a>
