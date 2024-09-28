@@ -103,6 +103,10 @@
     font-weight: 300 !important;
 }
 
+.fw-normal {
+    font-weight: 400 !important;
+}
+
 .fw-bold {
     font-weight: 700 !important;
 }
@@ -113,7 +117,6 @@
 
 .ff-serif {
     font-family: $serif-font-family !important;
-    font-weight: 400 !important;
 }
 
 .lh-animate {
@@ -126,6 +129,14 @@
 
 .text-primary {
     color: $primary-color !important;
+}
+
+.text-body {
+    color: var(--dark-color) !important;
+}
+
+.text-highlight {
+    color: var(--dark-highlight) !important;
 }
 
 .row {
