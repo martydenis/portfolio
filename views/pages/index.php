@@ -65,7 +65,7 @@
                         <a href="https://www.easy-alarm.be/" rel="noopener" class="btn btn-link hover-icon-effect" target="_blank">
                             See the e-shop
                             <svg class="icon">
-                                <use href="/static/img/icons/icons.svg#arrow-right"></use>
+                                <use href="/static/img/icons/icons.svg#arrow-up-right"></use>
                             </svg>
                         </a>
                     </p>
@@ -88,7 +88,7 @@
                         <a href="https://www.art-in-mov.com/fr/" rel="noopener" class="btn btn-link hover-icon-effect" target="_blank">
                             See the e-shop
                             <svg class="icon">
-                                <use href="/static/img/icons/icons.svg#arrow-right"></use>
+                                <use href="/static/img/icons/icons.svg#arrow-up-right"></use>
                             </svg>
                         </a>
                     </p>

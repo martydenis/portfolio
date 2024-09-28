@@ -4,6 +4,10 @@
         <path d="M1 12H22M22 12C17.7781 10.7347 16.1327 9.12241 14.6667 5M22 12C17.6867 13.3925 16.3342 15.1594 14.6667 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
     </symbol>
 
+    <symbol id="arrow-up-right" viewBox="0 0 24 24">
+        <path d="M4.94975 19.9497L19.799 5.10051M19.799 5.10051C15.919 7.19114 13.6154 7.21455 9.66382 5.33618M19.799 5.10051C17.7337 9.13512 18.0267 11.3409 19.5633 15.2357" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
     <symbol id="arrow-up" viewBox="0 0 24 24">
         <path d="M12 22.5L12 1.5M12 1.5C10.7347 5.72194 9.12241 7.36729 5 8.83333M12 1.5C13.3925 5.81328 15.1594 7.16576 19 8.83333" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
     </symbol>
