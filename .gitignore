@@ -2,3 +2,4 @@ sandbox/*/
 dist/
 node_modules/
 .htaccess
+robots.txt

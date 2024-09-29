@@ -19,7 +19,7 @@
                 <article>
                     <a href="//wishy.martindenis.be" target="_blank">
                         <div class="project-thumb-container">
-                            <img src="./static/img/projects/wishy.webp" alt="Wishy" width="588" height="420">
+                            <img src="./static/img/projects/wishy.webp" alt="Wishy" loading="lazy" width="588" height="420">
                         </div>
                         <h3 class="ff-serif">Wishy</h3>
                         <p>Wishlist web application created for self-training purposes</p>
@@ -35,7 +35,7 @@
                 <article>
                     <a href="/project/pewpew">
                         <div class="project-thumb-container">
-                            <img src="./static/img/projects/pewpew.png" alt="Pew Pew" width="588" height="420">
+                            <img src="./static/img/projects/pewpew.png" alt="Pew Pew" loading="lazy" width="588" height="420">
                         </div>
                         <h3 class="ff-serif">Pew Pew</h3>
                         <p>Simulation of gravity, again. This time in space.</p>
@@ -49,7 +49,7 @@
                 <article>
                     <a href="/project/double-pendulum">
                         <div class="project-thumb-container">
-                            <img src="./static/img/projects/double-pendulum.png" alt="Double pendulum" width="588" height="420">
+                            <img src="./static/img/projects/double-pendulum.png" alt="Double pendulum" loading="lazy" width="588" height="420">
                         </div>
                         <h3 class="ff-serif">Double pendulum</h3>
                         <p>Simulation of the physics behind a double pendulum</p>
@@ -63,7 +63,7 @@
                 <article>
                     <a href="/project/snake">
                         <div class="project-thumb-container">
-                            <img src="./static/img/projects/snake.png" alt="Snake" width="588" height="420">
+                            <img src="./static/img/projects/snake.png" alt="Snake" loading="lazy" width="588" height="420">
                         </div>
                         <h3 class="ff-serif">Snake</h3>
                         <p>Recreation of the famous Nokia game</p>
@@ -77,7 +77,7 @@
                 <article>
                     <a href="/project/gravity-circular">
                         <div class="project-thumb-container">
-                            <img src="./static/img/projects/gravity-circular.png" alt="Circular gravity" width="588" height="420">
+                            <img src="./static/img/projects/gravity-circular.png" alt="Circular gravity" loading="lazy" width="588" height="420">
                         </div>
                         <h3 class="ff-serif">Circular gravity</h3>
                         <p>Simulation of gravity physics, but around a disc, not a plane</p>
@@ -91,7 +91,7 @@
                 <article>
                     <a href="/project/scratch">
                         <div class="project-thumb-container">
-                            <img src="./static/img/projects/scratch.jpg" alt="Scratch game" width="588" height="420">
+                            <img src="./static/img/projects/scratch.jpg" alt="Scratch game" loading="lazy" width="588" height="420">
                         </div>
                         <h3 class="ff-serif">Scratch game</h3>
                         <p>Well, it's a scratch game</p>
@@ -105,7 +105,7 @@
                 <article>
                     <a href="/project/gravity">
                         <div class="project-thumb-container">
-                            <img src="./static/img/projects/gravity.png" alt="Gravity" width="588" height="420">
+                            <img src="./static/img/projects/gravity.png" alt="Gravity" loading="lazy" width="588" height="420">
                         </div>
                         <h3 class="ff-serif">Gravity</h3>
                         <p>Simulation of gravity physics. Click to throw the balls in the air</p>

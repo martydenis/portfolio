@@ -55,7 +55,7 @@
         <div class="pin-wrapper">
             <div class="container-big section__fullheight">
                 <div class="section__image">
-                    <img src="static/img/easy-alarm.webp" alt="Easy Alarm" class="project__laptop" width="840" height="490">
+                    <img src="static/img/easy-alarm.webp" alt="Easy Alarm" loading="lazy" class="project__laptop" width="840" height="490">
                 </div>
                 <div class="section__content">
                     <h3 class="ff-serif">Easy-Alarm</h3>
@@ -78,7 +78,7 @@
         <div class="pin-wrapper">
             <div class="container-big section__fullheight">
                 <div class="section__image">
-                    <img src="static/img/artinmov.webp" alt="Art In Mov" class="project__laptop" width="840" height="490">
+                    <img src="static/img/artinmov.webp" alt="Art In Mov" loading="lazy" class="project__laptop" width="840" height="490">
                 </div>
                 <div class="section__content">
                     <h3 class="ff-serif">Art in Mov</h2>

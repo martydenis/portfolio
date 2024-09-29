@@ -21,7 +21,7 @@
                 ?>
 
                 <div id="footer__content" class="d-flex">
-                    <a href="#top" class="js-sroll-to btn-circle absolute-center-x">
+                    <a href="#top" class="js-sroll-to btn-circle absolute-center-x" aria-label="Scroll to top">
                         <svg class="icon">
                             <use href="/static/img/icons/icons.svg#arrow-up"></use>
                         </svg>
