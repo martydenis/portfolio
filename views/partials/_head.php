@@ -22,9 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo DIST_URL . $route['name'] . '.css'; ?>" media="screen" />
 <?php endif; ?>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300..700&display=swap" rel="stylesheet" media="screen">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300..700&display=swap" rel="stylesheet" media="screen"> -->
 <link rel="icon" type="image/svg" href="/favicon.svg" />
-
-<noscript><style>.anim-appear { opacity: 1; }</style></noscript>
