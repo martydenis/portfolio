@@ -9,14 +9,13 @@
     </div>
 </section>
 
-<section id="presentation" class="container-big section__fullheight pt-20 pb-20">
+<section id="presentation" class="container-big section__fullheight pt-20">
     <div class="section__content">
-        <div class="row justify-content-between flex-column flex-row-lg">
+        <div class="row justify-between flex-column flex-row-lg">
             <div class="col-5">
                 <h2 class="animate m-0 h3 text-body" data-anim-type="lines">I'm a Web Designer and Frontend Developer based in Brussels.</h2>
                 <p class="animate h3 text-body" data-anim-type="lines" data-anim-delay="0.5">I design web interfaces and build frontend applications, most of the time using modern technologies. My focus is on creating digital experiences that are both engaging and intuitive.</p>
             </div>
-            <div class="col d-none d-block-lg"></div>
             <div class="col-5 mt-40">
                 <p class="animate h3 text-body" data-anim-type="lines">At the end of the day, I just do what I love, really. I aim to build things that inspire me and, hopefully, bring a little bit of joy to others. The goal? Keep it interesting, keep it fun and make sure it looks, you know, not ugly.</p>
             </div>

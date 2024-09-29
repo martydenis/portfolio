@@ -1,12 +1,3 @@
-// @font-face {
-//     font-family: "Nevrada Neue";
-//     src: url("/static/fonts/nevradaneue/nevradaneue.woff2") format("woff2"),
-//          url("/static/fonts/nevradaneue/nevradaneue.woff") format("woff");
-//     font-weight: normal;
-//     font-style: normal;
-//     font-display: swap;
-// }
-
 @font-face {
     font-family: "Neue Machina";
     src: url("/static/fonts/neuemachina/ppneuemachina-inktraplight.woff2") format("woff2"),
@@ -34,61 +25,10 @@
     font-display: swap;
 }
 
-// @font-face {
-//     font-family: "Trap";
-//     src: url("/static/fonts/Trap/trap-bold.woff2") format("woff2"),
-//          url("/static/fonts/Trap/trap-bold.woff") format("woff");
-//     font-weight: 700;
-//     font-style: normal;
-//     font-display: swap;
-// }
-
-// @font-face {
-//     font-family: "Trap";
-//     src: url("/static/fonts/Trap/trap-medium.woff2") format("woff2"),
-//          url("/static/fonts/Trap/trap-medium.woff") format("woff");
-//     font-weight: 500;
-//     font-style: normal;
-//     font-display: swap;
-// }
-
-// @font-face {
-//     font-family: "Trap";
-//     src: url("/static/fonts/Trap/trap-regular.woff2") format("woff2"),
-//          url("/static/fonts/Trap/trap-regular.woff") format("woff");
-//     font-weight: 400;
-//     font-style: normal;
-//     font-display: swap;
-// }
-
-// @font-face {
-//     font-family: "Geist";
-//     src: url("/static/fonts/geist/GeistVF.woff2") format("woff2"),
-//          url("/static/fonts/geist/GeistVF.woff") format("woff");
-//     font-weight: 400;
-//     font-style: normal;
-//     font-display: swap;
-// }
-
-// @font-face {
-//     font-family: "Kumbh Sans";
-//     src: url("/static/fonts/kumbh/KumbhSans-Bold.ttf") format("truetype");
-//     font-weight: 700;
-//     font-style: normal;
-//     font-display: swap;
-// }
-
-// @font-face {
-//     font-family: "Kumbh Sans";
-//     src: url("/static/fonts/kumbh/KumbhSans-Regular.ttf") format("truetype");
-//     font-weight: 400;
-//     font-style: normal;
-//     font-display: swap;
-// }
-
 @font-face {
     font-family: "Telegraf";
-    src: url("/static/fonts/telegraf/PPTelegraf-Ultralight.otf") format("opentype");
+    src: url("/static/fonts/telegraf/pptelegraf-ultralight.woff2") format("woff2"),
+         url("/static/fonts/telegraf/pptelegraf-ultralight.woff") format("woff");
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -96,7 +36,8 @@
 
 @font-face {
     font-family: "Telegraf";
-    src: url("/static/fonts/telegraf/PPTelegraf-Regular.otf") format("opentype");
+    src: url("/static/fonts/telegraf/pptelegraf-regular.woff2") format("woff2"),
+         url("/static/fonts/telegraf/pptelegraf-regular.woff") format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -104,7 +45,8 @@
 
 @font-face {
     font-family: "Telegraf";
-    src: url("/static/fonts/telegraf/PPTelegraf-Ultrabold.otf") format("opentype");
+    src: url("/static/fonts/telegraf/pptelegraf-ultrabold.woff2") format("woff2"),
+         url("/static/fonts/telegraf/pptelegraf-ultrabold.woff") format("woff");
     font-weight: 700;
     font-style: normal;
     font-display: swap;

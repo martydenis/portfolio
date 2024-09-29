@@ -7,7 +7,8 @@
         <div class="col-6">
             <h1 class="animate ff-serif lh-serif" data-anim-type="letters">Contact me</h1>
 
-            <p class="h4 animate text-body" data-anim-type="lines" data-anim-delay="0.45">Fill in this form and tell me anything.</p>
+            <p class="animate h4 text-body" data-anim-type="lines" data-anim-delay="0.45">Fill in this form and tell me anything.</p>
+            <p class="animate h4 text-body" data-anim-type="lines" data-anim-delay="0.65">If you're not a robot I might reply to you.</p>
         </div>
 
         <div class="col-5 mt-20">

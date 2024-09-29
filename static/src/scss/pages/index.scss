@@ -27,7 +27,7 @@
         }
 
         @media (min-width: $sm) {
-            font-size: calc((100vw - var(--container-padding) * 2) * 0.151);
+            font-size: calc((100vw - var(--container-padding) * 2) * 0.15);
             white-space: nowrap;
         }
     }
@@ -50,13 +50,14 @@
     }
 
     &__intro__wrapper {
-        margin-bottom: 40svh;
+        margin-bottom: 60svh;
     }
 
     &__intro {
         display: flex;
-        padding-bottom: 5rem;
+        // padding-bottom: 5rem;
         flex-direction: column;
+        justify-content: center;
         color: var(--dark-color);
 
         h2 {
@@ -66,7 +67,7 @@
             margin-bottom: 0;
             white-space: nowrap;
 
-            font-size: min(16vw, 50svh);
+            font-size: max(16vw, 6rem);
             line-height: 1.25;
             text-indent: 1em;
             color: var(--dark-color);
@@ -93,6 +94,7 @@
         position: relative;
         z-index: 10;
         width: 33%;
+        min-width: 22rem;
         font-weight: 400;
     }
 
@@ -116,7 +118,7 @@
     }
 
     h3 {
-        font-size: 3.5em;
+        font-size: min(10vw, 3.5rem);
         margin-bottom: 0.2em;
         color: white;
 

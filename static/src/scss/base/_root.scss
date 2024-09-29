@@ -9,11 +9,10 @@
    --dark-border: 1px solid #36425a;
 
    --container-padding: 0.75rem;
-   --grid-gap: 12px;
+   --grid-gap: min(36px, 10vw);
    --spacer: 2rem;
 
-   @media (min-width: 768px) {
-      --grid-gap: 24px;
+   @media (min-width: $sm) {
       --spacer: 4rem;
       --container-padding: 1.5rem;
    }

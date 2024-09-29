@@ -101,11 +101,18 @@
 </IfModule>
 # END Cache-Control Headers
 
+# Disable automatic trailing slashes for directories
+<IfModule mod_dir.c>
+    DirectorySlash Off
+</IfModule>
+
 #Redirect to playground to sandbox
 RedirectMatch 301 /playground/(.*) /projects$1
 RedirectMatch 301 /sandbox/(.*) /projects$1
 
 <IfModule mod_rewrite.c>
+   DirectorySlash Off
+
    RewriteEngine On
    # Redirect all folder requests to index.php
    RewriteCond %{REQUEST_FILENAME} -d

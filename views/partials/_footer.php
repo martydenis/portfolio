@@ -27,7 +27,7 @@
                         </svg>
                     </a>
 
-                    <p class="d-flex align-center">Created by Martin Denis with ❤️</p>
+                    <p class="d-flex align-center">Made with ❤️ by Martin Denis</p>
 
                     <ul id="footer__socials" class="flex-basis justify-end navbar">
                         <li>

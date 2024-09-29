@@ -24,15 +24,15 @@
 }
 
 .mt-20 {
-    margin-top: min(20svh, 20vw) !important;
+    margin-top: 8vw !important;
 }
 
 .mt-30 {
-    margin-top: min(30svh, 30vw) !important;
+    margin-top: 12vw !important;
 }
 
 .mt-40 {
-    margin-top: min(40svh, 40vw) !important;
+    margin-top: 16vw !important;
 }
 
 .mb-0 {
@@ -40,11 +40,15 @@
 }
 
 .pt-20 {
-    padding-top: min(20svh, 20vw) !important;
+    padding-top: 8vw !important;
 }
 
 .pb-20 {
-    padding-bottom: min(20svh, 20vw) !important;
+    padding-bottom: 8vw !important;
+}
+
+.pb-20 {
+    padding-bottom: 8vw !important;
 }
 
 .bottom-0 {
@@ -57,6 +61,10 @@
 
 .d-flex {
     display: flex !important;
+}
+
+.flex-wrap {
+    flex-wrap: wrap !important;
 }
 
 .flex-column {
@@ -97,6 +105,10 @@
 
 .text-center {
     text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
 }
 
 .fw-light {
@@ -165,6 +177,10 @@
 @media (min-width: $sm) {
     .col-2 {
         width: 16.66667%;
+    }
+
+    .col-3 {
+        width: 25%;
     }
 
     .col-4 {

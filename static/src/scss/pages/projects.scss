@@ -10,26 +10,16 @@ h1 {
 }
 
 #projects-list {
-    --gap: var(--grid-gap);
-
-    @media screen and (min-width: 1200px) {
-        --gap: calc(var(--grid-gap) * 2);
-    }
-
+    gap: 0;
     list-style: none;
-
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: calc(-1 * var(--gap));
-    margin-right: calc(-1 * var(--gap));
+    margin-left: calc(var(--grid-gap) * -0.5);
+    margin-right: calc(var(--grid-gap) * -0.5);
 }
 
 .project {
-    padding: var(--gap);
+    padding: calc(var(--grid-gap) / 2);
 
-    @media screen and (min-width: 690px) {
-        width: 50%;
-
+    @media screen and (min-width: $sm) {
         &:nth-child(2n) {
             margin-top: calc(var(--spacer) * 2);
         }
