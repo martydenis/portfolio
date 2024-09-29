@@ -25,6 +25,10 @@ h1 {
         }
     }
 
+    article {
+        max-width: 609px;
+    }
+
     h3 {
         font-size: 1.15em;
         color: var(--dark-highlight);

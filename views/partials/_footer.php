@@ -31,14 +31,14 @@
 
                     <ul id="footer__socials" class="flex-basis justify-end navbar">
                         <li>
-                            <a href="https://github.com/martydenis/" class="nav-link" target="_blank">
+                            <a href="https://github.com/martydenis/" class="nav-link" target="_blank" aria-label="Github">
                                 <svg class="icon">
                                     <use href="/static/img/icons/icons.svg#github"></use>
                                 </svg>
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/martin-denis-593776a6/" class="nav-link" target="_blank">
+                            <a href="https://www.linkedin.com/in/martin-denis-593776a6/" class="nav-link" target="_blank" aria-label="Linkedin">
                                 <svg class="icon">
                                     <use href="/static/img/icons/icons.svg#linkedin"></use>
                                 </svg>
