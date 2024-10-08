@@ -2,7 +2,7 @@
 
 $config = array();
 
-$config['email'] = "martin.2nis@gmail.com";
+$config['email'] = "contact@martindenis.be";
 // Messages d'erreur
 $config['no_name'] = "I need your name.";
 $config['too_fast'] = "You went suspiciously fast to submit this form. Please try again slower.";
@@ -71,7 +71,7 @@ if (isset($_POST) && count($_POST)>0) {
 		$message = wordwrap($message, 70, "\r\n");
 
 		$subject = "Message de " . $name . " depuis le portfolio";
-		$headers = "From:'" . $name . "' <info@martindenis.be>\r\n" . "Reply-To:" . $email . "\r\n";
+		$headers = "From:'" . $name . "' <contact@martindenis.be>\r\n" . "Reply-To:" . $email . "\r\n";
 
 		mail($config['email'], $subject, $message, $headers);
 
